@@ -1,0 +1,2086 @@
+----------------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\delamb\data\ahbelong\data/logs/20180831.log
+  log type:  text
+ opened on:  31 Aug 2018, 15:04:21
+
+. rename *, lower
+
+. su sch_yr
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+      sch_yr |      6,504    .3543973    .4831649          0          6
+
+. codebook sch_yr
+
+----------------------------------------------------------------------------------------------------------------------------------------
+sch_yr                                                                                                   94-95 SCHOOL YEAR IN SESSION-W1
+----------------------------------------------------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+                 label:  SCH_YR
+
+                 range:  [0,6]                        units:  1
+         unique values:  3                        missing .:  0/6,504
+
+            tabulation:  Freq.   Numeric  Label
+                         4,204         0  (0) No
+                         2,299         1  (1) Yes
+                             1         6  (6) Refused
+
+. tab smp01
+
+       CORE |
+  SAMPLE-W1 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+     (0) No |        432        6.64        6.64
+    (1) Yes |      6,072       93.36      100.00
+------------+-----------------------------------
+      Total |      6,504      100.00
+
+. tab smp01, mis
+
+       CORE |
+  SAMPLE-W1 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+     (0) No |        432        6.64        6.64
+    (1) Yes |      6,072       93.36      100.00
+------------+-----------------------------------
+      Total |      6,504      100.00
+
+. tab smp03, mi
+
+       HIGH |
+  EDUCATION |
+      BLACK |
+  SAMPLE-W1 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+     (0) No |      5,984       92.00       92.00
+    (1) Yes |        520        8.00      100.00
+------------+-----------------------------------
+      Total |      6,504      100.00
+
+. browse
+
+. tab h1gi8
+
+           S1Q8 RACE-SINGLE CATEGORY-W1 |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+                              (1) White |        134        2.06        2.06
+             (2) Black/African American |         94        1.45        3.51
+    (3) American Indian/Native American |         33        0.51        4.01
+             (4) Asian/Pacific Islander |         24        0.37        4.38
+                              (5) Other |         25        0.38        4.77
+                            (6) Refused |          3        0.05        4.81
+(7) Legitimate skip (only one race mark |      6,182       95.05       99.86
+                         (8) Don't know |          8        0.12       99.98
+                     (9) Not applicable |          1        0.02      100.00
+----------------------------------------+-----------------------------------
+                                  Total |      6,504      100.00
+
+. tab h1gi8, mi
+
+           S1Q8 RACE-SINGLE CATEGORY-W1 |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+                              (1) White |        134        2.06        2.06
+             (2) Black/African American |         94        1.45        3.51
+    (3) American Indian/Native American |         33        0.51        4.01
+             (4) Asian/Pacific Islander |         24        0.37        4.38
+                              (5) Other |         25        0.38        4.77
+                            (6) Refused |          3        0.05        4.81
+(7) Legitimate skip (only one race mark |      6,182       95.05       99.86
+                         (8) Don't know |          8        0.12       99.98
+                     (9) Not applicable |          1        0.02      100.00
+----------------------------------------+-----------------------------------
+                                  Total |      6,504      100.00
+
+. tab h1gi15
+
+    S1Q15 HAVE YOU EVER BEEN MARRIED-W1 |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+                  (0) No (skip to Q.18) |      4,428       68.08       68.08
+                                (1) Yes |         35        0.54       68.62
+             (6) Refused (skip to Q.18) |          1        0.02       68.63
+(7) Legitimate skip (age<15 or unknown) |      2,039       31.35       99.98
+          (8) Don't know (skip to Q.18) |          1        0.02      100.00
+----------------------------------------+-----------------------------------
+                                  Total |      6,504      100.00
+
+. tab h1gi11
+
+     S1Q11 BORN IN THE UNITED STATES-W1 |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+                                 (0) No |        399        6.13        6.13
+                 (1) Yes (skip to Q.15) |      4,807       73.91       80.04
+             (6) Refused (skip to Q.15) |          2        0.03       80.07
+(7) Legitimate skip (lived at current a |      1,293       19.88       99.95
+          (8) Don't know (skip to Q.15) |          3        0.05      100.00
+----------------------------------------+-----------------------------------
+                                  Total |      6,504      100.00
+
+. tab h1gi15 if h1gi11==0
+
+    S1Q15 HAVE YOU EVER BEEN MARRIED-W1 |      Freq.     Percent        Cum.
+----------------------------------------+-----------------------------------
+                  (0) No (skip to Q.18) |        315       78.95       78.95
+                                (1) Yes |          3        0.75       79.70
+(7) Legitimate skip (age<15 or unknown) |         81       20.30      100.00
+----------------------------------------+-----------------------------------
+                                  Total |        399      100.00
+
+. su h1gh60
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+      h1gh60 |      6,504    161.6179    135.3328         50        999
+
+. su h1gh60, d
+
+                       S3Q60 WEIGHT-W1
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%           83             50
+ 5%           97             57
+10%          105             62       Obs               6,504
+25%          118             62       Sum of Wgt.       6,504
+
+50%          135                      Mean           161.6179
+                        Largest       Std. Dev.      135.3328
+75%          160            998
+90%          190            999       Variance       18314.96
+95%          220            999       Skewness       5.641462
+99%          998            999       Kurtosis       34.95556
+
+. codebook h1gh60
+
+----------------------------------------------------------------------------------------------------------------------------------------
+h1gh60                                                                                                                   S3Q60 WEIGHT-W1
+----------------------------------------------------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+                 label:  H1GH60, but 191 nonmissing values are not labeled
+
+                 range:  [50,999]                     units:  1
+         unique values:  194                      missing .:  0/6,504
+
+              examples:  115   
+                         130   
+                         145   
+                         170   
+
+. help codebook
+
+. codebook h1gh60, all
+
+               Dataset:  C:\Users\delamb\data\ahbelong\data\DS0001\21600-0001-Data.dta
+            Last saved:  20 May 2016 08:54
+                         DATA HAVE CHANGED SINCE LAST SAVED
+
+                 Label:  National Longitudinal Study of Adolescent to Adult Health (Add Health), 1994-200
+   Number of variables:  2,794
+Number of observations:  6,504
+                  Size:  36,454,920 bytes ignoring labels, etc.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+h1gh60                                                                                                                   S3Q60 WEIGHT-W1
+----------------------------------------------------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+                 label:  H1GH60, but 191 nonmissing values are not labeled
+
+                 range:  [50,999]                     units:  1
+         unique values:  194                      missing .:  0/6,504
+
+              examples:  115   
+                         130   
+                         145   
+                         170   
+
+. help keep
+
+. clear
+
+. use data/DS0005/21600-0005-Data
+(National Longitudinal Study of Adolescent to Adult Health (Add Health), 1994-200)
+
+. d, s
+
+Contains data from data/DS0005/21600-0005-Data.dta
+  obs:         4,834                          National Longitudinal Study of Adolescent to Adult Health (Add Health), 1994-200
+ vars:         2,532                          20 May 2016 09:01
+ size:    24,629,230                          
+Sorted by: 
+
+. rename *, lower
+
+. use data/DS0008/21600-0008-Data
+no; data in memory would be lost
+r(4);
+
+. use data/DS0008/21600-0008-Data
+no; data in memory would be lost
+r(4);
+
+. clear
+
+. clear
+
+. use data/DS0008/21600-0008-Data
+(National Longitudinal Study of Adolescent to Adult Health (Add Health), 1994-200)
+
+. d,
+
+Contains data from data/DS0008/21600-0008-Data.dta
+  obs:         4,882                          National Longitudinal Study of Adolescent to Adult Health (Add Health), 1994-200
+ vars:         1,831                          20 May 2016 09:05
+ size:    19,718,398                          
+----------------------------------------------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+----------------------------------------------------------------------------------------------------------------------------------------
+AID             str8    %9s                   RESPONDENT IDENTIFIER
+IMONTH3         int     %13.0f     IMONTH3    MONTH OF INTERVIEW-W3
+IDAY3           int     %2.0f                 DAY OF INTERVIEW-W3
+IYEAR3          int     %4.0f                 YEAR OF INTERVIEW-W3
+BIO_SEX3        int     %10.0f     BIO_SEX3   BIOLOGICAL SEX-W3
+VERSION3        int     %15.0f     VERSION3   QUESTIONNAIRE VERSION-W3
+FRIEND          int     %24.0f     FRIEND     FRIEND SAMPLE-W3
+SIBLING         int     %25.0f     SIBLING    SIBLING SAMPLE-W3
+PARTNER         int     %25.0f     PARTNER    PARTNER SAMPLE-W3
+BINGE           int     %23.0f     BINGE      BINGE SAMPLE-W3
+PRMOM           int     %46.0f     PRMOM      MOTHER FIGURE AT LAST INTERVIEW-W3
+PRPOP           int     %46.0f     PRPOP      FATHER FIGURE AT LAST INTERVIEW-W3
+PRYEAR          int     %4.0f                 LAST INTERVIEW YEAR-W3
+CALCAGE3        int     %2.0f                 CALCULATED AGE-W3
+PRETEST3        int     %27.0f     PRETEST3   PRETEST INTERVIEW-W3
+PRISON3         int     %29.0f     PRISON3    PRISON INTERVIEW-W3
+H3OD1M          int     %13.0f     H3OD1M     S1Q1 BIRTH MONTH-W3
+H3OD1Y          int     %4.0f                 S1Q1 BIRTH YEAR-W3
+H3OD2           int     %20.0f     H3OD2      S1Q2 ARE YOU OF HISPANIC ORIGIN-W3
+H3OD3A          int     %19.0f     H3OD3A     S1Q3A HISPANIC-MEXICAN-W3
+H3OD3B          int     %19.0f     H3OD3B     S1Q3B HISPANIC-CHICANO-W3
+H3OD3C          int     %19.0f     H3OD3C     S1Q3C HISPANIC-CUBAN-W3
+H3OD3D          int     %19.0f     H3OD3D     S1Q3D HISPANIC-PUERTO RICAN-W3
+H3OD3E          int     %19.0f     H3OD3E     S1Q3E HISPANIC-CENTRAL/SO AMERICAN-W3
+H3OD3F          int     %19.0f     H3OD3F     S1Q3F HISPANIC-OTHER-W3
+H3OD4A          int     %18.0f     H3OD4A     S1Q4A RACE-WHITE-W3
+H3OD4B          int     %18.0f     H3OD4B     S1Q4B RACE-BLACK/AFRICAN AM-W3
+H3OD4C          int     %18.0f     H3OD4C     S1Q4C RACE-AMER INDIAN/NATIVE AM-W3
+H3OD4D          int     %18.0f     H3OD4D     S1Q4D RACE-ASIAN-W3
+H3OD5A          int     %19.0f     H3OD5A     S1Q5A ASIAN-CHINESE-W3
+H3OD5B          int     %19.0f     H3OD5B     S1Q5B ASIAN-FILIPINO-W3
+H3OD5C          int     %19.0f     H3OD5C     S1Q5C ASIAN-JAPANESE-W3
+H3OD5D          int     %19.0f     H3OD5D     S1Q5D ASIAN-ASIAN INDIAN-W3
+H3OD5E          int     %19.0f     H3OD5E     S1Q5E ASIAN-KOREAN-W3
+H3OD5F          int     %19.0f     H3OD5F     S1Q5F ASIAN-VIETNAMESE-W3
+H3OD5G          int     %19.0f     H3OD5G     S1Q5G ASIAN-OTHER-W3
+H3OD6           int     %35.0f     H3OD6      S1Q6 RACE-SINGLE CATEGORY-W3
+H3OD7A          int     %50.0f     H3OD7A     S1Q7A FAMILY ANCESTRY-1ST COUNTRY-W3
+H3OD7B          int     %50.0f     H3OD7B     S1Q7B FAMILY ANCESTRY-2ND COUNTRY-W3
+H3OD7C          int     %50.0f     H3OD7C     S1Q7C FAMILY ANCESTRY-3RD COUNTRY-W3
+H3OD7D          int     %50.0f     H3OD7D     S1Q7D FAMILY ANCESTRY-4TH COUNTRY-W3
+H3OD8           int     %60.0f     H3OD8      S1Q8 BEST COUNTRY FAMILY ORIGIN-W3
+H3OD9           int     %42.0f     H3OD9      S1Q9 LANG USED MOST W/FAMILY-W3
+H3OD10          int     %42.0f     H3OD10     S1Q10 LANG USED MOST W/CLOSE FRIENDS-W3
+H3OD11          int     %18.0f     H3OD11     S1Q11 OFTEN BUY MUSIC IN NON ENGLISH-W3
+H3OD12          int     %18.0f     H3OD12     S1Q12 OFTEN USE MEDIA IN NON ENGLISH-W3
+H3OD13          int     %22.0f     H3OD13     S1Q13 BORN IN THE UNITED STATES-W3
+H3OD14          int     %39.0f     H3OD14     S1Q14 COUNTRY OF BIRTH-W3
+H3OD15          int     %19.0f     H3OD15     S1Q15 PLAN TO LIVE IN US NEXT 10 YRS-W3
+H3OD16          int     %22.0f     H3OD16     S1Q16 BORN A US CITIZEN-W3
+H3OD17          int     %21.0f     H3OD17     S1Q17 HAVE BECOME A US CITIZEN-W3
+H3OD18M         int     %20.0f     H3OD18M    S1Q18M MONTH BECAME A US CITIZEN-W3
+H3OD18Y         int     %22.0f     H3OD18Y    S1Q18Y YEAR BECAME A US CITIZEN-W3
+H3OD19          int     %19.0f     H3OD19     S1Q19 TRYING TO BECOME A US CITIZEN-W3
+H3OD20          int     %21.0f     H3OD20     S1Q20 EVER LIVED ON WORKING FARM-W3
+H3OD21A         int     %19.0f     H3OD21A    S1Q21A LIVED ON FARM-BEFORE GRADE SCH-W3
+H3OD21B         int     %19.0f     H3OD21B    S1Q21B LIVED ON FARM-DURING GRADE SCH-W3
+H3OD21C         int     %19.0f     H3OD21C    S1Q21C LIVED ON FARM-MIDDLE SCHOOL-W3
+H3OD21D         int     %19.0f     H3OD21D    S1Q21D LIVED ON FARM-DURING HIGH SCH-W3
+H3OD21E         int     %19.0f     H3OD21E    S1Q21E LIVED ON FARM-AFTER HIGH SCH-W3
+H3OD22          int     %19.0f     H3OD22     S1Q22 NOW LIVE ON WORKING FARM-W3
+H3OD23          int     %21.0f     H3OD23     S1Q23 EVER ADOPTED-W3
+H3OD24          int     %22.0f     H3OD24     S1Q24 ADOPTED BY BLOOD RELATIVE-W3
+H3OD25          int     %34.0f     H3OD25     S1Q25 ADOPTED BY SPOUSE OF BIO PARENT-W3
+H3OD26          int     %24.0f     H3OD26     S1Q26 AGE WHEN ADOPTED-W3
+H3OD27          int     %21.0f     H3OD27     S1Q27 MONTHS OLD WHEN ADOPTED-W3
+H3OD28          int     %20.0f     H3OD28     S1Q28 AGE FOUND OUT ADOPTED-W3
+H3OD29          int     %19.0f     H3OD29     S1Q29 TRANSRACIAL ADOPTION-W3
+H3OD30          int     %19.0f     H3OD30     S1Q30 INTERNATIONAL ADOPTION-W3
+H3OD31          int     %18.0f     H3OD31     S1Q31 EVER LIVE IN FOSTER HOME-W3
+H3OD32          int     %20.0f     H3OD32     S1Q32 NO OF FOSTER HOMES LIVED IN-W3
+H3OD33          int     %21.0f     H3OD33     S1Q33 NEG/ABUSE IN FOSTER/ADOPT-W3
+H3OD34A         int     %21.0f     H3OD34A    S1Q34A MONTHS LIVED IN FOSTER/ADOPT-W3
+H3OD34B         int     %20.0f     H3OD34B    S1Q34B YEARS LIVED IN FOSTER/ADOPT-W3
+H3OD35          int     %29.0f     H3OD35     S1Q35 EVER LIVED W/EITHER BIO PARENTS-W3
+H3OD36M         int     %20.0f     H3OD36M    S1Q36M MONTH 1ST LIVED W/ BIO PARENT-W3
+H3OD36Y         int     %22.0f     H3OD36Y    S1Q36Y YEAR 1ST LIVED W/ BIO PARENT-W3
+H3OD37M         int     %20.0f     H3OD37M    S1Q37M MON LAST LIVED W/ BIO PARENT-W3
+H3OD37Y         int     %22.0f     H3OD37Y    S1Q37Y YR LAST LIVED W/R BIO PARENT-W3
+H3OD38          int     %19.0f     H3OD38     S1Q38 NEGL/ABUSE BY BIO PARENT-W3
+H3HR1           int     %29.0f     H3HR1      S2Q1 RESPONDENT LIVES AT INT SITE-W3
+H3HR2           int     %46.0f     H3HR2      S2Q2 WHERE RESPONDENT LIVES AT-W3
+H3HR3           int     %19.0f     H3HR3      S2Q3 LAST/WEEK STAYING AT SHELTER-W3
+H3HR4           int     %23.0f     H3HR4      S2Q4 PERSON RESPONDENT LIVES WITH-W3
+H3HR5           int     %34.0f     H3HR5      S2Q5 RESP LIVES ALONE OR W/OTHERS-W3
+H3HR6           int     %20.0f     H3HR6      S2Q6 HOW MANY PEOPLE RESP LIVES WITH-W3
+H3HR7A          int     %19.0f     H3HR7A     S2Q7A HH MEMBER 1-GENDER-W3
+H3HR8A          int     %21.0f     H3HR8A     S2Q8A HH MEMBER 1-AGE-W3
+H3HR9A          int     %21.0f     H3HR9A     S2Q9A HH MEMBER 1-APPROXIMATE AGE-W3
+H3HR10A         int     %29.0f     H3HR10A    S2Q10A HH MEMBER 1-RELATION TO RESP-W3
+H3HR11A         int     %36.0f     H3HR11A    S2Q11A HH MEMBER 1-BEST/FIT RELATION-W3
+H3HR7B          int     %19.0f     H3HR7B     S2Q7B HH MEMBER 2-GENDER-W3
+H3HR8B          int     %21.0f     H3HR8B     S2Q8B HH MEMBER 2-AGE-W3
+H3HR9B          int     %21.0f     H3HR9B     S2Q9B HH MEMBER 2-APPROXIMATE AGE-W3
+H3HR10B         int     %49.0f     H3HR10B    S2Q10B HH MEMBER 2-RELATION TO RESP-W3
+H3HR11B         int     %40.0f     H3HR11B    S2Q11B HH MEMBER 2-BEST/FIT RELATION-W3
+H3HR7C          int     %19.0f     H3HR7C     S2Q7C HH MEMBER 3-GENDER-W3
+H3HR8C          int     %21.0f     H3HR8C     S2Q8C HH MEMBER 3-AGE-W3
+H3HR9C          int     %21.0f     H3HR9C     S2Q9C HH MEMBER 3-APPROXIMATE AGE-W3
+H3HR10C         int     %49.0f     H3HR10C    S2Q10C HH MEMBER 3-RELATION TO RESP-W3
+H3HR11C         int     %40.0f     H3HR11C    S2Q11C HH MEMBER 3-BEST/FIT RELATION-W3
+H3HR7D          int     %19.0f     H3HR7D     S2Q7D HH MEMBER 4-GENDER-W3
+H3HR8D          int     %21.0f     H3HR8D     S2Q8D HH MEMBER 4-AGE-W3
+H3HR9D          int     %21.0f     H3HR9D     S2Q9D HH MEMBER 4-APPROXIMATE AGE-W3
+H3HR10D         int     %49.0f     H3HR10D    S2Q10D HH MEMBER 4-RELATION TO RESP-W3
+H3HR11D         int     %40.0f     H3HR11D    S2Q11D HH MEMBER 4-BEST/FIT RELATION-W3
+H3HR7E          int     %19.0f     H3HR7E     S2Q7E HH MEMBER 5-GENDER-W3
+H3HR8E          int     %21.0f     H3HR8E     S2Q8E HH MEMBER 5-AGE-W3
+H3HR9E          int     %21.0f     H3HR9E     S2Q9E HH MEMBER 5-APPROXIMATE AGE-W3
+H3HR10E         int     %49.0f     H3HR10E    S2Q10E HH MEMBER 5-RELATION TO RESP-W3
+H3HR11E         int     %40.0f     H3HR11E    S2Q11E HH MEMBER 5-BEST/FIT RELATION-W3
+H3HR7F          int     %19.0f     H3HR7F     S2Q7F HH MEMBER 6-GENDER-W3
+H3HR8F          int     %21.0f     H3HR8F     S2Q8F HH MEMBER 6-AGE-W3
+H3HR9F          int     %21.0f     H3HR9F     S2Q9F HH MEMBER 6-APPROXIMATE AGE-W3
+H3HR10F         int     %49.0f     H3HR10F    S2Q10F HH MEMBER 6-RELATION TO RESP-W3
+H3HR11F         int     %40.0f     H3HR11F    S2Q11F HH MEMBER 6-BEST/FIT RELATION-W3
+H3HR7G          int     %19.0f     H3HR7G     S2Q7G HH MEMBER 7-GENDER-W3
+H3HR8G          int     %21.0f     H3HR8G     S2Q8G HH MEMBER 7-AGE-W3
+H3HR9G          int     %21.0f     H3HR9G     S2Q9G HH MEMBER 7-APPROXIMATE AGE-W3
+H3HR10G         int     %49.0f     H3HR10G    S2Q10G HH MEMBER 7-RELATION TO RESP-W3
+H3HR11G         int     %40.0f     H3HR11G    S2Q11G HH MEMBER 7-BEST/FIT RELATION-W3
+H3HR7H          int     %19.0f     H3HR7H     S2Q7H HH MEMBER 8-GENDER-W3
+H3HR8H          int     %21.0f     H3HR8H     S2Q8H HH MEMBER 8-AGE-W3
+H3HR9H          int     %21.0f     H3HR9H     S2Q9H HH MEMBER 8-APPROXIMATE AGE-W3
+H3HR10H         int     %49.0f     H3HR10H    S2Q10H HH MEMBER 8-RELATION TO RESP-W3
+H3HR11H         int     %40.0f     H3HR11H    S2Q11H HH MEMBER 8-BEST/FIT RELATION-W3
+H3HR7I          int     %19.0f     H3HR7I     S2Q7I HH MEMBER 9-GENDER-W3
+H3HR8I          int     %21.0f     H3HR8I     S2Q8I HH MEMBER 9-AGE-W3
+H3HR9I          int     %21.0f     H3HR9I     S2Q9I HH MEMBER 9-APPROXIMATE AGE-W3
+H3HR10I         int     %49.0f     H3HR10I    S2Q10I HH MEMBER 9-RELATION TO RESP-W3
+H3HR11I         int     %40.0f     H3HR11I    S2Q11I HH MEMBER 9-BEST/FIT RELATION-W3
+H3HR7J          int     %19.0f     H3HR7J     S2Q7J HH MEMBER 10-GENDER-W3
+H3HR8J          int     %21.0f     H3HR8J     S2Q8J HH MEMBER 10-AGE-W3
+H3HR9J          int     %21.0f     H3HR9J     S2Q9J HH MEMBER 10-APPROXIMATE AGE-W3
+H3HR10J         int     %49.0f     H3HR10J    S2Q10J HH MEMBER 10-RELATION TO RESP-W3
+H3HR11J         int     %40.0f     H3HR11J    S2Q11J HH MEMBER 10-BEST/FIT RELATION-W3
+H3HR7K          int     %19.0f     H3HR7K     S2Q7K HH MEMBER 11-GENDER-W3
+H3HR8K          int     %21.0f     H3HR8K     S2Q8K HH MEMBER 11-AGE-W3
+H3HR9K          int     %21.0f     H3HR9K     S2Q9K HH MEMBER 11-APPROXIMATE AGE-W3
+H3HR10K         int     %20.0f     H3HR10K    S2Q10K HH MEMBER 11-RELATION TO RESP-W3
+H3HR11K         int     %20.0f     H3HR11K    S2Q11K HH MEMBER 11-BEST/FIT RELATION-W3
+H3HR7L          int     %19.0f     H3HR7L     S2Q7L HH MEMBER 12-GENDER-W3
+H3HR8L          int     %21.0f     H3HR8L     S2Q8L HH MEMBER 12-AGE-W3
+H3HR9L          int     %21.0f     H3HR9L     S2Q9L HH MEMBER 12-APPROXIMATE AGE-W3
+H3HR10L         int     %20.0f     H3HR10L    S2Q10L HH MEMBER 12-RELATION TO RESP-W3
+H3HR11L         int     %20.0f     H3HR11L    S2Q11L HH MEMBER 12-BEST/FIT RELATION-W3
+H3HR7M          int     %19.0f     H3HR7M     S2Q7M HH MEMBER 13-GENDER-W3
+H3HR8M          int     %21.0f     H3HR8M     S2Q8M HH MEMBER 13-AGE-W3
+H3HR9M          int     %21.0f     H3HR9M     S2Q9M HH MEMBER 13-APPROXIMATE AGE-W3
+H3HR10M         int     %20.0f     H3HR10M    S2Q10M HH MEMBER 13-RELATION TO RESP-W3
+H3HR11M         int     %20.0f     H3HR11M    S2Q11M HH MEMBER 13-BEST/FIT RELATION-W3
+H3HR7N          int     %19.0f     H3HR7N     S2Q7N HH MEMBER 14-GENDER-W3
+H3HR8N          int     %21.0f     H3HR8N     S2Q8N HH MEMBER 14-AGE-W3
+H3HR9N          int     %21.0f     H3HR9N     S2Q9N HH MEMBER 14-APPROXIMATE AGE-W3
+H3HR10N         int     %20.0f     H3HR10N    S2Q10N HH MEMBER 14-RELATION TO RESP-W3
+H3HR11N         int     %20.0f     H3HR11N    S2Q11N HH MEMBER 14-BEST/FIT RELATION-W3
+H3HR7O          int     %19.0f     H3HR7O     S2Q7O HH MEMBER 15-GENDER-W3
+H3HR8O          int     %21.0f     H3HR8O     S2Q8O HH MEMBER 15-AGE-W3
+H3HR9O          int     %21.0f     H3HR9O     S2Q9O HH MEMBER 15-APPROXIMATE AGE-W3
+H3HR10O         int     %20.0f     H3HR10O    S2Q10O HH MEMBER 15-RELATION TO RESP-W3
+H3HR11O         int     %20.0f     H3HR11O    S2Q11O HH MEMBER 15-BEST/FIT RELATION-W3
+H3HR7P          int     %19.0f     H3HR7P     S2Q7P HH MEMBER 16-GENDER-W3
+H3HR8P          int     %21.0f     H3HR8P     S2Q8P HH MEMBER 16-AGE-W3
+H3HR9P          int     %21.0f     H3HR9P     S2Q9P HH MEMBER 16-APPROXIMATE AGE-W3
+H3HR10P         int     %20.0f     H3HR10P    S2Q10P HH MEMBER 16-RELATION TO RESP-W3
+H3HR11P         int     %20.0f     H3HR11P    S2Q11P HH MEMBER 16-BEST/FIT RELATION-W3
+H3HR7Q          int     %19.0f     H3HR7Q     S2Q7Q HH MEMBER 17-GENDER-W3
+H3HR8Q          int     %21.0f     H3HR8Q     S2Q8Q HH MEMBER 17-AGE-W3
+H3HR9Q          int     %21.0f     H3HR9Q     S2Q9Q HH MEMBER 17-APPROXIMATE AGE-W3
+H3HR10Q         int     %20.0f     H3HR10Q    S2Q10Q HH MEMBER 17-RELATION TO RESP-W3
+H3HR11Q         int     %20.0f     H3HR11Q    S2Q11Q HH MEMBER 17-BEST/FIT RELATION-W3
+H3HR7R          int     %19.0f     H3HR7R     S2Q7R HH MEMBER 18-GENDER-W3
+H3HR8R          int     %21.0f     H3HR8R     S2Q8R HH MEMBER 18-AGE-W3
+H3HR9R          int     %21.0f     H3HR9R     S2Q9R HH MEMBER 18-APPROXIMATE AGE-W3
+H3HR10R         int     %20.0f     H3HR10R    S2Q10R HH MEMBER 18-RELATION TO RESP-W3
+H3HR11R         int     %20.0f     H3HR11R    S2Q11R HH MEMBER 18-BEST/FIT RELATION-W3
+H3HR7S          int     %19.0f     H3HR7S     S2Q7S HH MEMBER 19-GENDER-W3
+H3HR8S          int     %21.0f     H3HR8S     S2Q8S HH MEMBER 19-AGE-W3
+H3HR9S          int     %21.0f     H3HR9S     S2Q9S HH MEMBER 19-APPROXIMATE AGE-W3
+H3HR10S         int     %20.0f     H3HR10S    S2Q10S HH MEMBER 19-RELATION TO RESP-W3
+H3HR11S         int     %20.0f     H3HR11S    S2Q11S HH MEMBER 19-BEST/FIT RELATION-W3
+H3HR12          int     %21.0f     H3HR12     S2Q12 WHO ACTS AS THE MOTHER TO RESP-W3
+H3HR13          int     %20.0f     H3HR13     S2Q13 WHICH PERSON IS THAT-W3
+H3HR14          int     %21.0f     H3HR14     S2Q14 WHO ACTS AS THE FATHER TO RESP-W3
+H3HR15          int     %20.0f     H3HR15     S2Q15 WHICH PERSON IS THAT-W3
+H3HR16          int     %22.0f     H3HR16     S2Q16 ALWAYS LIVE AT CURRENT ADDRESS-W3
+H3HR17M         int     %20.0f     H3HR17M    S2Q17M MONTH MOVED CURRENT ADDRESS-W3
+H3HR17Y         int     %22.0f     H3HR17Y    S2Q17Y YEAR MOVED CURRENT ADDRESS-W3
+H3HR18          int     %20.0f     H3HR18     S2Q18 SINCE 6/95 ADDRESSES LIVED-W3
+H3HR19          int     %21.0f     H3HR19     S2Q19 COUNTRY/STATE OTH THAN CURRENT-W3
+H3HR20          int     %27.0f     H3HR20     S2Q20 HOW MANY STATE/COUNTRIES LIVED-W3
+H3HR21M         int     %20.0f     H3HR21M    S2Q21M MONTH MOVED CURRENT STATE-W3
+H3HR21Y         int     %22.0f     H3HR21Y    S2Q21Y YEAR MOVED CURRENT STATE-W3
+H3HR22MA        int     %20.0f     H3HR22MA   S2Q22MA MONTH MOVED PREV STATE 1-W3
+H3HR22YA        int     %22.0f     H3HR22YA   S2Q22YA YEAR MOVED PREV STATE 1-W3
+H3HR22MB        int     %20.0f     H3HR22MB   S2Q22MB MONTH MOVED PREV STATE 2-W3
+H3HR22YB        int     %22.0f     H3HR22YB   S2Q22YB YEAR MOVED PREV STATE 2-W3
+H3HR22MC        int     %20.0f     H3HR22MC   S2Q22MC MONTH MOVED PREV STATE 3-W3
+H3HR22YC        int     %22.0f     H3HR22YC   S2Q22YC YEAR MOVED PREV STATE 3-W3
+H3HR22MD        int     %20.0f     H3HR22MD   S2Q22MD MONTH MOVED PREV STATE 4-W3
+H3HR22YD        int     %22.0f     H3HR22YD   S2Q22YD YEAR MOVED PREV STATE 4-W3
+H3HR22ME        int     %20.0f     H3HR22ME   S2Q22ME MONTH MOVED PREV STATE 5-W3
+H3HR22YE        int     %22.0f     H3HR22YE   S2Q22YE YEAR MOVED PREV STATE 5-W3
+H3HR22MF        int     %20.0f     H3HR22MF   S2Q22MF MONTH MOVED PREV STATE 6-W3
+H3HR22YF        int     %22.0f     H3HR22YF   S2Q22YF YEAR MOVED PREV STATE 6-W3
+H3HR22MG        int     %20.0f     H3HR22MG   S2Q22MG MONTH MOVED PREV STATE 7-W3
+H3HR22YG        int     %22.0f     H3HR22YG   S2Q22YG YEAR MOVED PREV STATE 7-W3
+H3HR23          int     %18.0f     H3HR23     S2Q23 EVER RUN AWAY FROM HOME-W3
+H3HR24          int     %19.0f     H3HR24     S2Q24 EVER BEEN HOMELESS A WEEK/MORE-W3
+H3HR25          int     %18.0f     H3HR25     S2Q25 EVER STAYED HOMELESS SHELTER-W3
+H3HR26          int     %28.0f     H3HR26     S2Q26 PARENTS EVER ORDERED MOVE OUT-W3
+H3HR27          int     %58.0f     H3HR27     S2Q27 KIND GROUP QUARTERS LIVING NOW-W3
+H3HR28          int     %19.0f     H3HR28     S2Q28 IS SAME-SEX OR CO-ED DORMITORY-W3
+H3HR29          int     %19.0f     H3HR29     S2Q29 IS SOCIAL/FRATERNITY/SORORITY-W3
+H3HR30          int     %19.0f     H3HR30     S2Q30 EVER LIVED CARE/TREATMENT HOME-W3
+H3WP1           int     %19.0f     H3WP1      S3Q1 STILL LIVE W/PREV MOM-W3
+H3WP2           int     %41.0f     H3WP2      S3Q2 PREV MOM STILL LIVING-W3
+H3WP3M          int     %42.0f     H3WP3M     S3Q3 PREV MOM DEATH-MONTH-W3
+H3WP3Y          int     %44.0f     H3WP3Y     S3Q3 PREV MOM DEATH-YEAR-W3
+H3WP4           int     %19.0f     H3WP4      S3Q4 STILL LIVE W/PREV DAD-W3
+H3WP5           int     %41.0f     H3WP5      S3Q5 PREV DAD STILL LIVING-W3
+H3WP6M          int     %42.0f     H3WP6M     S3Q6 PREV DAD DEATH-MONTH-W3
+H3WP6Y          int     %44.0f     H3WP6Y     S3Q6 PREV DAD DEATH-YEAR-W3
+H3WP7           int     %21.0f     H3WP7      S3Q7 KNOW ANYTHING ABOUT BIO MOM-W3
+H3WP8           int     %22.0f     H3WP8      S3Q8 IS SHE STILL LIVING-W3
+H3WP9           int     %20.0f     H3WP9      S3Q9 YOUR AGE WHEN SHE DIED-W3
+H3WP10M         int     %20.0f     H3WP10M    S3Q10 BIO MOM DEATH-MONTH-W3
+H3WP10Y         int     %22.0f     H3WP10Y    S3Q10 BIO MOM DEATH-YEAR-W3
+H3WP11          int     %21.0f     H3WP11     S3Q11 KNOW ANYTHING ABOUT BIO DAD-W3
+H3WP12          int     %22.0f     H3WP12     S3Q12 IS HE STILL LIVING-W3
+H3WP13          int     %20.0f     H3WP13     S3Q13 YOUR AGE WHEN HE DIED-W3
+H3WP14M         int     %20.0f     H3WP14M    S3Q14 BIO DAD DEATH-MONTH-W3
+H3WP14Y         int     %22.0f     H3WP14Y    S3Q14 BIO DAD DEATH-YEAR-W3
+H3WP15          int     %22.0f     H3WP15     S3Q15 FINANCIAL HEAD OF HH-W3
+H3WP16          int     %21.0f     H3WP16     S3Q16 YOU CONTRIB TO LIVING EXP-W3
+H3WP17          int     %19.0f     H3WP17     S3Q17 EST YOUR CONTRIB TO LIV EXP-W3
+H3WP18          int     %30.0f     H3WP18     S3Q18 ENJOY DOING THINGS W/CURR MOM-W3
+H3WP19          int     %30.0f     H3WP19     S3Q19 CURR MOM-WARM/LOVING TO YOU-W3
+H3WP20          int     %20.0f     H3WP20     S3Q20 CLOSE TO CURR RES MOM-W3
+H3WP21          int     %21.0f     H3WP21     S3Q21 CURR MOM CONTRIB TO LIV EXP-W3
+H3WP22          int     %19.0f     H3WP22     S3Q22 CURR MOM-EST CONTRIB TO LIV EXP-W3
+H3WP23          int     %30.0f     H3WP23     S3Q23 ENJOY DOING THINGS W/CURR DAD-W3
+H3WP24          int     %30.0f     H3WP24     S3Q24 CURR DAD-WARM/LOVING TO YOU-W3
+H3WP25          int     %20.0f     H3WP25     S3Q25 CLOSE TO CURR DAD-W3
+H3WP26          int     %21.0f     H3WP26     S3Q26 CURR DAD CONTRIB TO LIV EXP-W3
+H3WP27          int     %19.0f     H3WP27     S3Q27 CURR DAD-EST CONTRIB TO LIV EXP-W3
+H3WP28          int     %58.0f     H3WP28     S3Q28 PREV MOM-SMOKE CIGARETTES-W3
+H3WP29          int     %21.0f     H3WP29     S3Q29 STILL IN TOUCH W/PREV MOM-W3
+H3WP30          int     %30.0f     H3WP30     S3Q30 ENJOY DOING THINGS W/PREV MOM-W3
+H3WP31          int     %30.0f     H3WP31     S3Q31 PREV MOM-WARM/LOVING TO YOU-W3
+H3WP32          int     %20.0f     H3WP32     S3Q32 CLOSE TO PREV MOM-W3
+H3WP33          int     %21.0f     H3WP33     S3Q33 PREV MOM CONTRIB TO LIV EXP-W3
+H3WP34          int     %19.0f     H3WP34     S3Q34 PREV MOM-EST CONTRIB TO LIV EXP-W3
+H3WP35          int     %57.0f     H3WP35     S3Q35 PREV DAD-SMOKE CIGARETTES-W3
+H3WP36          int     %21.0f     H3WP36     S3Q36 STILL IN TOUCH W/PREV DAD-W3
+H3WP37          int     %30.0f     H3WP37     S3Q37 ENJOY DOING THINGS W/PREV DAD-W3
+H3WP38          int     %30.0f     H3WP38     S3Q38 PREV DAD-WARM/LOVING TO YOU-W3
+H3WP39          int     %20.0f     H3WP39     S3Q39 CLOSE TO PREV DAD-W3
+H3WP40          int     %21.0f     H3WP40     S3Q40 PREV DAD CONTRIB TO LIV EXP-W3
+H3WP41          int     %19.0f     H3WP41     S3Q41 PREV DAD-EST CONTRIB TO LIV EXP-W3
+H3WP42          int     %19.0f     H3WP42     S3Q42 PREV MOM/PREV DAD LIVE TOGETHER-W3
+H3WP43          int     %21.0f     H3WP43     S3Q43 IN TOUCH W/BIO MOM-W3
+H3WP44          int     %30.0f     H3WP44     S3Q44 ENJOY DOING THINGS W/BIO MOM-W3
+H3WP45          int     %30.0f     H3WP45     S3Q45 BIO MOM-WARM/LOVING TO YOU-W3
+H3WP46          int     %20.0f     H3WP46     S3Q46 CLOSE TO BIO MOM-W3
+H3WP47          int     %21.0f     H3WP47     S3Q47 BIO MOM CONTRIB TO LIV EXP-W3
+H3WP48          int     %19.0f     H3WP48     S3Q48 BIO MOM-EST CONTRIB TO LIV EXP-W3
+H3WP49          int     %19.0f     H3WP49     S3Q49 EVER LIVE W/BIO MOM-W3
+H3WP50          int     %21.0f     H3WP50     S3Q50 IN TOUCH W/BIO DAD-W3
+H3WP51          int     %30.0f     H3WP51     S3Q51 ENJOY DOING THINGS W/BIO DAD-W3
+H3WP52          int     %30.0f     H3WP52     S3Q52 BIO DAD-WARM/LOVING TO YOU-W3
+H3WP53          int     %20.0f     H3WP53     S3Q53 CLOSE TO BIO DAD-W3
+H3WP54          int     %21.0f     H3WP54     S3Q54 BIO DAD CONTRIB TO LIV EXP-W3
+H3WP55          int     %19.0f     H3WP55     S3Q55 BIO DAD-EST CONTRIB TO LIV EXP-W3
+H3WP56          int     %19.0f     H3WP56     S3Q56 EVER LIVE W/BIO DAD-W3
+H3WP57          int     %19.0f     H3WP57     S3Q57 BIO DAD/BIO MOM LIVE TOGETHER-W3
+H3WP58          int     %21.0f     H3WP58     S3Q58 BIO DAD REMARRIED/NEW PARTNER-W3
+H3WP59          int     %19.0f     H3WP59     S3Q59 BIO DAD-SEX OF PARTNER-W3
+H3WP60          int     %19.0f     H3WP60     S3Q60 EVER LIVE W/BIO DAD PARTNER-W3
+H3WP61          int     %21.0f     H3WP61     S3Q61 IN TOUCH W/BIO DAD PARTNER-W3
+H3WP62          int     %30.0f     H3WP62     S3Q62 ENJY DOING THINGS BIO DAD PRTNR-W3
+H3WP63          int     %30.0f     H3WP63     S3Q63 DAD PRTNR-WARM/LOVING TO YOU-W3
+H3WP64          int     %20.0f     H3WP64     S3Q64 CLOSE TO BIO DAD PARTNER-W3
+H3WP65          int     %25.0f     H3WP65     S3Q65 FREQ CONTACT W/BIO DAD PRTNR-W3
+H3WP66          int     %33.0f     H3WP66     S3Q66 BIO MOM REMARRIED/NEW PARTNER-W3
+H3WP67          int     %19.0f     H3WP67     S3Q67 BIO MOM-SEX OF PARTNER-W3
+H3WP68          int     %19.0f     H3WP68     S3Q68 EVER LIVE W/BIO MOM PRTNR-W3
+H3WP69          int     %33.0f     H3WP69     S3Q69 IN TOUCH W/BIO MOM PRTNR-W3
+H3WP70          int     %30.0f     H3WP70     S3Q70 ENJY DOING THINGS BIO MOM PRTNR-W3
+H3WP71          int     %30.0f     H3WP71     S3Q71 MOM PRTNR-WARM/LOVING TO YOU-W3
+H3WP72          int     %20.0f     H3WP72     S3Q72 CLOSE TO BIO MOM PARTNER-W3
+H3WP73          int     %25.0f     H3WP73     S3Q73 FREQ CONTACT W/BIO MOM PRTNR-W3
+H3RA1           int     %19.0f     H3RA1      S4Q1 AGES 5-12 CARELESS MISTAKES-W3
+H3RA2           int     %19.0f     H3RA2      S4Q2 AGES 5-12 FIDGETED-W3
+H3RA3           int     %19.0f     H3RA3      S4Q3 AGES 5-12 DIFFICULTY W/ATTENTION-W3
+H3RA4           int     %19.0f     H3RA4      S4Q4 AGES 5-12 LEFT SEAT-W3
+H3RA5           int     %19.0f     H3RA5      S4Q5 AGES 5-12 DID NOT LISTEN-W3
+H3RA6           int     %19.0f     H3RA6      S4Q6 AGES 5-12 FELT RESTLESS-W3
+H3RA7           int     %19.0f     H3RA7      S4Q7 AGES 5-12 FAILED TO FINISH WORK-W3
+H3RA8           int     %19.0f     H3RA8      S4Q8 AGES 5-12 DIFFICULT TO BE QUIET-W3
+H3RA9           int     %19.0f     H3RA9      S4Q9 AGES 5-12 DIFFICULT TO ORGANIZE-W3
+H3RA10          int     %19.0f     H3RA10     S4Q10 AGES 5-12 FELT ON THE GO-W3
+H3RA11          int     %19.0f     H3RA11     S4Q11 AGES 5-12 AVOIDED MENTAL EFFORT-W3
+H3RA12          int     %19.0f     H3RA12     S4Q12 AGES 5-12 TALKED TOO MUCH-W3
+H3RA13          int     %19.0f     H3RA13     S4Q13 AGES 5-12 LOST THINGS-W3
+H3RA14          int     %19.0f     H3RA14     S4Q14 AGES 5-12 BLURTED OUT ANSWERS-W3
+H3RA15          int     %19.0f     H3RA15     S4Q15 AGES 5-12 EASILY DISTRACTED-W3
+H3RA16          int     %19.0f     H3RA16     S4Q16 AGES 5-12 DIFFICULT WAIT TURN-W3
+H3RA17          int     %19.0f     H3RA17     S4Q17 AGES 5-12 FORGETFUL-W3
+H3RA18          int     %19.0f     H3RA18     S4Q18 AGES 5-12 SPITEFUL/VINDICTIVE-W3
+H3WS1A          int     %49.0f     H3WS1A     S5Q1 SIBLING1 STILL ALIVE-W3
+H3WS2MA         int     %42.0f     H3WS2MA    S5Q2M SIBLING1 MONTH OF DEATH-W3
+H3WS2YA         int     %44.0f     H3WS2YA    S5Q2Y SIBLING1 YEAR OF DEATH-W3
+H3WS3A          int     %42.0f     H3WS3A     S5Q3 SIBLING1 CAUSE OF DEATH-W3
+H3WS4A          int     %41.0f     H3WS4A     S5Q4 SIBLING1 INTERESTS/GOAL SHARED-W3
+H3WS5A          int     %41.0f     H3WS5A     S5Q5 SIBLING1 HOW CLOSE-W3
+H3WS6A          int     %41.0f     H3WS6A     S5Q6 SIBLING1 OFTEN ASK FOR HELP-W3
+H3WS7A          int     %41.0f     H3WS7A     S5Q7 SIBLING1 OFTEN QUARREL/FIGHT-W3
+H3WS8A          int     %42.0f     H3WS8A     S5Q8 SIBLING1 TRVL TIME DISTANCE-W3
+H3WS9A          int     %41.0f     H3WS9A     S5Q9 SIBLING1 OFTEN SEE EACH/O-W3
+H3WS10A         int     %41.0f     H3WS10A    S5Q10 SIBLING1 OFTEN TALK/PHONE-W3
+H3WS11A         int     %41.0f     H3WS11A    S5Q11 SIBLING1 OFTEN LETTR/EMAIL-W3
+H3WS12A         int     %41.0f     H3WS12A    S5Q12 SIBLING1 WISH MORE CONTACT-W3
+H3WS1B          int     %53.0f     H3WS1B     S5Q1 SIBLING2 STILL ALIVE-W3
+H3WS2MB         int     %42.0f     H3WS2MB    S5Q2M SIBLING2 MONTH OF DEATH-W3
+H3WS2YB         int     %44.0f     H3WS2YB    S5Q2Y SIBLING2 YEAR OF DEATH-W3
+H3WS3B          int     %42.0f     H3WS3B     S5Q3 SIBLING2 CAUSE OF DEATH-W3
+H3WS4B          int     %41.0f     H3WS4B     S5Q4 SIBLING2 INTERESTS/GOAL SHARED-W3
+H3WS5B          int     %41.0f     H3WS5B     S5Q5 SIBLING2 HOW CLOSE-W3
+H3WS6B          int     %41.0f     H3WS6B     S5Q6 SIBLING2 OFTEN ASK FOR HELP-W3
+H3WS7B          int     %41.0f     H3WS7B     S5Q7 SIBLING2 OFTEN QUARREL/FIGHT-W3
+H3WS8B          int     %42.0f     H3WS8B     S5Q8 SIBLING2 TRVL TIME DISTANCE-W3
+H3WS9B          int     %41.0f     H3WS9B     S5Q9 SIBLING2 OFTEN SEE EACH/O-W3
+H3WS10B         int     %41.0f     H3WS10B    S5Q10 SIBLING2 OFTEN TALK/PHONE-W3
+H3WS11B         int     %41.0f     H3WS11B    S5Q11 SIBLING2 OFTEN LETTR/EMAIL-W3
+H3WS12B         int     %41.0f     H3WS12B    S5Q12 SIBLING2 WISH MORE CONTACT-W3
+H3WS1C          int     %41.0f     H3WS1C     S5Q1 SIBLING3 STILL ALIVE-W3
+H3WS2MC         int     %42.0f     H3WS2MC    S5Q2M SIBLING3 MONTH OF DEATH-W3
+H3WS2YC         int     %44.0f     H3WS2YC    S5Q2Y SIBLING3 YEAR OF DEATH-W3
+H3WS3C          int     %42.0f     H3WS3C     S5Q3 SIBLING3 CAUSE OF DEATH-W3
+H3WS4C          int     %41.0f     H3WS4C     S5Q4 SIBLING3 INTERESTS/GOAL SHARED-W3
+H3WS5C          int     %41.0f     H3WS5C     S5Q5 SIBLING3 HOW CLOSE-W3
+H3WS6C          int     %41.0f     H3WS6C     S5Q6 SIBLING3 OFTEN ASK FOR HELP-W3
+H3WS7C          int     %41.0f     H3WS7C     S5Q7 SIBLING3 OFTEN QUARREL/FIGHT-W3
+H3WS8C          int     %42.0f     H3WS8C     S5Q8 SIBLING3 TRVL TIME DISTANCE-W3
+H3WS9C          int     %41.0f     H3WS9C     S5Q9 SIBLING3 OFTEN SEE EACH/O-W3
+H3WS10C         int     %41.0f     H3WS10C    S5Q10 SIBLING3 OFTEN TALK/PHONE-W3
+H3WS11C         int     %41.0f     H3WS11C    S5Q11 SIBLING3 OFTEN LETTR/EMAIL-W3
+H3WS12C         int     %41.0f     H3WS12C    S5Q12 SIBLING3 WISH MORE CONTACT-W3
+H3WS1D          int     %41.0f     H3WS1D     S5Q1 SIBLING4 STILL ALIVE-W3
+H3WS2MD         int     %42.0f     H3WS2MD    S5Q2M SIBLING4 MONTH OF DEATH-W3
+H3WS2YD         int     %44.0f     H3WS2YD    S5Q2Y SIBLING4 YEAR OF DEATH-W3
+H3WS3D          int     %42.0f     H3WS3D     S5Q3 SIBLING4 CAUSE OF DEATH-W3
+H3WS4D          int     %41.0f     H3WS4D     S5Q4 SIBLING4 INTERESTS/GOAL SHARED-W3
+H3WS5D          int     %41.0f     H3WS5D     S5Q5 SIBLING4 HOW CLOSE-W3
+H3WS6D          int     %41.0f     H3WS6D     S5Q6 SIBLING4 OFTEN ASK FOR HELP-W3
+H3WS7D          int     %41.0f     H3WS7D     S5Q7 SIBLING4 OFTEN QUARREL/FIGHT-W3
+H3WS8D          int     %42.0f     H3WS8D     S5Q8 SIBLING4 TRVL TIME DISTANCE-W3
+H3WS9D          int     %41.0f     H3WS9D     S5Q9 SIBLING4 OFTEN SEE EACH/O-W3
+H3WS10D         int     %41.0f     H3WS10D    S5Q10 SIBLING4 OFTEN TALK/PHONE-W3
+H3WS11D         int     %41.0f     H3WS11D    S5Q11 SIBLING4 OFTEN LETTR/EMAIL-W3
+H3WS12D         int     %41.0f     H3WS12D    S5Q12 SIBLING4 WISH MORE CONTACT-W3
+H3FS1_A         int     %41.0f     H3FS1_A    S6Q1A KNOW 1ST FRIEND-W3
+H3FS2_A         int     %42.0f     H3FS2_A    S6Q2A 1ST FRIEND-CURRENT RELSHP-W3
+H3FS3_A         int     %42.0f     H3FS3_A    S6Q3A 1ST FRIEND-FAMILY RELATION-W3
+H3FS4_A         int     %42.0f     H3FS4_A    S6Q4A 1ST FRIEND-FREQ OF CONTACT-W3
+H3FS5_A         int     %42.0f     H3FS5_A    S6Q5A 1ST FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_A         int     %41.0f     H3FS6_A    S6Q6A 1ST FRIEND-ONE OF CLOSEST-W3
+H3FS7M_A        int     %42.0f     H3FS7M_A   S6Q7A 1ST FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_A        int     %44.0f     H3FS7Y_A   S6Q7A 1ST FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_A        int     %42.0f     H3FS8M_A   S6Q8A 1ST FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_A        int     %44.0f     H3FS8Y_A   S6Q8A 1ST FRIEND-YR OF LAST CONTACT-W3
+H3FS9_A         int     %42.0f     H3FS9_A    S6Q9A 1ST FRIEND-REASON RELSHP ENDED-W3
+H3FS10_A        int     %42.0f     H3FS10_A   S6Q10A 1ST FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_B         int     %41.0f     H3FS1_B    S6Q1B KNOW 2ND FRIEND-W3
+H3FS2_B         int     %42.0f     H3FS2_B    S6Q2B 2ND FRIEND-CURRENT RELSHP-W3
+H3FS3_B         int     %42.0f     H3FS3_B    S6Q3B 2ND FRIEND-FAMILY RELATION-W3
+H3FS4_B         int     %42.0f     H3FS4_B    S6Q4B 2ND FRIEND-FREQ OF CONTACT-W3
+H3FS5_B         int     %42.0f     H3FS5_B    S6Q5B 2ND FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_B         int     %41.0f     H3FS6_B    S6Q6B 2ND FRIEND-ONE OF CLOSEST-W3
+H3FS7M_B        int     %42.0f     H3FS7M_B   S6Q7B 2ND FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_B        int     %44.0f     H3FS7Y_B   S6Q7B 2ND FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_B        int     %42.0f     H3FS8M_B   S6Q8B 2ND FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_B        int     %44.0f     H3FS8Y_B   S6Q8B 2ND FRIEND-YR OF LAST CONTACT-W3
+H3FS9_B         int     %42.0f     H3FS9_B    S6Q9B 2ND FRIEND-REASON RELSHP ENDED-W3
+H3FS10_B        int     %42.0f     H3FS10_B   S6Q10B 2ND FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_C         int     %41.0f     H3FS1_C    S6Q1C KNOW 3RD FRIEND-W3
+H3FS2_C         int     %42.0f     H3FS2_C    S6Q2C 3RD FRIEND-CURRENT RELSHP-W3
+H3FS3_C         int     %42.0f     H3FS3_C    S6Q3C 3RD FRIEND-FAMILY RELATION-W3
+H3FS4_C         int     %42.0f     H3FS4_C    S6Q4C 3RD FRIEND-FREQ OF CONTACT-W3
+H3FS5_C         int     %42.0f     H3FS5_C    S6Q5C 3RD FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_C         int     %41.0f     H3FS6_C    S6Q6C 3RD FRIEND-ONE OF CLOSEST-W3
+H3FS7M_C        int     %42.0f     H3FS7M_C   S6Q7C 3RD FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_C        int     %44.0f     H3FS7Y_C   S6Q7C 3RD FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_C        int     %42.0f     H3FS8M_C   S6Q8C 3RD FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_C        int     %44.0f     H3FS8Y_C   S6Q8C 3RD FRIEND-YR OF LAST CONTACT-W3
+H3FS9_C         int     %42.0f     H3FS9_C    S6Q9C 3RD FRIEND-REASON RELSHP ENDED-W3
+H3FS10_C        int     %42.0f     H3FS10_C   S6Q10C 3RD FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_D         int     %41.0f     H3FS1_D    S6Q1D KNOW 4TH FRIEND-W3
+H3FS2_D         int     %42.0f     H3FS2_D    S6Q2D 4TH FRIEND-CURRENT RELSHP-W3
+H3FS3_D         int     %42.0f     H3FS3_D    S6Q3D 4TH FRIEND-FAMILY RELATION-W3
+H3FS4_D         int     %42.0f     H3FS4_D    S6Q4D 4TH FRIEND-FREQ OF CONTACT-W3
+H3FS5_D         int     %42.0f     H3FS5_D    S6Q5D 4TH FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_D         int     %41.0f     H3FS6_D    S6Q6D 4TH FRIEND-ONE OF CLOSEST-W3
+H3FS7M_D        int     %42.0f     H3FS7M_D   S6Q7D 4TH FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_D        int     %44.0f     H3FS7Y_D   S6Q7D 4TH FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_D        int     %42.0f     H3FS8M_D   S6Q8D 4TH FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_D        int     %44.0f     H3FS8Y_D   S6Q8D 4TH FRIEND-YR OF LAST CONTACT-W3
+H3FS9_D         int     %42.0f     H3FS9_D    S6Q9D 4TH FRIEND-REASON RELSHP ENDED-W3
+H3FS10_D        int     %42.0f     H3FS10_D   S6Q10D 4TH FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_E         int     %41.0f     H3FS1_E    S6Q1E KNOW 5TH FRIEND-W3
+H3FS2_E         int     %42.0f     H3FS2_E    S6Q2E 5TH FRIEND-CURRENT RELSHP-W3
+H3FS3_E         int     %42.0f     H3FS3_E    S6Q3E 5TH FRIEND-FAMILY RELATION-W3
+H3FS4_E         int     %42.0f     H3FS4_E    S6Q4E 5TH FRIEND-FREQ OF CONTACT-W3
+H3FS5_E         int     %42.0f     H3FS5_E    S6Q5E 5TH FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_E         int     %41.0f     H3FS6_E    S6Q6E 5TH FRIEND-ONE OF CLOSEST-W3
+H3FS7M_E        int     %42.0f     H3FS7M_E   S6Q7E 5TH FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_E        int     %44.0f     H3FS7Y_E   S6Q7E 5TH FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_E        int     %42.0f     H3FS8M_E   S6Q8E 5TH FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_E        int     %44.0f     H3FS8Y_E   S6Q8E 5TH FRIEND-YR OF LAST CONTACT-W3
+H3FS9_E         int     %42.0f     H3FS9_E    S6Q9E 5TH FRIEND-REASON RELSHP ENDED-W3
+H3FS10_E        int     %42.0f     H3FS10_E   S6Q10E 5TH FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_F         int     %41.0f     H3FS1_F    S6Q1F KNOW 6TH FRIEND-W3
+H3FS2_F         int     %42.0f     H3FS2_F    S6Q2F 6TH FRIEND-CURRENT RELSHP-W3
+H3FS3_F         int     %42.0f     H3FS3_F    S6Q3F 6TH FRIEND-FAMILY RELATION-W3
+H3FS4_F         int     %42.0f     H3FS4_F    S6Q4F 6TH FRIEND-FREQ OF CONTACT-W3
+H3FS5_F         int     %42.0f     H3FS5_F    S6Q5F 6TH FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_F         int     %41.0f     H3FS6_F    S6Q6F 6TH FRIEND-ONE OF CLOSEST-W3
+H3FS7M_F        int     %42.0f     H3FS7M_F   S6Q7F 6TH FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_F        int     %44.0f     H3FS7Y_F   S6Q7F 6TH FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_F        int     %42.0f     H3FS8M_F   S6Q8F 6TH FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_F        int     %44.0f     H3FS8Y_F   S6Q8F 6TH FRIEND-YR OF LAST CONTACT-W3
+H3FS9_F         int     %42.0f     H3FS9_F    S6Q9F 6TH FRIEND-REASON RELSHP ENDED-W3
+H3FS10_F        int     %42.0f     H3FS10_F   S6Q10F 6TH FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_G         int     %41.0f     H3FS1_G    S6Q1G KNOW 7TH FRIEND-W3
+H3FS2_G         int     %42.0f     H3FS2_G    S6Q2G 7TH FRIEND-CURRENT RELSHP-W3
+H3FS3_G         int     %42.0f     H3FS3_G    S6Q3G 7TH FRIEND-FAMILY RELATION-W3
+H3FS4_G         int     %42.0f     H3FS4_G    S6Q4G 7TH FRIEND-FREQ OF CONTACT-W3
+H3FS5_G         int     %42.0f     H3FS5_G    S6Q5G 7TH FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_G         int     %41.0f     H3FS6_G    S6Q6G 7TH FRIEND-ONE OF CLOSEST-W3
+H3FS7M_G        int     %42.0f     H3FS7M_G   S6Q7G 7TH FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_G        int     %44.0f     H3FS7Y_G   S6Q7G 7TH FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_G        int     %42.0f     H3FS8M_G   S6Q8G 7TH FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_G        int     %44.0f     H3FS8Y_G   S6Q8G 7TH FRIEND-YR OF LAST CONTACT-W3
+H3FS9_G         int     %42.0f     H3FS9_G    S6Q9G 7TH FRIEND-REASON RELSHP ENDED-W3
+H3FS10_G        int     %42.0f     H3FS10_G   S6Q10G 7TH FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_H         int     %41.0f     H3FS1_H    S6Q1H KNOW 8TH FRIEND-W3
+H3FS2_H         int     %42.0f     H3FS2_H    S6Q2H 8TH FRIEND-CURRENT RELSHP-W3
+H3FS3_H         int     %42.0f     H3FS3_H    S6Q3H 8TH FRIEND-FAMILY RELATION-W3
+H3FS4_H         int     %42.0f     H3FS4_H    S6Q4H 8TH FRIEND-FREQ OF CONTACT-W3
+H3FS5_H         int     %42.0f     H3FS5_H    S6Q5H 8TH FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_H         int     %41.0f     H3FS6_H    S6Q6H 8TH FRIEND-ONE OF CLOSEST-W3
+H3FS7M_H        int     %42.0f     H3FS7M_H   S6Q7H 8TH FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_H        int     %44.0f     H3FS7Y_H   S6Q7H 8TH FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_H        int     %42.0f     H3FS8M_H   S6Q8H 8TH FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_H        int     %44.0f     H3FS8Y_H   S6Q8H 8TH FRIEND-YR OF LAST CONTACT-W3
+H3FS9_H         int     %42.0f     H3FS9_H    S6Q9H 8TH FRIEND-REASON RELSHP ENDED-W3
+H3FS10_H        int     %42.0f     H3FS10_H   S6Q10H 8TH FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_I         int     %41.0f     H3FS1_I    S6Q1I KNOW 9TH FRIEND-W3
+H3FS2_I         int     %42.0f     H3FS2_I    S6Q2I 9TH FRIEND-CURRENT RELSHP-W3
+H3FS3_I         int     %42.0f     H3FS3_I    S6Q3I 9TH FRIEND-FAMILY RELATION-W3
+H3FS4_I         int     %42.0f     H3FS4_I    S6Q4I 9TH FRIEND-FREQ OF CONTACT-W3
+H3FS5_I         int     %42.0f     H3FS5_I    S6Q5I 9TH FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_I         int     %41.0f     H3FS6_I    S6Q6I 9TH FRIEND-ONE OF CLOSEST-W3
+H3FS7M_I        int     %42.0f     H3FS7M_I   S6Q7I 9TH FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_I        int     %44.0f     H3FS7Y_I   S6Q7I 9TH FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_I        int     %42.0f     H3FS8M_I   S6Q8I 9TH FRIEND-MNTH OF LAST CONTACT-W3
+H3FS8Y_I        int     %44.0f     H3FS8Y_I   S6Q8I 9TH FRIEND-YR OF LAST CONTACT-W3
+H3FS9_I         int     %42.0f     H3FS9_I    S6Q9I 9TH FRIEND-REASON RELSHP ENDED-W3
+H3FS10_I        int     %42.0f     H3FS10_I   S6Q10I 9TH FRIEND-AVG FREQ OF CONTACT-W3
+H3FS1_J         int     %41.0f     H3FS1_J    S6Q1J KNOW 10TH FRIEND-W3
+H3FS2_J         int     %42.0f     H3FS2_J    S6Q2J 10TH FRIEND-CURRENT RELSHP-W3
+H3FS3_J         int     %42.0f     H3FS3_J    S6Q3J 10TH FRIEND-FAMILY RELATION-W3
+H3FS4_J         int     %42.0f     H3FS4_J    S6Q4J 10TH FRIEND-FREQ OF CONTACT-W3
+H3FS5_J         int     %42.0f     H3FS5_J    S6Q5J 10TH FRIEND-TALK/EMAIL/WRITE-W3
+H3FS6_J         int     %41.0f     H3FS6_J    S6Q6J 10TH FRIEND-ONE OF CLOSEST-W3
+H3FS7M_J        int     %42.0f     H3FS7M_J   S6Q7J 10TH FRIEND-MNTH RELSHP BEGAN-W3
+H3FS7Y_J        int     %44.0f     H3FS7Y_J   S6Q7J 10TH FRIEND-YR RELSHP BEGAN-W3
+H3FS8M_J        int     %42.0f     H3FS8M_J   S6Q8J 10TH FRIEND-MNTH LAST CONTACT-W3
+H3FS8Y_J        int     %44.0f     H3FS8Y_J   S6Q8J 10TH FRIEND-YR OF LAST CONTACT-W3
+H3FS9_J         int     %42.0f     H3FS9_J    S6Q9J 10TH FRIEND-REASON RELSHP ENDED-W3
+H3FS10_J        int     %42.0f     H3FS10_J   S6Q10J 10TH FRIEND-AVG FREQ CONTACT-W3
+H3FS11          int     %42.0f     H3FS11     S6Q11 STILL FRIENDS W/HS FRIENDS-W3
+H3FS12          int     %41.0f     H3FS12     S6Q12 FRIEND OR FAMILY INFLUENCE MORE-W3
+H3ED1           int     %39.0f     H3ED1      S7Q1 HIGHEST GRADE COMPLETED REG/SCH-W3
+H3ED2           int     %18.0f     H3ED2      S7Q2 HAS RECEIVED GED/HS EQUIV-W3
+H3ED3           int     %18.0f     H3ED3      S7Q3 HAS RECEIVED HS DIPLOMA-W3
+H3ED4           int     %14.0f     H3ED4      S7Q4 HAS RECEIVED JR COL DEGREE-W3
+H3ED5           int     %14.0f     H3ED5      S7Q5 HAS RECEIVED BACHELOR DEGREE-W3
+H3ED6           int     %14.0f     H3ED6      S7Q6 HAS RECEIVED MASTER DEGREE-W3
+H3ED7           int     %18.0f     H3ED7      S7Q7 HAS RECEIVED DOCTORAL DEGREE-W3
+H3ED8           int     %14.0f     H3ED8      S7Q8 HAS RECEIVED PROFESSIONAL DEG-W3
+H3ED9           int     %19.0f     H3ED9      S7Q9 HAS NOT RECEIVED DIPL/DEGREE-W3
+H3ED10          int     %21.0f     H3ED10     S7Q10 EVER ATTENDED HIGH SCHOOL-W3
+H3ED11          int     %19.0f     H3ED11     S7Q11 EVER ATTENDED OTH/HIGH SCHOOL-W3
+H3ED12M         int     %20.0f     H3ED12M    S7Q12 MONTH RECEIVED GED/EQUIV/DEG-W3
+H3ED12Y         int     %22.0f     H3ED12Y    S7Q12 YEAR RECEIVED GED/EQUIV/DEG-W3
+H3ED13M         int     %20.0f     H3ED13M    S7Q13 MONTH RECEIVED HS DEGREE-W3
+H3ED13Y         int     %22.0f     H3ED13Y    S7Q13 YEAR RECEIVED HS DEGREE-W3
+H3ED14M         int     %20.0f     H3ED14M    S7Q14 MONTH RECEIVED JR COLL DEGREE-W3
+H3ED14Y         int     %22.0f     H3ED14Y    S7Q14 YEAR RECEIVED JR COLL DEGREE-W3
+H3ED15M         int     %20.0f     H3ED15M    S7Q15 MONTH RECEIVED BACHELOR DEG-W3
+H3ED15Y         int     %22.0f     H3ED15Y    S7Q15 YEAR RECEIVED BACHELOR DEG-W3
+H3ED16          str7    %9s                   S7Q16 FIRST COLLEGE MAJOR-W3
+H3ED17          str7    %9s                   S7Q17 SECOND COLLEGE MAJOR-W3
+H3ED18M         int     %20.0f     H3ED18M    S7Q18 MONTH RECEIVED MASTER DEGREE-W3
+H3ED18Y         int     %22.0f     H3ED18Y    S7Q18 YEAR RECEIVED MASTER DEGREE-W3
+H3ED19          str7    %9s                   S7Q19 MASTER FIRST FIELD/STUDY-W3
+H3ED20          str7    %9s                   S7Q20 MASTER SECOND FIELD/STUDY-W3
+H3ED21M         int     %20.0f     H3ED21M    S7Q21 MONTH RECEIVED PROF DEGREE-W3
+H3ED21Y         int     %22.0f     H3ED21Y    S7Q21 YEAR RECEIVED PROF DEGREE-W3
+H3ED22          str7    %9s                   S7Q22 FIELD OF PROFESSIONAL DEGREE-W3
+H3ED23          int     %21.0f     H3ED23     S7Q23 CURR/ATTENDING SCHOOL-W3
+H3ED24M         int     %20.0f     H3ED24M    S7Q24 MONTH ENROLLED CURR/SCHOOL-W3
+H3ED24Y         int     %22.0f     H3ED24Y    S7Q24 YEAR ENROLLED CURR/SCHOOL-W3
+H3ED25          int     %19.0f     H3ED25     S7Q25 GOING FULL/PART TIME-W3
+H3ED26          int     %30.0f     H3ED26     S7Q26 SCHOOL TYPE-W3
+H3ED27          int     %42.0f     H3ED27     S7Q27 YEAR CURRENT COLL/GRAD/SCH-W3
+H3ED28          int     %19.0f     H3ED28     S7Q28 COMPLETED GRAD COURSE/WRK-W3
+H3ED29          str7    %9s                   S7Q29 GRAD FIRST FIELD STUDY-W3
+H3ED30          str7    %9s                   S7Q30 GRAD SECOND FIELD STUDY-W3
+H3ED31          int     %21.0f     H3ED31     S7Q31 ATTENDED TRAINING 3 MONTH+-W3
+H3ED32          int     %20.0f     H3ED32     S7Q32 HOW MANY TRAIN/COURSES ATT-W3
+H3ED33          int     %21.0f     H3ED33     S7Q33 EVER EXPELLED FROM SCHOOL-W3
+H3ED34          int     %19.0f     H3ED34     S7Q34 EXPELLED GRADE SCHOOL-W3
+H3ED35          int     %19.0f     H3ED35     S7Q35 EXPELLED 6TH GRADE-W3
+H3ED36          int     %19.0f     H3ED36     S7Q36 EXPELLED 7TH GRADE-W3
+H3ED37          int     %19.0f     H3ED37     S7Q37 EXPELLED 8TH GRADE-W3
+H3ED38          int     %19.0f     H3ED38     S7Q38 EXPELLED 9TH GRADE-W3
+H3ED39          int     %19.0f     H3ED39     S7Q39 EXPELLED 10TH GRADE-W3
+H3ED40          int     %19.0f     H3ED40     S7Q40 EXPELLED 11TH GRADE-W3
+H3ED41          int     %19.0f     H3ED41     S7Q41 EXPELLED 12TH GRADE-W3
+H3ED42          int     %19.0f     H3ED42     S7Q42 EXPELLED COLLEGE-W3
+H3ED43          int     %33.0f     H3ED43     S7Q43 ATTND VOC/JOB/TRAINING-W3
+H3ED44          int     %20.0f     H3ED44     S7Q44 HOW MANY VOC/JOB/TRAIN ATTND-W3
+H3ED45_A        int     %60.0f     H3ED45_A   S7Q45 1ST TRAINING KIND INSTITUTION-W3
+H3ED46_A        int     %60.0f     H3ED46_A   S7Q46 1ST TRAINING KIND FIELD-W3
+H3ED47_A        int     %19.0f     H3ED47_A   S7Q47 1ST TRAINING REQ WELFARE PROG-W3
+H3ED48_A        int     %19.0f     H3ED48_A   S7Q48 1ST TRAINING REC LICENSE/CERT-W3
+H3ED49MA        int     %20.0f     H3ED49MA   S7Q49M 1ST TRAINING MONTH LIC/CERT-W3
+H3ED49YA        int     %22.0f     H3ED49YA   S7Q49Y 1ST TRAINING YEAR LIC/CERT-W3
+H3ED45_B        int     %60.0f     H3ED45_B   S7Q45 2ND TRAINING KIND INSTITUTION-W3
+H3ED46_B        int     %60.0f     H3ED46_B   S7Q46 2ND TRAINING KIND FIELD-W3
+H3ED47_B        int     %19.0f     H3ED47_B   S7Q47 2ND TRAINING REQ WELFARE PROG-W3
+H3ED48_B        int     %19.0f     H3ED48_B   S7Q48 2ND TRAINING REC LICENSE/CERT-W3
+H3ED49MB        int     %20.0f     H3ED49MB   S7Q49M 2ND TRAINING MONTH LIC/CERT-W3
+H3ED49YB        int     %22.0f     H3ED49YB   S7Q49Y 2ND TRAINING YEAR LIC/CERT-W3
+H3ED45_C        int     %60.0f     H3ED45_C   S7Q45 3RD TRAINING KIND INSTITUTION-W3
+H3ED46_C        int     %60.0f     H3ED46_C   S7Q46 3RD TRAINING KIND FIELD-W3
+H3ED47_C        int     %19.0f     H3ED47_C   S7Q47 3RD TRAINING REQ WELFARE PROG-W3
+H3ED48_C        int     %19.0f     H3ED48_C   S7Q48 3RD TRAINING REC LICENSE/CERT-W3
+H3ED49MC        int     %20.0f     H3ED49MC   S7Q49M 3RD TRAINING MONTH LIC/CERT-W3
+H3ED49YC        int     %22.0f     H3ED49YC   S7Q49Y 3RD TRAINING YEAR LIC/CERT-W3
+H3ED45_D        int     %60.0f     H3ED45_D   S7Q45 4TH TRAINING KIND INSTITUTION-W3
+H3ED46_D        int     %60.0f     H3ED46_D   S7Q46 4TH TRAINING KIND FIELD-W3
+H3ED47_D        int     %19.0f     H3ED47_D   S7Q47 4TH TRAINING REQ WELFARE PROG-W3
+H3ED48_D        int     %19.0f     H3ED48_D   S7Q48 4TH TRAINING REC LICENSE/CERT-W3
+H3ED49MD        int     %20.0f     H3ED49MD   S7Q49M 4TH TRAINING MONTH LIC/CERT-W3
+H3ED49YD        int     %22.0f     H3ED49YD   S7Q49Y 4TH TRAINING YEAR LIC/CERT-W3
+H3ED45_E        int     %60.0f     H3ED45_E   S7Q45 5TH TRAINING KIND INSTITUTION-W3
+H3ED46_E        int     %60.0f     H3ED46_E   S7Q46 5TH TRAINING KIND FIELD-W3
+H3ED47_E        int     %19.0f     H3ED47_E   S7Q47 5TH TRAINING REQ WELFARE PROG-W3
+H3ED48_E        int     %19.0f     H3ED48_E   S7Q48 5TH TRAINING REC LICENSE/CERT-W3
+H3ED49ME        int     %20.0f     H3ED49ME   S7Q49M 5TH TRAINING MONTH LIC/CERT-W3
+H3ED49YE        int     %22.0f     H3ED49YE   S7Q49Y 5TH TRAINING YEAR LIC/CERT-W3
+H3ED45_F        int     %60.0f     H3ED45_F   S7Q45 6TH TRAINING KIND INSTITUTION-W3
+H3ED46_F        int     %60.0f     H3ED46_F   S7Q46 6TH TRAINING KIND FIELD-W3
+H3ED47_F        int     %19.0f     H3ED47_F   S7Q47 6TH TRAINING REQ WELFARE PROG-W3
+H3ED48_F        int     %19.0f     H3ED48_F   S7Q48 6TH TRAINING REC LICENSE/CERT-W3
+H3ED49MF        int     %20.0f     H3ED49MF   S7Q49M 6TH TRAINING MONTH LIC/CERT-W3
+H3ED49YF        int     %22.0f     H3ED49YF   S7Q49Y 6TH TRAINING YEAR LIC/CERT-W3
+H3ED45_G        int     %60.0f     H3ED45_G   S7Q45 7TH TRAINING KIND INSTITUTION-W3
+H3ED46_G        int     %60.0f     H3ED46_G   S7Q46 7TH TRAINING KIND FIELD-W3
+H3ED47_G        int     %19.0f     H3ED47_G   S7Q47 7TH TRAINING REQ WELFARE PROG-W3
+H3ED48_G        int     %19.0f     H3ED48_G   S7Q48 7TH TRAINING REC LICENSE/CERT-W3
+H3ED49MG        int     %20.0f     H3ED49MG   S7Q49M 7TH TRAINING MONTH LIC/CERT-W3
+H3ED49YG        int     %22.0f     H3ED49YG   S7Q49Y 7TH TRAINING YEAR LIC/CERT-W3
+H3ED45_H        int     %60.0f     H3ED45_H   S7Q45 8TH TRAINING KIND INSTITUTION-W3
+H3ED46_H        int     %60.0f     H3ED46_H   S7Q46 8TH TRAINING KIND FIELD-W3
+H3ED47_H        int     %19.0f     H3ED47_H   S7Q47 8TH TRAINING REQ WELFARE PROG-W3
+H3ED48_H        int     %19.0f     H3ED48_H   S7Q48 8TH TRAINING REC LICENSE/CERT-W3
+H3ED49MH        int     %20.0f     H3ED49MH   S7Q49M 8TH TRAINING MONTH LIC/CERT-W3
+H3ED49YH        int     %22.0f     H3ED49YH   S7Q49Y 8TH TRAINING YEAR LIC/CERT-W3
+H3ED45_I        int     %60.0f     H3ED45_I   S7Q45 9TH TRAINING KIND INSTITUTION-W3
+H3ED46_I        int     %60.0f     H3ED46_I   S7Q46 9TH TRAINING KIND FIELD-W3
+H3ED47_I        int     %19.0f     H3ED47_I   S7Q47 9TH TRAINING REQ WELFARE PROG-W3
+H3ED48_I        int     %19.0f     H3ED48_I   S7Q48 9TH TRAINING REC LICENSE/CERT-W3
+H3ED49MI        int     %20.0f     H3ED49MI   S7Q49M 9TH TRAINING MONTH LIC/CERT-W3
+H3ED49YI        int     %22.0f     H3ED49YI   S7Q49Y 9TH TRAINING YEAR LIC/CERT-W3
+H3ED45_J        int     %20.0f     H3ED45_J   S7Q45 10TH TRAINING KIND INSTITUTION-W3
+H3ED46_J        int     %20.0f     H3ED46_J   S7Q46 10TH TRAINING KIND FIELD-W3
+H3ED47_J        int     %19.0f     H3ED47_J   S7Q47 10TH TRAINING REQ WELFARE PROG-W3
+H3ED48_J        int     %19.0f     H3ED48_J   S7Q48 10TH TRAINING REC LICENSE/CERT-W3
+H3ED49MJ        int     %20.0f     H3ED49MJ   S7Q49M 10TH TRAINING MONTH LIC/CERT-W3
+H3ED49YJ        int     %22.0f     H3ED49YJ   S7Q49Y 10TH TRAINING YEAR LIC/CERT-W3
+H3ED45_K        int     %20.0f     H3ED45_K   S7Q45 11TH TRAINING KIND INSTITUTION-W3
+H3ED46_K        int     %20.0f     H3ED46_K   S7Q46 11TH TRAINING KIND FIELD-W3
+H3ED47_K        int     %19.0f     H3ED47_K   S7Q47 11TH TRAINING REQ WELFARE PROG-W3
+H3ED48_K        int     %19.0f     H3ED48_K   S7Q48 11TH TRAINING REC LICENSE/CERT-W3
+H3ED49MK        int     %20.0f     H3ED49MK   S7Q49M 11TH TRAINING MONTH LIC/CERT-W3
+H3ED49YK        int     %22.0f     H3ED49YK   S7Q49Y 11TH TRAINING YEAR LIC/CERT-W3
+H3ED45_L        int     %20.0f     H3ED45_L   S7Q45 12TH TRAINING KIND INSTITUTION-W3
+H3ED46_L        int     %20.0f     H3ED46_L   S7Q46 12TH TRAINING KIND FIELD-W3
+H3ED47_L        int     %19.0f     H3ED47_L   S7Q47 12TH TRAINING REQ WELFARE PROG-W3
+H3ED48_L        int     %19.0f     H3ED48_L   S7Q48 12TH TRAINING REC LICENSE/CERT-W3
+H3ED49ML        int     %20.0f     H3ED49ML   S7Q49M 12TH TRAINING MONTH LIC/CERT-W3
+H3ED49YL        int     %22.0f     H3ED49YL   S7Q49Y 12TH TRAINING YEAR LIC/CERT-W3
+H3ED45_M        int     %20.0f     H3ED45_M   S7Q45 13TH TRAINING KIND INSTITUTION-W3
+H3ED46_M        int     %20.0f     H3ED46_M   S7Q46 13TH TRAINING KIND FIELD-W3
+H3ED47_M        int     %19.0f     H3ED47_M   S7Q47 13TH TRAINING REQ WELFARE PROG-W3
+H3ED48_M        int     %19.0f     H3ED48_M   S7Q48 13TH TRAINING REC LICENSE/CERT-W3
+H3ED49MM        int     %20.0f     H3ED49MM   S7Q49M 13TH TRAINING MONTH LIC/CERT-W3
+H3ED49YM        int     %22.0f     H3ED49YM   S7Q49Y 13TH TRAINING YEAR LIC/CERT-W3
+H3ED45_N        int     %20.0f     H3ED45_N   S7Q45 14TH TRAINING KIND INSTITUTION-W3
+H3ED46_N        int     %20.0f     H3ED46_N   S7Q46 14TH TRAINING KIND FIELD-W3
+H3ED47_N        int     %19.0f     H3ED47_N   S7Q47 14TH TRAINING REQ WELFARE PROG-W3
+H3ED48_N        int     %19.0f     H3ED48_N   S7Q48 14TH TRAINING REC LICENSE/CERT-W3
+H3ED49MN        int     %20.0f     H3ED49MN   S7Q49M 14TH TRAINING MONTH LIC/CERT-W3
+H3ED49YN        int     %22.0f     H3ED49YN   S7Q49Y 14TH TRAINING YEAR LIC/CERT-W3
+H3ED45_O        int     %20.0f     H3ED45_O   S7Q45 15TH TRAINING KIND INSTITUTION-W3
+H3ED46_O        int     %20.0f     H3ED46_O   S7Q46 15TH TRAINING KIND FIELD-W3
+H3ED47_O        int     %19.0f     H3ED47_O   S7Q47 15TH TRAINING REQ WELFARE PROG-W3
+H3ED48_O        int     %19.0f     H3ED48_O   S7Q48 15TH TRAINING REC LICENSE/CERT-W3
+H3ED49MO        int     %20.0f     H3ED49MO   S7Q49M 15TH TRAINING MONTH LIC/CERT-W3
+H3ED49YO        int     %22.0f     H3ED49YO   S7Q49Y 15TH TRAINING YEAR LIC/CERT-W3
+H3LM1           int     %20.0f     H3LM1      S8Q1 EVER HAD A JOB-W3
+H3LM2           int     %21.0f     H3LM2      S8Q2 EVER WORK 9 WEEKS/MORE/10 HRS-W3
+H3LM3           int     %21.0f     H3LM3      S8Q3 PHYSICAL/NERV/COND PREVENT WORK-W3
+H3LM4M          int     %20.0f     H3LM4M     S8Q4 MONTH CONDITION BEGAN-W3
+H3LM4Y          int     %22.0f     H3LM4Y     S8Q4 YEAR CONDITION BEGAN-W3
+H3LM5           int     %22.0f     H3LM5      S8Q5 STILL HAVE CONDITION-W3
+H3LM6M          int     %20.0f     H3LM6M     S8Q6 MONTH CONDITION ENDED-W3
+H3LM6Y          int     %22.0f     H3LM6Y     S8Q6 YEAR CONDITION ENDED-W3
+H3LM7           int     %20.0f     H3LM7      S8Q7 CURRENTLY WORK/10 HRS WEEK-W3
+H3LM8           int     %22.0f     H3LM8      S8Q8 STILL WORK FIRST PAY JOB EVER-W3
+H3LM9           int     %20.0f     H3LM9      S8Q9 AGE AT FIRST PAY JOB-W3
+H3LM10          str7    %9s                   S8Q10 JOB CLASSIFICATION-W3
+H3LM11A         str7    %9s                   S8Q11A DETAIL JOB CLASSIFICATION-W3
+H3LM11B         str7    %9s                   S8Q11B DETAIL JOB CLASSIFICATION-W3
+H3LM11C         str7    %9s                   S8Q11C DETAIL JOB CLASSIFICATION-W3
+H3LM12          int     %19.0f     H3LM12     S8Q12 FIRST PAY JOB FULL/PART TIME-W3
+H3LM13M         int     %20.0f     H3LM13M    S8Q13 MONTH FIRST PAY JOB ENDED-W3
+H3LM13Y         int     %22.0f     H3LM13Y    S8Q13 YEAR FIRST PAY JOB ENDED-W3
+H3LM14          int     %20.0f     H3LM14     S8Q14 NUMBER OF CURRENT PAY JOBS-W3
+H3LM15M         int     %20.0f     H3LM15M    S8Q15 MONTH PAY JOB STARTED-W3
+H3LM15Y         int     %22.0f     H3LM15Y    S8Q15 YEAR PAY JOB STARTED-W3
+H3LM16          int     %20.0f     H3LM16     S8Q16 NUMBER HRS/WEEK CURR PAY JOB-W3
+H3LM17          int     %31.0f     H3LM17     S8Q17 TIME PERIOD OF RATE OF PAY -W3
+H3LM18          float   %21.2f     H3LM18     S8Q18 HOURLY RATE OF PAY-W3
+H3LM19          float   %21.2f     H3LM19     S8Q19 DAILY RATE OF PAY-W3
+H3LM20          double  %23.2f     H3LM20     S8Q20 WEEKLY RATE OF PAY-W3
+H3LM21          double  %23.2f     H3LM21     S8Q21 BI-WEEKLY RATE OF PAY-W3
+H3LM22          float   %23.1f     H3LM22     S8Q22 BI-MONTHLY RATE OF PAY-W3
+H3LM23          double  %23.2f     H3LM23     S8Q23 MONTHLY RATE OF PAY-W3
+H3LM24          long    %24.0f     H3LM24     S8Q24 ANNUAL EARNINGS BEFORE TAX/DED-W3
+H3LM25          str7    %9s                   S8Q25 JOB CLASSIFICATION CURR JOB-W3
+H3LM26A         str7    %9s                   S8Q26A DETAIL JOB CLASS/CURR JOB-W3
+H3LM26B         str7    %9s                   S8Q26B DETAIL JOB CLASS/CURR JOB-W3
+H3LM26C         str7    %9s                   S8Q26C DETAIL JOB CLASS/CURR JOB-W3
+H3LM27          int     %59.0f     H3LM27     S8Q27 BEST DESC HRS WORKED CURR JOB-W3
+H3LM28          int     %38.0f     H3LM28     S8Q28 CURRENT JOB SATISFACTION-W3
+H3LM29          int     %31.0f     H3LM29     S8Q29 TIME PERIOD AT/START/CURR JOB-W3
+H3LM30          float   %21.2f     H3LM30     S8Q30 START HOURLY RATE OF PAY-W3
+H3LM31          float   %21.2f     H3LM31     S8Q31 START DAILY RATE OF PAY-W3
+H3LM32          double  %23.2f     H3LM32     S8Q32 START WEEKLY RATE OF PAY-W3
+H3LM33          double  %23.2f     H3LM33     S8Q33 START BI-WEEKLY RATE OF PAY-W3
+H3LM34          long    %23.0f     H3LM34     S8Q34 START BI-MONTHLY RATE OF PAY-W3
+H3LM35          double  %23.2f     H3LM35     S8Q35 START MONTHLY RATE OF PAY-W3
+H3LM36          long    %23.0f     H3LM36     S8Q36 START ANNUAL EARNINGS-W3
+H3LM37          int     %18.0f     H3LM37     S8Q37 SOC/SVCS/WELFARE JOB TRAINING-W3
+H3LM38          int     %18.0f     H3LM38     S8Q38 EVER BEEN MILITARY RESERVES-W3
+H3LM39          int     %21.0f     H3LM39     S8Q39 CURRENT ACTIVE MILITARY DUTY-W3
+H3LM40M         int     %20.0f     H3LM40M    S8Q40 MONTH START ACT/MILITARY DUTY-W3
+H3LM40Y         int     %22.0f     H3LM40Y    S8Q40 YEAR START ACT/MILITARY DUTY-W3
+H3LM41          int     %20.0f     H3LM41     S8Q41 BRANCH OF ARMED FORCES-W3
+H3LM42          int     %60.0f     H3LM42     S8Q42 CURRENT RANK-W3
+H3LM43          int     %21.0f     H3LM43     S8Q43 SERVED MILITARY BEFORE-W3
+H3LM44A         int     %19.0f     H3LM44A    S8Q44A SERVED BEFORE ARMY-W3
+H3LM44B         int     %19.0f     H3LM44B    S8Q44B SERVED BEFORE AIR FORCE-W3
+H3LM44C         int     %19.0f     H3LM44C    S8Q44C SERVED BEFORE MARINES-W3
+H3LM44D         int     %19.0f     H3LM44D    S8Q44D SERVED BEFORE NAVY-W3
+H3LM44E         int     %19.0f     H3LM44E    S8Q44E SERVED BEFORE COAST GUARD-W3
+H3LM45          int     %20.0f     H3LM45     S8Q45 RANK AT DISCHARGE ARMY-W3
+H3LM46M         int     %20.0f     H3LM46M    S8Q46 MONTH DISCHARGED ARMY-W3
+H3LM46Y         int     %22.0f     H3LM46Y    S8Q46 YEAR DISCHARGED ARMY-W3
+H3LM47          int     %26.0f     H3LM47     S8Q47 RANK AT DISCHARGE AIR FORCE-W3
+H3LM48M         int     %20.0f     H3LM48M    S8Q48 MONTH DISCHARGED AIR FORCE-W3
+H3LM48Y         int     %22.0f     H3LM48Y    S8Q48 YEAR DISCHARGED AIR FORCE-W3
+H3LM49          int     %27.0f     H3LM49     S8Q49 RANK AT DISCHARGE MARINES-W3
+H3LM50M         int     %20.0f     H3LM50M    S8Q50 MONTH DISCHARGED MARINES-W3
+H3LM50Y         int     %22.0f     H3LM50Y    S8Q50 YEAR DISCHARGED MARINES-W3
+H3LM51          int     %33.0f     H3LM51     S8Q51 RANK AT DISCHARGE NAVY-W3
+H3LM52M         int     %20.0f     H3LM52M    S8Q52 MONTH DISCHARGED NAVY-W3
+H3LM52Y         int     %22.0f     H3LM52Y    S8Q52 YEAR DISCHARGED NAVY-W3
+H3LM53          int     %28.0f     H3LM53     S8Q53 RANK AT DISCHARGE COAST GUARD-W3
+H3LM54M         int     %20.0f     H3LM54M    S8Q54 MONTH DISCHARGED COAST GUARD-W3
+H3LM54Y         int     %22.0f     H3LM54Y    S8Q54 YEAR DISCHARGED COAST GUARD-W3
+H3LM55          int     %21.0f     H3LM55     S8Q55 IN 1995 WORKED FOR PAY-W3
+H3LM56          int     %19.0f     H3LM56     S8Q56 WORKED CIVILIAN/MILITARY-W3
+H3LM57          int     %19.0f     H3LM57     S8Q57 WORKED ENTIRE 1995 YEAR-W3
+H3LM58          int     %19.0f     H3LM58     S8Q58 1995 WORKED MOSTLY FULL TIME-W3
+H3LM59          int     %21.0f     H3LM59     S8Q59 IN 1996 WORKED FOR PAY-W3
+H3LM60          int     %19.0f     H3LM60     S8Q60 WORKED CIVILIAN/MILITARY-W3
+H3LM61          int     %19.0f     H3LM61     S8Q61 WORKED ENTIRE 1996 YEAR-W3
+H3LM62          int     %19.0f     H3LM62     S8Q62 1996 WORKED MOSTLY FULL TIME-W3
+H3LM63          int     %21.0f     H3LM63     S8Q63 IN 1997 WORKED FOR PAY-W3
+H3LM64          int     %19.0f     H3LM64     S8Q64 WORKED CIVILIAN/MILITARY-W3
+H3LM65          int     %19.0f     H3LM65     S8Q65 WORKED ENTIRE 1997 YEAR-W3
+H3LM66          int     %19.0f     H3LM66     S8Q66 1997 WORKED MOSTLY FULL TIME-W3
+H3LM67          int     %21.0f     H3LM67     S8Q67 IN 1998 WORKED FOR PAY-W3
+H3LM68          int     %19.0f     H3LM68     S8Q68 WORKED CIVILIAN/MILITARY-W3
+H3LM69          int     %19.0f     H3LM69     S8Q69 WORKED ENTIRE 1998 YEAR-W3
+H3LM70          int     %19.0f     H3LM70     S8Q70 1998 WORKED MOSTLY FULL TIME-W3
+H3LM71          int     %21.0f     H3LM71     S8Q71 IN 1999 WORKED FOR PAY-W3
+H3LM72          int     %19.0f     H3LM72     S8Q72 WORKED CIVILIAN/MILITARY-W3
+H3LM73          int     %19.0f     H3LM73     S8Q73 WORKED ENTIRE 1999 YEAR-W3
+H3LM74          int     %19.0f     H3LM74     S8Q74 1999 WORKED MOSTLY FULL TIME-W3
+H3LM75          int     %21.0f     H3LM75     S8Q75 IN 2000 WORKED FOR PAY-W3
+H3LM76          int     %19.0f     H3LM76     S8Q76 WORKED CIVILIAN/MILITARY-W3
+H3LM77          int     %19.0f     H3LM77     S8Q77 WORKED ENTIRE 2000 YEAR-W3
+H3LM78          int     %19.0f     H3LM78     S8Q78 2000 WORKED MOSTLY FULL TIME-W3
+H3LM79          int     %33.0f     H3LM79     S8Q79 IN 2001 WORKED FOR PAY-W3
+H3LM80          int     %19.0f     H3LM80     S8Q80 WORKED CIVILIAN/MILITARY-W3
+H3LM81          int     %19.0f     H3LM81     S8Q81 WORKED ENTIRE 2001 YEAR-W3
+H3LM82          int     %19.0f     H3LM82     S8Q82 2001 WORKED MOSTLY FULL TIME-W3
+H3GH1           int     %13.0f     H3GH1      S9Q01 HOW IS GENERAL HEALTH-W3
+H3GH2           int     %26.0f     H3GH2      S9Q02 WHAT YOU THINK OF YOUR WEIGHT-W3
+H3GH3           int     %42.0f     H3GH3      S9Q03 CURR DOING ANYTHING ABOUT WT-W3
+H3GH4A          int     %19.0f     H3GH4A     S9Q04A DID YOU DIET TO CHANGE WEIGHT-W3
+H3GH4B          int     %19.0f     H3GH4B     S9Q04B DID YOU EXERCISE CHANGE WEIGHT-W3
+H3GH4C          int     %19.0f     H3GH4C     S9Q04C FAST/SKIP MEALS CHANGE WEIGHT-W3
+H3GH4D          int     %19.0f     H3GH4D     S9Q04D MAKE SELF THROW UP CHANGE WT-W3
+H3GH4E          int     %19.0f     H3GH4E     S9Q04E WT-LOSS PILLS CHANGE WEIGHT-W3
+H3GH4F          int     %19.0f     H3GH4F     S9Q04F TAKE LAXATIVES CHANGE WEIGHT-W3
+H3GH4G          int     %19.0f     H3GH4G     S9Q04G USE DIURETICS CHANGE WEIGHT-W3
+H3GH4H          int     %19.0f     H3GH4H     S9Q04H FOOD SUPPLEMENTS CHANGE WEIGHT-W3
+H3GH4I          int     %19.0f     H3GH4I     S9Q04I WEIGHT PROGRAM CHANGE WEIGHT-W3
+H3GH5           int     %15.0f     H3GH5      S9Q05 EXERCISE CENTER PAST 7 DAYS-W3
+H3GH6           int     %18.0f     H3GH6      S9Q06 EATEN SO MUCH/BEEN EMBARRASSED-W3
+H3GH7           int     %18.0f     H3GH7      S9Q07 AFRAID START EATING/CAN'T STOP-W3
+H3GH8           int     %18.0f     H3GH8      S9Q08 TOLD HAVE EATING DISORDER-W3
+H3GH9A          int     %19.0f     H3GH9A     S9Q09A EAT DIFF FOODS TO GAIN WEIGHT-W3
+H3GH9B          int     %19.0f     H3GH9B     S9Q09B DID YOU EXERCISE GAIN WEIGHT-W3
+H3GH9C          int     %19.0f     H3GH9C     S9Q09C LIFT WEIGHTS GAIN WEIGHT-W3
+H3GH9D          int     %19.0f     H3GH9D     S9Q09D TAKE FOOD SUPPLEMENTS GAIN WT-W3
+H3GH9E          int     %19.0f     H3GH9E     S9Q09E DID YOU EAT MORE GAIN WEIGHT-W3
+H3GH10          int     %21.0f     H3GH10     S9Q10 PAST MO,HEALTH PROB/MISSED DAY-W3
+H3GH11H         int     %19.0f     H3GH11H    S9Q11 HOUR YOU USUALLY WAKE UP-W3
+H3GH11M         int     %19.0f     H3GH11M    S9Q11 MINUTE YOU USUALLY WAKE UP-W3
+H3GH11T         int     %6.0f      H3GH11T    S9Q11 AM OR PM YOU WAKE UP-W3
+H3GH12H         int     %19.0f     H3GH12H    S9Q12 HOUR YOU USUALLY GO TO SLEEP-W3
+H3GH12M         int     %19.0f     H3GH12M    S9Q12 MINUTE YOU USUALLY GO TO SLEEP-W3
+H3GH12T         int     %6.0f      H3GH12T    S9Q12 AM OR PM YOU GO TO SLEEP-W3
+H3GH13H         int     %19.0f     H3GH13H    S9Q13 HR USUALLY WAKE UP/SLEEP IN-W3
+H3GH13M         int     %19.0f     H3GH13M    S9Q13 MIN USUALLY WAKE UP/SLEEP IN-W3
+H3GH13T         int     %6.0f      H3GH13T    S9Q13 AM/PM YOU WAKE UP/CAN SLEEP IN-W3
+H3GH14H         int     %19.0f     H3GH14H    S9Q14 HR USUALLY GO SLEEP/SLEEP IN-W3
+H3GH14M         int     %19.0f     H3GH14M    S9Q14 MIN USUALLY GO SLEEP/SLEEP IN-W3
+H3GH14T         int     %6.0f      H3GH14T    S9Q14 AM/PM USUAL GO SLEEP/SLEEP IN-W3
+H3GH15          int     %19.0f     H3GH15     S9Q15 PAST 7 DAYS FALL ASLEEP-W3
+H3GH16          int     %19.0f     H3GH16     S9Q16 PAST 7 DAYS HOW OFTEN TOOK NAP-W3
+H3GH17          int     %14.0f     H3GH17     S9Q17 ARE YOU A VEGETARIAN-W3
+H3GH18          int     %19.0f     H3GH18     S9Q18 DAYS ATE FAST FOOD LAST 7 DAYS-W3
+H3GH19          int     %19.0f     H3GH19     S9Q19 DAYS ATE BREAKFAST LAST 7 DAYS-W3
+H3GH20          int     %14.0f     H3GH20     S9Q20 VITAMINS OR MINERALS LAST MON-W3
+H3HS1           int     %19.0f     H3HS1      S10Q1 # MONTHS HAVE HEALTH INSURANCE-W3
+H3HS2           int     %20.0f     H3HS2      S10Q2 PAST 12 MON OFFERED HEALTH INS-W3
+H3HS3           int     %21.0f     H3HS3      S10Q3 GOT HEALTH INS WHEN OFFERED-W3
+H3HS4A          int     %19.0f     H3HS4A     S10Q4A WHY NOT: HAD HEALTH INS -W3
+H3HS4B          int     %19.0f     H3HS4B     S10Q4B WHY NOT: COVERED BY PARENTS-W3
+H3HS4C          int     %19.0f     H3HS4C     S10Q4C WHY NOT: COVERED BY SPOUSE-W3
+H3HS4D          int     %19.0f     H3HS4D     S10Q4D WHY NOT: NOT NEEDED/WANTED-W3
+H3HS4E          int     %19.0f     H3HS4E     S10Q4E WHY NOT: TOO EXPENSIVE-W3
+H3HS4F          int     %19.0f     H3HS4F     S10Q4F WHY NOT: OTHER REASONS-W3
+H3HS5           int     %58.0f     H3HS5      S10Q5 BEST DESCRIBE CURR/HEALTH INS-W3
+H3HS6           int     %21.0f     H3HS6      S10Q6 PAST 12/MON NEEDED MED CARE-W3
+H3HS7A          int     %19.0f     H3HS7A     S10Q7A ROUTINE CHECK-UP-W3
+H3HS7B          int     %19.0f     H3HS7B     S10Q7B RAN OUT PRESCP MEDICATION-W3
+H3HS7C          int     %19.0f     H3HS7C     S10Q7C SICK SYMPTOMS-W3
+H3HS7D          int     %19.0f     H3HS7D     S10Q7D INJURED BY ACCCIDENT-W3
+H3HS7E          int     %19.0f     H3HS7E     S10Q7E INJURED BY PHYSICAL FIGHT-W3
+H3HS7F          int     %19.0f     H3HS7F     S10Q7F PROB RELATED HAVING SEX-W3
+H3HS7G          int     %19.0f     H3HS7G     S10Q7G PROB STRESS/DEPRSS/NERVES-W3
+H3HS7H          int     %19.0f     H3HS7H     S10Q7H PROB REL TOBACCO/ALCOHOL/DRUGS-W3
+H3HS7I          int     %19.0f     H3HS7I     S10Q7I OTHER PROBLEMS-W3
+H3HS8A          int     %19.0f     H3HS8A     S10Q8A DID NOT KNOW WHOM TO SEE-W3
+H3HS8B          int     %19.0f     H3HS8B     S10Q8B HAD NO TRANSPORTATION-W3
+H3HS8C          int     %19.0f     H3HS8C     S10Q8C NO COMPANION-W3
+H3HS8D          int     %19.0f     H3HS8D     S10Q8D PARENT/GUARDIAN REFUSE ACCOMP-W3
+H3HS8E          int     %19.0f     H3HS8E     S10Q8E DID NOT WANT PARENTS TO KNOW-W3
+H3HS8F          int     %19.0f     H3HS8F     S10Q8F DIFFICULT GET APPOINTMENT-W3
+H3HS8G          int     %19.0f     H3HS8G     S10Q8G AFRAID DOCTOUR WOULD SAY-W3
+H3HS8H          int     %19.0f     H3HS8H     S10Q8H THOUGHT PROB GO AWAY-W3
+H3HS8I          int     %19.0f     H3HS8I     S10Q8I COULD NOT PAY-W3
+H3HS8J          int     %19.0f     H3HS8J     S10Q8J DID NOT HAVE TIME-W3
+H3HS8K          int     %19.0f     H3HS8K     S10Q8K THOUGHT DR TELL HUSB/PARTNER-W3
+H3HS8L          int     %19.0f     H3HS8L     S10Q8L TOO EMBARRASSED-W3
+H3HS8M          int     %19.0f     H3HS8M     S10Q8M THOUGHT DR REPORT POLICE/AUTH-W3
+H3HS8N          int     %19.0f     H3HS8N     S10Q8N DID NOT THINK DR WOULD HELP-W3
+H3HS8O          int     %19.0f     H3HS8O     S10Q8O OTHER REASONS-W3
+H3HS9           int     %19.0f     H3HS9      S10Q9 PAST12 MON PROB GOT WORSE-W3
+H3HS10          int     %41.0f     H3HS10     S10Q10 LOCATION HEALTH CARE FACILITY-W3
+H3HS11          int     %52.0f     H3HS11     S10Q11 LAST CONSULT DOCTOR/NURSE-W3
+H3HS12          int     %29.0f     H3HS12     S10Q12 MAIN REASON VISIT DR/NURSE-W3
+H3HS13          int     %41.0f     H3HS13     S10Q13 TYPE FACILITY-W3
+H3HS14          int     %52.0f     H3HS14     S10Q14 LAST ROUTINE CHECK-UP-W3
+H3HS15          int     %41.0f     H3HS15     S10Q15 TYPE FACILITY LAST CHK-UP-W3
+H3HS16          int     %52.0f     H3HS16     S10Q16 LAST GYNECOL/PELVIC EXAM-W3
+H3HS17          int     %52.0f     H3HS17     S10Q17 MAIN REASON EXAMINATION-W3
+H3HS18          int     %21.0f     H3HS18     S10Q18 PAP SMEAR DONE-W3
+H3HS19          int     %22.0f     H3HS19     S10Q19 RESULTS PAP SMEAR NORMAL-W3
+H3HS20          int     %60.0f     H3HS20     S10Q20 WHAT TOLD ABNORMAL PAP SMEAR-W3
+H3HS21          int     %18.0f     H3HS21     S10Q21 PAST 12 MON DENTAL EXAM-W3
+H3HS22          int     %18.0f     H3HS22     S10Q22 PAST12 MON PSYCHO/COUNSELING-W3
+H3HS23          int     %18.0f     H3HS23     S10Q23 PAST 12 MON DRUG/ALCO/PROG-W3
+H3ID1           int     %22.0f     H3ID1      S11Q1 LIMIT:VIGOROUS ACTIVITIES-W3
+H3ID2           int     %22.0f     H3ID2      S11Q2 LIMIT:MODERATE ACTIVITIES-W3
+H3ID3           int     %22.0f     H3ID3      S11Q3 LIMIT:LIFT/CARRY BAG GROCERIES-W3
+H3ID4           int     %22.0f     H3ID4      S11Q4 LIMIT:CLIMB SEV. FLIGHT STAIRS-W3
+H3ID5           int     %22.0f     H3ID5      S11Q5 LIMIT:CLIMBING 1 FLIGHT STAIRS-W3
+H3ID6           int     %22.0f     H3ID6      S11Q6 LIMIT:BENDING,KNEELING,STOOPING-W3
+H3ID7           int     %22.0f     H3ID7      S11Q7 LIMIT:WALKING MORE THAN A MILE-W3
+H3ID8           int     %22.0f     H3ID8      S11Q8 LIMIT:WALKING SEVERAL BLOCKS-W3
+H3ID9           int     %22.0f     H3ID9      S11Q9 LIMIT:WALKING ONE BLOCK-W3
+H3ID10          int     %22.0f     H3ID10     S11Q10 LIMIT:BATHING,DRESSING SELF-W3
+H3ID11          int     %27.0f     H3ID11     S11Q11 LIMIT CAUSE BY COND.>YR/RECENT-W3
+H3ID12          int     %18.0f     H3ID12     S11Q12 PST 30DYS, TAKEN ANTIBIOTICS-W3
+H3ID13          int     %14.0f     H3ID13     S11Q13 EVER BEEN DX WITH ASTHMA-W3
+H3ID14          int     %18.0f     H3ID14     S11Q14 EVER BEEN DX CANCER/LEUKEMIA-W3
+H3ID15          int     %18.0f     H3ID15     S11Q15 EVER BEEN DX WITH DEPRESSION-W3
+H3ID16          int     %18.0f     H3ID16     S11Q16 EVER BEEN DX WITH DIABETES-W3
+H3ID17          int     %20.0f     H3ID17     S11Q17 AGE FIRST DX WITH DIABETES-W3
+H3ID18          int     %19.0f     H3ID18     S11Q18 PILL/INSULIN CONTR BLOOD SUGAR-W3
+H3ID19          int     %21.0f     H3ID19     S11Q19 EVER BEEN DX W/EPILEPSY/SEIZ -W3
+H3ID20          int     %22.0f     H3ID20     S11Q20 #SEIZURES HAD PAST 12 MONTHS-W3
+H3ID21          int     %18.0f     H3ID21     S11Q21 DR SAID HAVE HIGH CHOLESTEROL-W3
+H3ID22          int     %18.0f     H3ID22     S11Q22 EVER DX W/HIGH BLOOD PRESSUR-W3
+H3ID23          int     %18.0f     H3ID23     S11Q23 TETANUS SHOT PAST 10 YR-W3
+H3ID24          int     %18.0f     H3ID24     S11Q24 HAD HEPATITIS B VACCINATION-W3
+H3ID25          int     %21.0f     H3ID25     S11Q25 PST YR,TAKEN ANY PRESCRIP. MED-W3
+H3ID26A         int     %19.0f     H3ID26A    S11Q26A PST YR PRES MED ACNE-W3
+H3ID26B         int     %19.0f     H3ID26B    S11Q26B PST YR PRES MED ALLERGIES-W3
+H3ID26C         int     %19.0f     H3ID26C    S11Q26C PST YR PRES MED ASTHMA-W3
+H3ID26D         int     %19.0f     H3ID26D    S11Q26D PST YR PRES MED ADD/ADHD-W3
+H3ID26E         int     %19.0f     H3ID26E    S11Q26E PST YR PRES MED DIABETES-W3
+H3ID26F         int     %19.0f     H3ID26F    S11Q26F PST YR PRES MED DEPRES/STRESS-W3
+H3ID26G         int     %19.0f     H3ID26G    S11Q26G PST YR PRES MED HYPERTENSION-W3
+H3ID26H         int     %19.0f     H3ID26H    S11Q26H PST YR PRES MED HEART PROB-W3
+H3ID26I         int     %19.0f     H3ID26I    S11Q26I PST YR PRES MED HEADACHES-W3
+H3ID26J         int     %19.0f     H3ID26J    S11Q26J PST YR PRES MED INFECTION-W3
+H3ID26K         int     %19.0f     H3ID26K    S11Q26K PST YR PRES MED SEIZURES-W3
+H3ID26L         int     %19.0f     H3ID26L    S11Q26L PST YR PRES MED STOP SMOKE-W3
+H3ID26M         int     %19.0f     H3ID26M    S11Q26M PST YR PRES MED STOMACH PROBL-W3
+H3ID26N         int     %19.0f     H3ID26N    S11Q26N PST YR PRES MED WT CONTROL-W3
+H3ID26O         int     %19.0f     H3ID26O    S11Q26O PST YR PRES MED SEX PERFORMAN-W3
+H3ID26P         int     %19.0f     H3ID26P    S11Q26P PST YR PRES MED BIRTH CONTROL-W3
+H3ID26Q         int     %19.0f     H3ID26Q    S11Q26Q PST YR PRES MED MENSTRUAL ISS-W3
+H3ID26R         int     %19.0f     H3ID26R    S11Q26S PST YR PRES MED OTHER-W3
+H3ID27          int     %16.0f     H3ID27     S11Q27 PST 5YRS, #TIMES BEEN ER-W3
+H3ID28          int     %33.0f     H3ID28     S11Q28 REASON MOST RECENT ER VISIT-W3
+H3ID29          int     %16.0f     H3ID29     S11Q29 PST 5YRS, #TIMES HOSPITALIZED-W3
+H3ID30          int     %52.0f     H3ID30     S11Q30 HOW LONG AGO MOST RECENT HOSP.-W3
+H3ID31          int     %35.0f     H3ID31     S11Q31 REASON MOST RECENT HOSPITAL-W3
+H3ID32          int     %21.0f     H3ID32     S11Q32 LONG MOST RECENT HOSPITAL STAY-W3
+H3ID33          int     %14.0f     H3ID33     S11Q33 PST 5YRS HOSPITAL MENTAL ILL-W3
+H3ID34A         int     %18.0f     H3ID34A    S11Q34A PST YR ALT HEALTH ACUPUNCTURE-W3
+H3ID34B         int     %18.0f     H3ID34B    S11Q34B PST YR ALT HEALTH BIOFEEDBACK-W3
+H3ID34C         int     %18.0f     H3ID34C    S11Q34C PST YR ALT HEALTH CHIRO. TRTM-W3
+H3ID34D         int     %18.0f     H3ID34D    S11Q34D PST YR ALT HEALTH ENERGY HEAL-W3
+H3ID34E         int     %18.0f     H3ID34E    S11Q34E PST YR ALT HEALTH FOLK REMEDY-W3
+H3ID34F         int     %18.0f     H3ID34F    S11Q34F PST YR ALT HEALTH HERB REMEDY-W3
+H3ID34G         int     %18.0f     H3ID34G    S11Q34G PST YR ALT HEALTH HOMEOPATHY-W3
+H3ID34H         int     %18.0f     H3ID34H    S11Q34H PST YR ALT HEALTH HYPNOSIS-W3
+H3ID34I         int     %18.0f     H3ID34I    S11Q34I PST YR ALT HEALTH IMAGERY-W3
+H3ID34J         int     %18.0f     H3ID34J    S11Q34J PST YR ALT HEALTH MASSAGE -W3
+H3ID34K         int     %18.0f     H3ID34K    S11Q34K PST YR ALT HEALTH RELAX TECHN-W3
+H3ID34L         int     %18.0f     H3ID34L    S11Q34L PST YR ALT HEALTH SUP. GROUP-W3
+H3ID34M         int     %18.0f     H3ID34M    S11Q34M PST YR ALT HEALTH SPEC. DIET-W3
+H3ID34N         int     %18.0f     H3ID34N    S11Q34N PST YR ALT HEALTH SPIRIT HEAL-W3
+H3ID34O         int     %18.0f     H3ID34O    S11Q34O PST YR ALT HEALTH VIT THERAPY-W3
+H3ID35          int     %21.0f     H3ID35     S11Q35 TOTAL BLINDNESS ONE/BOTH EYES-W3
+H3ID36          int     %28.0f     H3ID36     S11Q36 BLIND IN ONE OR IN BOTH EYES-W3
+H3ID37          int     %19.0f     H3ID37     S11Q37 USE GLASSES OR CONTACTS-W3
+H3ID38          int     %20.0f     H3ID38     S11Q38 W/CORRECTION HOW IS EYESIGHT-W3
+H3ID39          int     %20.0f     H3ID39     S11Q39 HOW IS YOUR HEARING-W3
+H3ID40          int     %18.0f     H3ID40     S11Q40 STUTTERING STAMMERING PROBLEM-W3
+H3SP1           int     %21.0f     H3SP1      S12Q1 PAST 12 MON OFTEN LAUGHED A LOT-W3
+H3SP2           int     %21.0f     H3SP2      S12Q2 PAST 12 MON OFTEN CRIED A LOT-W3
+H3SP3           int     %38.0f     H3SP3      S12Q3 SATISFIED W/LIFE AS WHOLE-W3
+H3SP4           int     %28.0f     H3SP4      S12Q4 COMPARED TO OTH HOW INTELLIGENT-W3
+H3SP5           int     %36.0f     H3SP5      S12Q5 PAST 7 DAYS BOTHERED BY THINGS-W3
+H3SP6           int     %36.0f     H3SP6      S12Q1 PAST 7 DAYS SHAKE OFF BLUES-W3
+H3SP7           int     %36.0f     H3SP7      S12Q7 PAST 7 DAYS FELT AS GOOD AS OTH-W3
+H3SP8           int     %36.0f     H3SP8      S12Q8 PAST 7 DAYS TROUBLE CONCENTRTNG-W3
+H3SP9           int     %36.0f     H3SP9      S12Q9 PAST 7 DAYS WERE DEPRESSED-W3
+H3SP10          int     %36.0f     H3SP10     S12Q10 PAST 7 DAYS TOO TIRED DO THNGS-W3
+H3SP11          int     %36.0f     H3SP11     S12Q11 PAST 7 DAYS ENJOYED LIFE-W3
+H3SP12          int     %36.0f     H3SP12     S12Q12 PAST 7 DAYS WERE SAD-W3
+H3SP13          int     %36.0f     H3SP13     S12Q13 PAST 7 DAYS PEOPLE DISLIKED U-W3
+H3SP14          int     %30.0f     H3SP14     S12Q14 PAST 7 DAYS NEV TAKE OTH THNGS-W3
+H3SP15          int     %30.0f     H3SP15     S12Q15 PAST 7 DAYS SAY BAD THNGS FRND-W3
+H3SP16          int     %30.0f     H3SP16     S12Q16 PAST 7 DAYS NEVER SWEAR-W3
+H3SP17          int     %30.0f     H3SP17     S12Q17 PAST 7 DAYS AVOID PROBLEMS-W3
+H3SP18          int     %30.0f     H3SP18     S12Q18 PAST 7 DAYS GUT FEEL DECISIONS-W3
+H3SP19          int     %30.0f     H3SP19     S12Q19 PAST 7 DAYS HAVE MNY GOOD QUAL-W3
+H3SP20          int     %30.0f     H3SP20     S12Q20 PAST 7 DAYS HAVE LOT PROUD OF-W3
+H3SP21          int     %30.0f     H3SP21     S12Q21 PAST 7 DAYS LIKE YOURSELF-W3
+H3SP22          int     %30.0f     H3SP22     S12Q22 PAST 7 DAYS DOING THINGS RIGHT-W3
+H3SP23          int     %30.0f     H3SP23     S12Q23 PAST 7 DAYS LIKE TAKE RISKS-W3
+H3SP24          int     %30.0f     H3SP24     S12Q24 PAST 7 DAYS NOT THOUGHT FUTURE-W3
+H3SP25          int     %30.0f     H3SP25     S12Q25 PAST 7 DAYS IMPORTANT TO FIT-W3
+H3SP26          int     %30.0f     H3SP26     S12Q26 PAST 7 DAYS NOT FOLLOW CROWD-W3
+H3SP27          int     %30.0f     H3SP27     S12Q27 PAST 7 DAYS BEHAVE DEPEND OTH-W3
+H3MN1           int     %21.0f     H3MN1      S13Q1 ADULT MADE POSITIVE DIFFERENCE -W3
+H3MN2           int     %43.0f     H3MN2      S13Q2 RELATIONSHIP TO MENTOR-W3
+H3MN3           int     %19.0f     H3MN3      S13Q3 IS MENTOR STILL LIVING-W3
+H3MN4           int     %19.0f     H3MN4      S13Q4 SEX OF MENTOR-W3
+H3MN5           int     %20.0f     H3MN5      S13Q5 HOW WAS MENTOR INTRODUCED-W3
+H3MN6           int     %20.0f     H3MN6      S13Q6 HOW OLD WH INTRODUCED TO MENTOR-W3
+H3MN7           int     %19.0f     H3MN7      S13Q7 IS MENTOR STILL IMPORTANT-W3
+H3MN8           int     %20.0f     H3MN8      S13Q8 HOW MANY YEARS MENTOR IMPRTNT-W3
+H3MN9           int     %25.0f     H3MN9      S13Q9 HOW OFTEN IS MENTOR VISITED-W3
+H3MN10          int     %25.0f     H3MN10     S13Q10 HOW OFTEN TALK/EMAIL W MENTOR-W3
+H3MN11          int     %23.0f     H3MN11     S13Q11 HOW CLOSE TO MENTOR NOW-W3
+H3MN12M         int     %20.0f     H3MN12M    S13Q12M MONTH LAST TALK/EMAIL MENTOR-W3
+H3MN12Y         int     %22.0f     H3MN12Y    S13Q12Y YEAR LAST TALK/EMAIL MENTOR-W3
+H3MN13A         str60   %60s                  S13Q13A HOW DID HE/SHE HELP-W3
+H3MN13B         str60   %60s                  S13Q13B HOW DID HE/SHE HELP-W3
+H3MN13C         str60   %60s                  S13Q13C HOW HAS HE/SHE HELPED-W3
+H3MN13D         str60   %60s                  S13Q13D HOW HAS HE/SHE HELPED-W3
+H3MN14          int     %36.0f     H3MN14     S13Q14 LIFE BETTER AFTER H/SCHOOL-W3
+H3MN15          int     %26.0f     H3MN15     S13Q15 SOCIAL MATURITY FASTER GROWTH-W3
+H3MN16          int     %26.0f     H3MN16     S13Q16 ADULT RESPBLTY FASTER GROWTH-W3
+H3MN17          int     %29.0f     H3MN17     S13Q17 HOW OLD COMPARED TO OTH-W3
+H3MN18          int     %20.0f     H3MN18     S13Q18 HOW OFTEN THINK SELF AS ADULT-W3
+H3MN19          int     %29.0f     H3MN19     S13Q19 PLEDGE ABSTAIN SEX BFR MRRG-W3
+H3MN20M         int     %42.0f     H3MN20M    S13Q20M MONTH SIGNED PLEDGE-W3
+H3MN20Y         int     %44.0f     H3MN20Y    S13Q20Y YEAR SIGNED PLEDGE-W3
+H3MN21          int     %42.0f     H3MN21     S13Q21 HOW OLD WHEN SIGNED PLEDGE-W3
+H3MR1           int     %14.0f     H3MR1      S14Q1 NUMBER OF TIMES MARRIED-W3
+H3MR_M_A        int     %19.0f     H3MR_M_A   S14 SEQUENCE NUMBER FOR SPOUSE A-W3
+H3MR2M_A        int     %20.0f     H3MR2M_A   S14Q2 MONTH MARRIED TO SPOUSE A-W3
+H3MR2Y_A        int     %22.0f     H3MR2Y_A   S14Q2 YEAR MARRIED TO SPOUSE A-W3
+H3MR3_A         int     %21.0f     H3MR3_A    S14Q3 STILL MARRIED TO SPOUSE A-W3
+H3MR4_A         int     %19.0f     H3MR4_A    S14Q4 HOW MARRIAGE TO SPOUSE A END-W3
+H3MR5M_A        int     %20.0f     H3MR5M_A   S14Q5 MON MARRIAGE TO SPOUSE A ENDED-W3
+H3MR5Y_A        int     %22.0f     H3MR5Y_A   S14Q5 YEAR MARRIAGE TO SPOUSE A ENDED-W3
+H3MR6_A         int     %19.0f     H3MR6_A    S14Q6 CURRENTLY LIVING WITH SPOUSE A-W3
+H3MR7M_A        int     %20.0f     H3MR7M_A   S14Q7 MONTH LAST LIVED WITH SPOUSE A-W3
+H3MR7Y_A        int     %22.0f     H3MR7Y_A   S14Q7 YEAR LAST LIVED WITH SPOUSE A-W3
+H3MR_M_B        int     %19.0f     H3MR_M_B   S14 SEQUENCE NUMBER FOR SPOUSE B_W3
+H3MR2M_B        int     %20.0f     H3MR2M_B   S14Q2 MONTH MARRIED TO SPOUSE B-W3
+H3MR2Y_B        int     %22.0f     H3MR2Y_B   S14Q2 YEAR MARRIED TO SPOUSE B-W3
+H3MR3_B         int     %21.0f     H3MR3_B    S14Q3 STILL MARRIED TO SPOUSE B-W3
+H3MR4_B         int     %19.0f     H3MR4_B    S14Q4 HOW MARRIAGE TO SPOUSE B END-W3
+H3MR5M_B        int     %20.0f     H3MR5M_B   S14Q5 MON MARRIAGE TO SPOUSE B ENDED-W3
+H3MR5Y_B        int     %22.0f     H3MR5Y_B   S14Q5 YEAR MARRIAGE TO SPOUSE B ENDED-W3
+H3MR6_B         int     %19.0f     H3MR6_B    S14Q6 CURRENTLY LIVING WITH SPOUSE B-W3
+H3MR7M_B        int     %20.0f     H3MR7M_B   S14Q7 MONTH LAST LIVED WITH SPOUSE B-W3
+H3MR7Y_B        int     %22.0f     H3MR7Y_B   S14Q7 YEAR LAST LIVED WITH SPOUSE B-W3
+H3MR_M_C        int     %19.0f     H3MR_M_C   S14 SEQUENCE NUMBER FOR SPOUSE C_W3
+H3MR2M_C        int     %20.0f     H3MR2M_C   S14Q2 MONTH MARRIED TO SPOUSE C-W3
+H3MR2Y_C        int     %22.0f     H3MR2Y_C   S14Q2 YEAR MARRIED TO SPOUSE C-W3
+H3MR3_C         int     %21.0f     H3MR3_C    S14Q3 STILL MARRIED TO SPOUSE C-W3
+H3MR4_C         int     %19.0f     H3MR4_C    S14Q4 HOW MARRIAGE TO SPOUSE C END-W3
+H3MR5M_C        int     %20.0f     H3MR5M_C   S14Q5 MON MARRIAGE TO SPOUSE C ENDED-W3
+H3MR5Y_C        int     %22.0f     H3MR5Y_C   S14Q5 YEAR MARRIAGE TO SPOUSE C ENDED-W3
+H3MR6_C         int     %19.0f     H3MR6_C    S14Q6 CURRENTLY LIVING WITH SPOUSE C-W3
+H3MR7M_C        int     %20.0f     H3MR7M_C   S14Q7 MONTH LAST LIVED WITH SPOUSE C-W3
+H3MR7Y_C        int     %22.0f     H3MR7Y_C   S14Q7 YEAR LAST LIVED WITH SPOUSE C-W3
+H3MR8           int     %21.0f     H3MR8      S14Q8 EVER COHABITED W/SOMEONE-W3
+H3MR9           int     %20.0f     H3MR9      S14Q9 NUMBER OF COHABITATIONS-W3
+H3MR_C_A        int     %21.0f     H3MR_C_A   S14 SEQUENCE NUMBER FOR COHAB A-W3
+H3MR10MA        int     %20.0f     H3MR10MA   S14Q10 MONTH COHAB WITH A BEGAN -W3
+H3MR10YA        int     %22.0f     H3MR10YA   S14Q10 YEAR COHAB WITH A BEGAN-W3
+H3MR11_A        int     %19.0f     H3MR11_A   S14Q11 EVER MARRY COHAB A-W3
+H3MR12MA        int     %20.0f     H3MR12MA   S14Q12 MONTH YOU AND COHAB A MARRIED-W3
+H3MR12YA        int     %22.0f     H3MR12YA   S14Q12 YEAR YOU AND COHAB A MARRIED-W3
+H3MR13_A        int     %22.0f     H3MR13_A   S14Q13 STILL LIVING W/COHAB A-W3
+H3MR14_A        int     %26.0f     H3MR14_A   S14Q14 HOW COHAB WITH A ENDED-W3
+H3MR15MA        int     %20.0f     H3MR15MA   S14Q15 MONTH COHAB WITH A ENDED-W3
+H3MR15YA        int     %22.0f     H3MR15YA   S14Q15 YEAR COHAB WITH A ENDED-W3
+H3MR_C_B        int     %21.0f     H3MR_C_B   S14 SEQUENCE NUMBER FOR COHAB B-W3
+H3MR10MB        int     %20.0f     H3MR10MB   S14Q10 MONTH COHAB WITH B BEGAN -W3
+H3MR10YB        int     %22.0f     H3MR10YB   S14Q10 YEAR COHAB WITH B BEGAN-W3
+H3MR11_B        int     %19.0f     H3MR11_B   S14Q11 EVER MARRY COHAB B-W3
+H3MR12MB        int     %20.0f     H3MR12MB   S14Q12 MONTH YOU AND COHAB B MARRIED-W3
+H3MR12YB        int     %22.0f     H3MR12YB   S14Q12 YEAR YOU AND COHAB B MARRIED-W3
+H3MR13_B        int     %22.0f     H3MR13_B   S14Q13 STILL LIVING W/COHAB B-W3
+H3MR14_B        int     %26.0f     H3MR14_B   S14Q14 HOW COHAB WITH B ENDED-W3
+H3MR15MB        int     %20.0f     H3MR15MB   S14Q15 MONTH COHAB WITH B ENDED-W3
+H3MR15YB        int     %22.0f     H3MR15YB   S14Q15 YEAR COHAB WITH B ENDED-W3
+H3MR_C_C        int     %21.0f     H3MR_C_C   S14 SEQUENCE NUMBER FOR COHAB C-W3
+H3MR10MC        int     %20.0f     H3MR10MC   S14Q10 MONTH COHAB WITH C BEGAN -W3
+H3MR10YC        int     %22.0f     H3MR10YC   S14Q10 YEAR COHAB WITH C BEGAN-W3
+H3MR11_C        int     %19.0f     H3MR11_C   S14Q11 EVER MARRY COHAB C-W3
+H3MR12MC        int     %20.0f     H3MR12MC   S14Q12 MONTH YOU AND COHAB C MARRIED-W3
+H3MR12YC        int     %22.0f     H3MR12YC   S14Q12 YEAR YOU AND COHAB C MARRIED-W3
+H3MR13_C        int     %22.0f     H3MR13_C   S14Q13 STILL LIVING W/COHAB C-W3
+H3MR14_C        int     %26.0f     H3MR14_C   S14Q14 HOW COHAB WITH C ENDED-W3
+H3MR15MC        int     %20.0f     H3MR15MC   S14Q15 MONTH COHAB WITH C ENDED-W3
+H3MR15YC        int     %22.0f     H3MR15YC   S14Q15 YEAR COHAB WITH C ENDED-W3
+H3MR_C_D        int     %21.0f     H3MR_C_D   S14 SEQUENCE NUMBER FOR COHAB D-W3
+H3MR10MD        int     %20.0f     H3MR10MD   S14Q10 MONTH COHAB WITH D BEGAN -W3
+H3MR10YD        int     %22.0f     H3MR10YD   S14Q10 YEAR COHAB WITH D BEGAN-W3
+H3MR11_D        int     %19.0f     H3MR11_D   S14Q11 EVER MARRY COHAB D-W3
+H3MR12MD        int     %20.0f     H3MR12MD   S14Q12 MONTH YOU AND COHAB D MARRIED-W3
+H3MR12YD        int     %22.0f     H3MR12YD   S14Q12 YEAR YOU AND COHAB D MARRIED-W3
+H3MR13_D        int     %22.0f     H3MR13_D   S14Q13 STILL LIVING W/COHAB D-W3
+H3MR14_D        int     %26.0f     H3MR14_D   S14Q14 HOW COHAB WITH D ENDED-W3
+H3MR15MD        int     %20.0f     H3MR15MD   S14Q15 MONTH COHAB WITH D ENDED-W3
+H3MR15YD        int     %22.0f     H3MR15YD   S14Q15 YEAR COHAB WITH D ENDED-W3
+H3MR_C_E        int     %21.0f     H3MR_C_E   S14 SEQUENCE NUMBER FOR COHAB E-W3
+H3MR10ME        int     %20.0f     H3MR10ME   S14Q10 MONTH COHAB WITH E BEGAN -W3
+H3MR10YE        int     %22.0f     H3MR10YE   S14Q10 YEAR COHAB WITH E BEGAN-W3
+H3MR11_E        int     %19.0f     H3MR11_E   S14Q11 EVER MARRY COHAB E-W3
+H3MR12ME        int     %20.0f     H3MR12ME   S14Q12 MONTH YOU AND COHAB E MARRIED-W3
+H3MR12YE        int     %22.0f     H3MR12YE   S14Q12 YEAR YOU AND COHAB E MARRIED-W3
+H3MR13_E        int     %19.0f     H3MR13_E   S14Q13 STILL LIVING W/COHAB E-W3
+H3MR14_E        int     %26.0f     H3MR14_E   S14Q14 HOW COHAB WITH E ENDED-W3
+H3MR15ME        int     %20.0f     H3MR15ME   S14Q15 MONTH COHAB WITH E ENDED-W3
+H3MR15YE        int     %22.0f     H3MR15YE   S14Q15 YEAR COHAB WITH E ENDED-W3
+H3MR_C_F        int     %21.0f     H3MR_C_F   S14 SEQUENCE NUMBER FOR COHAB F-W3
+H3MR10MF        int     %20.0f     H3MR10MF   S14Q10 MONTH COHAB WITH F BEGAN -W3
+H3MR10YF        int     %22.0f     H3MR10YF   S14Q10 YEAR COHAB WITH F BEGAN-W3
+H3MR11_F        int     %19.0f     H3MR11_F   S14Q11 EVER MARRY COHAB F-W3
+H3MR12MF        int     %20.0f     H3MR12MF   S14Q12 MONTH YOU AND COHAB F MARRIED-W3
+H3MR12YF        int     %22.0f     H3MR12YF   S14Q12 YEAR YOU AND COHAB F MARRIED-W3
+H3MR13_F        int     %22.0f     H3MR13_F   S14Q13 STILL LIVING W/COHAB F-W3
+H3MR14_F        int     %19.0f     H3MR14_F   S14Q14 HOW COHAB WITH F ENDED-W3
+H3MR15MF        int     %20.0f     H3MR15MF   S14Q15 MONTH COHAB WITH F ENDED-W3
+H3MR15YF        int     %22.0f     H3MR15YF   S14Q15 YEAR COHAB WITH F ENDED-W3
+H3MR_C_G        int     %21.0f     H3MR_C_G   S14 SEQUENCE NUMBER FOR COHAB G-W3
+H3MR10MG        int     %20.0f     H3MR10MG   S14Q10 MONTH COHAB WITH G BEGAN -W3
+H3MR10YG        int     %22.0f     H3MR10YG   S14Q10 YEAR COHAB WITH G BEGAN-W3
+H3MR11_G        int     %19.0f     H3MR11_G   S14Q11 EVER MARRY COHAB G-W3
+H3MR12MG        int     %20.0f     H3MR12MG   S14Q12 MONTH YOU AND COHAB G MARRIED-W3
+H3MR12YG        int     %22.0f     H3MR12YG   S14Q12 YEAR YOU AND COHAB G MARRIED-W3
+H3MR13_G        int     %19.0f     H3MR13_G   S14Q13 STILL LIVING W/COHAB G-W3
+H3MR14_G        int     %26.0f     H3MR14_G   S14Q14 HOW COHAB WITH G ENDED-W3
+H3MR15MG        int     %20.0f     H3MR15MG   S14Q15 MONTH COHAB WITH G ENDED-W3
+H3MR15YG        int     %22.0f     H3MR15YG   S14Q15 YEAR COHAB WITH G ENDED-W3
+H3MR_C_H        int     %21.0f     H3MR_C_H   S14 SEQUENCE NUMBER FOR COHAB H-W3
+H3MR10MH        int     %20.0f     H3MR10MH   S14Q10 MONTH COHAB WITH H BEGAN -W3
+H3MR10YH        int     %22.0f     H3MR10YH   S14Q10 YEAR COHAB WITH H BEGAN-W3
+H3MR11_H        int     %19.0f     H3MR11_H   S14Q11 EVER MARRY COHAB H-W3
+H3MR12MH        int     %20.0f     H3MR12MH   S14Q12 MONTH YOU AND COHAB H MARRIED-W3
+H3MR12YH        int     %22.0f     H3MR12YH   S14Q12 YEAR YOU AND COHAB H MARRIED-W3
+H3MR13_H        int     %22.0f     H3MR13_H   S14Q13 STILL LIVING W/COHAB H-W3
+H3MR14_H        int     %19.0f     H3MR14_H   S14Q14 HOW COHAB WITH H ENDED-W3
+H3MR15MH        int     %20.0f     H3MR15MH   S14Q15 MONTH COHAB WITH H ENDED-W3
+H3MR15YH        int     %22.0f     H3MR15YH   S14Q15 YEAR COHAB WITH H ENDED-W3
+H3MR_C_I        int     %21.0f     H3MR_C_I   S14 SEQUENCE NUMBER FOR COHAB I-W3
+H3MR10MI        int     %20.0f     H3MR10MI   S14Q10 MONTH COHAB WITH I BEGAN -W3
+H3MR10YI        int     %22.0f     H3MR10YI   S14Q10 YEAR COHAB WITH I BEGAN-W3
+H3MR11_I        int     %19.0f     H3MR11_I   S14Q11 EVER MARRY COHAB I-W3
+H3MR12MI        int     %20.0f     H3MR12MI   S14Q12 MONTH YOU AND COHAB I MARRIED-W3
+H3MR12YI        int     %22.0f     H3MR12YI   S14Q12 YEAR YOU AND COHAB I MARRIED-W3
+H3MR13_I        int     %22.0f     H3MR13_I   S14Q13 STILL LIVING W/COHAB I-W3
+H3MR14_I        int     %19.0f     H3MR14_I   S14Q14 HOW COHAB WITH I ENDED-W3
+H3MR15MI        int     %20.0f     H3MR15MI   S14Q15 MONTH COHAB WITH I ENDED-W3
+H3MR15YI        int     %22.0f     H3MR15YI   S14Q15 YEAR COHAB WITH I ENDED-W3
+H3MR_C_J        int     %23.0f     H3MR_C_J   S14 SEQUENCE NUMBER FOR COHAB J-W3
+H3MR10MJ        int     %20.0f     H3MR10MJ   S14Q10 MONTH COHAB WITH J BEGAN -W3
+H3MR10YJ        int     %22.0f     H3MR10YJ   S14Q10 YEAR COHAB WITH J BEGAN-W3
+H3MR11_J        int     %19.0f     H3MR11_J   S14Q11 EVER MARRY COHAB J-W3
+H3MR12MJ        int     %20.0f     H3MR12MJ   S14Q12 MONTH YOU AND COHAB J MARRIED-W3
+H3MR12YJ        int     %22.0f     H3MR12YJ   S14Q12 YEAR YOU AND COHAB J MARRIED-W3
+H3MR13_J        int     %22.0f     H3MR13_J   S14Q13 STILL LIVING W/COHAB J-W3
+H3MR14_J        int     %19.0f     H3MR14_J   S14Q14 HOW COHAB WITH J ENDED-W3
+H3MR15MJ        int     %20.0f     H3MR15MJ   S14Q15 MONTH COHAB WITH J ENDED-W3
+H3MR15YJ        int     %22.0f     H3MR15YJ   S14Q15 YEAR COHAB WITH J ENDED-W3
+H3MR16A         int     %24.0f     H3MR16A    S14Q16A IMP. REALTIONSHIP-SAME RACE-W3
+H3MR16B         int     %24.0f     H3MR16B    S14Q16A IMP. REALTIONSHIP-LOVE-W3
+H3MR16C         int     %24.0f     H3MR16C    S14Q16A IMP. REALTIONSHIP-FAITHFUL-W3
+H3MR16D         int     %24.0f     H3MR16D    S14Q16A IMP. REALTIONSHIP-COMMITMENT-W3
+H3MR16E         int     %24.0f     H3MR16E    S14Q16A IMP. REALTIONSHIP-MONEY-W3
+H3MR17          int     %30.0f     H3MR17     S14Q17 LIKE TO BE MARRIED NOW-W3
+H3MR18          int     %33.0f     H3MR18     S14Q18 MARRY OR FINISH SCHOOL-W3
+H3MR19          int     %33.0f     H3MR19     S14Q19 MARRY/SCH PT OR FINISH SCHOOL-W3
+H3MR20          int     %24.0f     H3MR20     S14Q20 WORK BEFORE MARRY-W3
+H3MR21          int     %24.0f     H3MR21     S14Q21 IMPORTANT TO MARRY SOMEDAY-W3
+H3MR22          int     %30.0f     H3MR22     S14Q22 OK LIVE TOGETHER/NO MARRY-W3
+H3EC1A          int     %18.0f     H3EC1A     S15Q1A INCOME:WAGES/SALARIES INC TIPS-W3
+H3EC1B          int     %18.0f     H3EC1B     S15Q1B INCOME:INTERESTS OR DIVIDENDS-W3
+H3EC1C          int     %18.0f     H3EC1C     S15Q1C INCOME:FOOD STAMPS-W3
+H3EC1D          int     %18.0f     H3EC1D     S15Q1D INCOME:AFDC/WELFARE/TANF PROG-W3
+H3EC1E          int     %18.0f     H3EC1E     S15Q1E HOUSING ASSISTANCE-W3
+H3EC1F          int     %18.0f     H3EC1F     S15Q1F UNEMPL INSURANCE/COMP/DISAB-W3
+H3EC1G          int     %18.0f     H3EC1G     S15Q1G INCOME:CHILD SUPPORT/ALIMONY-W3
+H3EC1H          int     %18.0f     H3EC1H     S15Q1H INCOME:TRANSF FAMILY/FRIENDS-W3
+H3EC2           long    %23.0f     H3EC2      S15Q2 TOTAL INCOME 2000/2001-W3
+H3EC3           int     %21.0f     H3EC3      S15Q3 BEST GUESS INCOME BEFORE TAX-W3
+H3EC4           long    %24.0f     H3EC4      S15Q4 INCOME FROM EARNINGS 2000/2001-W3
+H3EC5           int     %21.0f     H3EC5      S15Q5 BEST GUESS INCOME FROM EARNINGS-W3
+H3EC6           long    %24.0f     H3EC6      S15Q6 TOTAL HOUSEHOLD INC 2000/2001-W3
+H3EC7           int     %21.0f     H3EC7      S15Q7 BEST GUESS HOUSEHOLD INC B TAX-W3
+H3EC8           long    %24.0f     H3EC8      S15Q8 TOTAL HOUSEHOLD INCOME COUPLES-W3
+H3EC9           int     %21.0f     H3EC9      S15Q9 BEST GUESS HHOLD INC COUPLES-W3
+H3EC10          int     %18.0f     H3EC10     S15Q10 OWN RESIDENCE-W3
+H3EC11          int     %18.0f     H3EC11     S15Q11 OWN CAR/TRUCK/VAN/MOTORCYCLE-W3
+H3EC12          int     %22.0f     H3EC12     S15Q12 OWN COMPUTER-W3
+H3EC13          int     %19.0f     H3EC13     S15Q13 ACCESS TO COMPUTER-W3
+H3EC14          int     %19.0f     H3EC14     S15Q14 HAS E-MAIL ACCOUNT-W3
+H3EC15          int     %19.0f     H3EC15     S15Q15 HAS CHECKING ACCOUNT-W3
+H3EC16          int     %19.0f     H3EC16     S15Q16 HAS CREDIT CARD-W3
+H3EC17          int     %19.0f     H3EC17     S15Q17 HAS SAVINGS ACCOUNT-W3
+H3EC18          int     %19.0f     H3EC18     S15Q18 PAST 12 MON NO PHONE SERVICE-W3
+H3EC19          int     %19.0f     H3EC19     S15Q19 PAST 12 MON NO MORTG PAYMENT-W3
+H3EC20          int     %19.0f     H3EC20     S15Q20 PAST 12 MON EVICTED FROM HOUSE-W3
+H3EC21          int     %19.0f     H3EC21     S15Q21 PAST 12 MON NO UTIL PAYMNT-W3
+H3EC22          int     %19.0f     H3EC22     S15Q22 PAST 12 MON UTIL TURNED OFF-W3
+H3EC23          int     %19.0f     H3EC23     S15Q23 PAST 12 MON NO $ TO SEE DOCTOR-W3
+H3EC24          int     %19.0f     H3EC24     S15Q24 PAST 12 MON NO $ TO SEE DENT-W3
+H3EC25          int     %19.0f     H3EC25     S15Q25 FAMILIAR WITH WELFARE LAWS-W3
+H3EC26          int     %19.0f     H3EC26     S15Q26 CURRENTLY GETTING AFDC-W3
+H3EC27          int     %22.0f     H3EC27     S15Q27 SINCE JAN 1/01 AFDC STOPPED-W3
+H3EC28          int     %44.0f     H3EC28     S15Q28 WELFARE CUT OFF VOLUNTARILY-W3
+H3EC29A         int     %19.0f     H3EC29A    S15Q29A REASON-GOT JOB-W3
+H3EC29B         int     %19.0f     H3EC29B    S15Q29B REASON-GOT RAISE-W3
+H3EC29C         int     %19.0f     H3EC29C    S15Q29C REASON-GOT BETTER JOB-W3
+H3EC29D         int     %19.0f     H3EC29D    S15Q29D REASON-GOT MARRIED-W3
+H3EC29E         int     %19.0f     H3EC29E    S15Q29E REASON-MOVED IN W PARTNER-W3
+H3EC29F         int     %19.0f     H3EC29F    S15Q29F REASON-MOVED IN W FAMILY-W3
+H3EC29G         int     %19.0f     H3EC29G    S15Q29G REASON-MOVED OTH COUNTY/STATE-W3
+H3EC29H         int     %19.0f     H3EC29H    S15Q29H REASON-OTHER-W3
+H3EC30A         int     %19.0f     H3EC30A    S15Q30A REASON-EARNINGS INCREASED-W3
+H3EC30B         int     %19.0f     H3EC30B    S15Q30B REASON-ASSETS TOO HIGH-W3
+H3EC30C         int     %19.0f     H3EC30C    S15Q30C REASON-DID NOT FOLLOW PROG-W3
+H3EC30D         int     %19.0f     H3EC30D    S15Q30D REASON-REACHED END TIME LIMIT-W3
+H3EC30E         int     %19.0f     H3EC30E    S15Q30E REASON-WAS NOT US CITIZEN-W3
+H3EC30F         int     %19.0f     H3EC30F    S15Q30F REASON-OTHER-W3
+H3EC31          int     %21.0f     H3EC31     S15Q31 REQUIRED TO WORK/ATTND SCHOOL-W3
+H3EC32A         int     %19.0f     H3EC32A    S15Q32A REQ: LOOK FOR JOB-W3
+H3EC32B         int     %19.0f     H3EC32B    S15Q32B REQ: WORK IN PAID JOB-W3
+H3EC32C         int     %19.0f     H3EC32C    S15Q32C REQ: WORK IN UNPAID JOB-W3
+H3EC32D         int     %19.0f     H3EC32D    S15Q32D REQ: ATTEND SCHOOL/TRAINING-W3
+H3EC33          int     %19.0f     H3EC33     S15Q33 CURRENTLY GETTING FOOD STAMPS-W3
+H3EC34          int     %21.0f     H3EC34     S15Q34 SINC JAN 1/01 F STAMPS STOPPED-W3
+H3EC35          int     %47.0f     H3EC35     S15Q35 FOOD STAMPS CUT OFF VOLUNTARLY-W3
+H3EC36A         int     %19.0f     H3EC36A    S15Q36A REASON-GOT JOB -W3
+H3EC36B         int     %19.0f     H3EC36B    S15Q36B REASON-GOT RAISE/WRK MORE HRS-W3
+H3EC36C         int     %19.0f     H3EC36C    S15Q36C REASON-BETTER JOB-W3
+H3EC36D         int     %19.0f     H3EC36D    S15Q36D REASON-GOT MARRIED-W3
+H3EC36E         int     %19.0f     H3EC36E    S15Q36E REASON-MOVED IN W PARTNER-W3
+H3EC36F         int     %19.0f     H3EC36F    S15Q36F REASON-MOVED IN W FAMILY-W3
+H3EC36G         int     %19.0f     H3EC36G    S15Q36G REASON-MOVED OTH COUNTY/STATE-W3
+H3EC36H         int     %19.0f     H3EC36H    S15Q36H REASON-OTHER-W3
+H3EC37A         int     %19.0f     H3EC37A    S15Q37A REASON-EARNINGS INCREASE-W3
+H3EC37B         int     %19.0f     H3EC37B    S15Q37B REASON-ASSETS TOO HIGH-W3
+H3EC37C         int     %19.0f     H3EC37C    S15Q37C REASON-NOT FOLLOW PROG RULES-W3
+H3EC37D         int     %19.0f     H3EC37D    S15Q37D REASON-REACHED TIME LIMIT-W3
+H3EC37E         int     %19.0f     H3EC37E    S15Q37E REASON-WAS NOT US CITIZEN-W3
+H3EC37F         int     %19.0f     H3EC37F    S15Q37F REASON-OTHER-W3
+H3EC38          int     %41.0f     H3EC38     S15Q38 RECEIVED OTH PUB ASSISTANCE-W3
+H3EC39          int     %21.0f     H3EC39     S15Q39 2001 RECEIVED ANY PUB ASSIST-W3
+H3EC40          int     %19.0f     H3EC40     S15Q40 2001 RECEIVD PUB ASSIST 12 MON-W3
+H3EC41          int     %21.0f     H3EC41     S15Q41 2000 ANY PUB ASSIS OTH/TH FOOD-W3
+H3EC42          int     %19.0f     H3EC42     S15Q42 2000 REC ASSIS 12 MON OTH/FOOD-W3
+H3EC43          int     %21.0f     H3EC43     S15Q43 1999 ANY PUB ASSIS OTH/TH FOOD-W3
+H3EC44          int     %19.0f     H3EC44     S15Q44 1999 REC ASSIS 12 MON OTH/FOOD-W3
+H3EC45          int     %21.0f     H3EC45     S15Q45 1998 ANY PUB ASSIS OTH/TH FOOD-W3
+H3EC46          int     %19.0f     H3EC46     S15Q46 1998 REC ASSIS 12 MON OTH/FOOD-W3
+H3EC47          int     %21.0f     H3EC47     S15Q47 1997 ANY PUB ASSIS OTH/TH FOOD-W3
+H3EC48          int     %19.0f     H3EC48     S15Q48 1997 REC ASSIS 12 MON OTH/FOOD-W3
+H3EC49          int     %21.0f     H3EC49     S15Q49 1996 ANY PUB ASSIS OTH/TH FOOD-W3
+H3EC50          int     %19.0f     H3EC50     S15Q50 1996 REC ASSIS 12 MON OTH/FOOD-W3
+H3EC51          int     %21.0f     H3EC51     S15Q51 1995 ANY PUB ASSIS OTH/TH FOOD-W3
+H3EC52          int     %19.0f     H3EC52     S15Q52 1995 REC ASSIS 12 MON OTH/FOOD-W3
+H3EC53          int     %14.0f     H3EC53     S15Q53 OWN STOCKS/MUTUAL FUNDS/TRUSTS-W3
+H3EC54          int     %14.0f     H3EC54     S15Q54 HAS UNPAID LOANS-W3
+H3EC55          int     %14.0f     H3EC55     S15Q55 HAS CREDIT CARD DEBT-W3
+H3EC56          int     %33.0f     H3EC56     S15Q56 CHANCE OF-LIVING TILL AGE 85-W3
+H3EC57          int     %33.0f     H3EC57     S15Q57 CHANCE OF-DIVORCE BY AGE 35-W3
+H3EC58          int     %33.0f     H3EC58     S15Q58 CHANCE OF-MARRIAGE NEXT 10 YRS-W3
+H3EC59          int     %33.0f     H3EC59     S15Q59 CHANCE OF-MID/CLASS INC AT 30-W3
+H3EC60          int     %33.0f     H3EC60     S15Q60 CHANCE OF-MID/CLASS INC+ AT 30-W3
+H3EC61          int     %33.0f     H3EC61     S15Q61 CHANCE OF-GETTING HIV/AIDS-W3
+H3EC62          int     %18.0f     H3EC62     S15Q62 B AGE 18 HH MEM REC PUB ASSIST-W3
+H3EC63          int     %28.0f     H3EC63     S15Q63 HOW LONG HH MEM REC PUB ASSIST-W3
+H3SE1           int     %21.0f     H3SE1      S16Q1 EVER HAVE SEX-W3
+H3SE2           int     %20.0f     H3SE2      S16Q2 AGE FIRST TIME SEX-W3
+H3SE3           int     %20.0f     H3SE3      S16Q3 TOTAL NUMBER OF SEX PRTNRS-W3
+H3SE4           int     %30.0f     H3SE4      S16Q4 PST 12 MTHS-TOT NO SEX PRTNRS-W3
+H3SE5           int     %19.0f     H3SE5      S16Q5 PST 12 MTHS-SEX PRTNR HAVE STD-W3
+H3SE6           int     %21.0f     H3SE6      S16Q6 PST 12 MTHS-TOT NO SEX INTRCRS-W3
+H3SE7           int     %19.0f     H3SE7      S16Q7 PST 12 MTHS-USE BIRTH CONTROL-W3
+H3SE8           int     %19.0f     H3SE8      S16Q8 PST 12 MTHS-OFTEN USE CONDOMS-W3
+H3SE9           int     %19.0f     H3SE9      S16Q9 MOST RECENT SEX-USE BRTH CTRL-W3
+H3SE10          int     %19.0f     H3SE10     S16Q10 MOST RECENT SEX-USE CONDOM
+H3SE11          int     %19.0f     H3SE11     S16Q11 EVER ATTRACTED TO FEMALE-W3
+H3SE12          int     %19.0f     H3SE12     S16Q12 EVER ATTRACTED TO MALE-W3
+H3SE13          int     %59.0f     H3SE13     S16Q13 SEXUAL SELF DEFINITION-W3
+H3SE14          int     %24.0f     H3SE14     S16Q14 PARENT KNOWLDGE OF SEXUALITY-W3
+H3SE15          int     %21.0f     H3SE15     S16Q15 EVER PAID FOR SEX-W3
+H3SE16          int     %20.0f     H3SE16     S16Q16 PST 12 MTHS-FREQ OF PD FOR SEX-W3
+H3SE17          int     %21.0f     H3SE17     S16Q17 EVER BEEN PD FOR SEX-W3
+H3SE18          int     %20.0f     H3SE18     S16Q18 PST 12 MTHS-FREQ BEEN PD SEX-W3
+H3SE19          int     %21.0f     H3SE19     S16Q19 EVER HAD SEX W/DRUG NDLE USER-W3
+H3SE20          int     %20.0f     H3SE20     S16Q20 FREQ OF SEX W/DRUG NDLE USER-W3
+H3SE21A         int     %18.0f     H3SE21A    S16Q21A PST 12 MTHS-DIAGN-CHLAMYDIA-W3
+H3SE21B         int     %18.0f     H3SE21B    S16Q21B PST 12 MTHS-DIAGN-GONORRHEA-W3
+H3SE21C         int     %18.0f     H3SE21C    S16Q21C PST 12 MTHS-DIAGN-TRICHMSIS-W3
+H3SE21D         int     %18.0f     H3SE21D    S16Q21D PST 12 MTHS-DIAGN-SYPHILIS-W3
+H3SE21E         int     %18.0f     H3SE21E    S16Q21E PST 12 MTHS-DIAGN-GEN HRPS-W3
+H3SE21F         int     %18.0f     H3SE21F    S16Q21F PST 12 MTHS-DIAGN-GEN WRTS-W3
+H3SE21G         int     %18.0f     H3SE21G    S16Q21G PST 12 MTHS-DIAGN-HPV-W3
+H3SE21H         int     %18.0f     H3SE21H    S16Q21H PST 12 MTHS-DIAGN-VAGINOSIS-W3
+H3SE21I         int     %18.0f     H3SE21I    S16Q21I PST 12 MTHS-DIAGN-PID-W3
+H3SE21J         int     %18.0f     H3SE21J    S16Q21J PST 12 MTHS-DIAGN-CERV/MPC-W3
+H3SE21K         int     %18.0f     H3SE21K    S16Q21K PST 12 MTHS-DIAGN-URTHRTS-W3
+H3SE21L         int     %18.0f     H3SE21L    S16Q21L PST 12 MTHS-DIAGN-VAGINTS-W3
+H3SE21M         int     %18.0f     H3SE21M    S16Q21M PST 12 MTHS-DIAGN-HIV/AIDS-W3
+H3SE21N         int     %18.0f     H3SE21N    S16Q21N PST 12 MTHS-DIAGN-OTHER-W3
+H3SE22A         int     %18.0f     H3SE22A    S16Q22A PST 12 MTHS-TEST-CHLAMYDIA-W3
+H3SE22B         int     %18.0f     H3SE22B    S16Q22B PST 12 MTHS-TEST-GONORRHEA-W3
+H3SE22C         int     %18.0f     H3SE22C    S16Q22C PST 12 MTHS-TEST-TRICHMSIS-W3
+H3SE22D         int     %18.0f     H3SE22D    S16Q22D PST 12 MTHS-TEST-SYPHILIS-W3
+H3SE22E         int     %18.0f     H3SE22E    S16Q22E PST 12 MTHS-TEST-GEN HRPS-W3
+H3SE22F         int     %18.0f     H3SE22F    S16Q22F PST 12 MTHS-TEST-HPV-W3
+H3SE22G         int     %18.0f     H3SE22G    S16Q22G PST 12 MTHS-TEST-VAGINOSIS-W3
+H3SE22H         int     %18.0f     H3SE22H    S16Q22H PST 12 MTHS-TEST-PID-W3
+H3SE22I         int     %18.0f     H3SE22I    S16Q22I PST 12 MTHS-TEST-HIV/AIDS-W3
+H3SE22J         int     %18.0f     H3SE22J    S16Q22J PST 12 MTHS-TEST-OTHER-W3
+H3SE23A         int     %18.0f     H3SE23A    S16Q23A PST 12 MTHS-SYMPTMS-URINE-W3
+H3SE23B         int     %18.0f     H3SE23B    S16Q23B PST 12 MTHS-SYMPTMS-GEN SORES-W3
+H3SE23C         int     %18.0f     H3SE23C    S16Q23C PST 12 MTHS-SYMPTMS-GEN WARTS-W3
+H3SE23D         int     %18.0f     H3SE23D    S16Q23D PST 12 MTHS-SYMPTMS-SECRETION-W3
+H3SE23E         int     %18.0f     H3SE23E    S16Q23E PST 12 MTHS-SYMPTMS-VAG BLEED-W3
+H3SE23F         int     %18.0f     H3SE23F    S16Q23F PST 12 MTHS-SYMPTMS-VAG ITCH-W3
+H3SE24A         int     %18.0f     H3SE24A    S16Q24A PST 24 HRS-SYMPTMS-URINE-W3
+H3SE24B         int     %18.0f     H3SE24B    S16Q24B PST 24 HRS-SYMPTMS-GEN SORES-W3
+H3SE24C         int     %18.0f     H3SE24C    S16Q24C PST 24 HRS-SYMPTMS-GEN WARTS-W3
+H3SE24D         int     %18.0f     H3SE24D    S16Q24D PST 24 HRS-SYMPTMS-SECRETION-W3
+H3SE24E         int     %18.0f     H3SE24E    S16Q24E PST 24 HRS-SYMPTMS-VAG BLEED-W3
+H3SE24F         int     %18.0f     H3SE24F    S16Q24F PST 24 HRS-SYMPTMS-VAG ITCH-W3
+H3SE25          int     %21.0f     H3SE25     S16Q25 SEEN DR/NURSE POSSIBLE STD/HIV-W3
+H3SE26          int     %28.0f     H3SE26     S16Q26 WHEN RCNT VISIT FOR STD/HIV-W3
+H3SE27A         int     %19.0f     H3SE27A    S16Q27 RCNT VISIT-PHYS SYMPTMS-W3
+H3SE27B         int     %19.0f     H3SE27B    S16Q27 RCNT VISIT-PRTNR W/STD-W3
+H3SE27C         int     %19.0f     H3SE27C    S16Q27 RCNT VISIT-WORRIED ENCOUNTER-W3
+H3SE27D         int     %19.0f     H3SE27D    S16Q27 RCNT VISIT-WORRIED ACTIVITIES-W3
+H3SE27E         int     %19.0f     H3SE27E    S16Q27 RCNT VISIT-OTHER-W3
+H3SE28          int     %41.0f     H3SE28     S16Q28 EVER TOLD YOU HAVE HIV/AIDS-W3
+H3SE29A         int     %18.0f     H3SE29A    S16Q29A PST 12 MTHS-BRTH CTRL PILL-W3
+H3SE29B         int     %18.0f     H3SE29B    S16Q29B PST 12 MTHS-BRTH CTRL IMPLANT-W3
+H3SE29C         int     %18.0f     H3SE29C    S16Q29C PST 12 MTHS-BRTH CTRL INJECT-W3
+H3SE29D         int     %18.0f     H3SE29D    S16Q29D PST 12 MTHS-DIAPHRAGM-W3
+H3SE29E         int     %18.0f     H3SE29E    S16Q29E PST 12 MTHS-EMERG CNTRCPTN-W3
+H3SE29F         int     %18.0f     H3SE29F    S16Q29F PST 12 MTHS-NTRL FAM PLANNING-W3
+H3SE29G         int     %18.0f     H3SE29G    S16Q29G PST 12 MTHS-FEMALE STRLZTN-W3
+H3SE30A         int     %18.0f     H3SE30A    S16Q30A PST 12 MTHS-PTNR USED CONDOM-W3
+H3SE30B         int     %18.0f     H3SE30B    S16Q30B PST 12 MTHS-PTNR MALE STRLZTN-W3
+H3SE31          int     %19.0f     H3SE31     S16Q31 PST 12 MTHS-CONDOM BROKE-W3
+H3SE32          int     %20.0f     H3SE32     S16Q32 CHANCE YOU HAVE STD/GON/CLAM-W3
+H3SE33          int     %33.0f     H3SE33     S16Q33 GOOD TO CHECK STD RESULTS-W3
+H3SE34          int     %34.0f     H3SE34     S16Q34 OTHERS APPROVE CHECK STD RSLTS-W3
+H3SE35          int     %46.0f     H3SE35     S16Q35 HLTH EFFCT OF STD/NO TREAT-W3
+H3SE36          int     %52.0f     H3SE36     S16Q36 EFFCT OF STD ON RELSHP W/PTNR-W3
+H3SE37          int     %20.0f     H3SE37     S16Q37 CHANCE OF CURING YOUR STD-W3
+RRELNO          int     %29.0f     RRELNO     RELATIONSHIP NUMBER Q1-3-W3
+H3BM1           int     %42.0f     H3BM1      S20Q1 LEVEL OF R'S COMMITMENT TO P-W3
+H3BM2           int     %42.0f     H3BM2      S20Q2 LEVEL OF R'S CLOSENESS TO P-W3
+H3BM3           int     %42.0f     H3BM3      S20Q3 LIKELIHOOD RELATNSHP PERMANENT-W3
+H3BM4           int     %42.0f     H3BM4      S20Q4 BALANCING ACCOUNTS OF FAVORS-W3
+H3BM5           int     %42.0f     H3BM5      S20Q5 REMEMBERING FAVORS R OWES-W3
+H3BM6           int     %42.0f     H3BM6      S20Q6 EXPECTATION OF RECIPROCITY-W3
+H3BM7           int     %42.0f     H3BM7      S20Q7 BALANCING ACCOUNTS OF FAVORS-W3
+H3BM8           int     %42.0f     H3BM8      S20Q8 TRADITIONAL SEX ROLES BEST-W3
+H3BM9           int     %42.0f     H3BM9      S20Q9 R DEFENDS BELIEFS-W3
+H3BM10          int     %42.0f     H3BM10     S20Q10 R IS AFFECTIONATE-W3
+H3BM11          int     %42.0f     H3BM11     S20Q11 R IS CONSCIENTIOUS-W3
+H3BM12          int     %42.0f     H3BM12     S20Q12 R IS INDEPENDENT-W3
+H3BM13          int     %42.0f     H3BM13     S20Q13 R IS SYMPATHETIC-W3
+H3BM14          int     %42.0f     H3BM14     S20Q14 R IS MOODY-W3
+H3BM15          int     %42.0f     H3BM15     S20Q15 R IS ASSERTIVE-W3
+H3BM16          int     %42.0f     H3BM16     S20Q16 R IS SENSITIVE TO OTHERS-W3
+H3BM17          int     %42.0f     H3BM17     S20Q17 R IS RELIABLE-W3
+H3BM18          int     %42.0f     H3BM18     S20Q18 R HAS A STRONG PERSONALITY-W3
+H3BM19          int     %42.0f     H3BM19     S20Q19 R IS UNDERSTANDING-W3
+H3BM20          int     %42.0f     H3BM20     S20Q20 R IS JEALOUS-W3
+H3BM21          int     %42.0f     H3BM21     S20Q21 R IS FORCEFUL-W3
+H3BM22          int     %42.0f     H3BM22     S20Q22 R IS COMPASSIONATE-W3
+H3BM23          int     %42.0f     H3BM23     S20Q23 R IS TRUTHFUL-W3
+H3BM24          int     %42.0f     H3BM24     S20Q24 R HAS LEADERSHIP ABILITY-W3
+H3BM25          int     %42.0f     H3BM25     S20Q25 R EAGER TO HEAL HURT FEELINGS-W3
+H3BM26          int     %42.0f     H3BM26     S20Q26 R IS SECRETIVE-W3
+H3BM27          int     %42.0f     H3BM27     S20Q27 R IS WILLING TO TAKE RISKS-W3
+H3BM28          int     %42.0f     H3BM28     S20Q28 R IS WARM-W3
+H3BM29          int     %42.0f     H3BM29     S20Q29 R IS ADAPTABLE-W3
+H3BM30          int     %42.0f     H3BM30     S20Q30 R IS DOMINANT-W3
+H3BM31          int     %42.0f     H3BM31     S20Q31 R IS TENDER-W3
+H3BM32          int     %42.0f     H3BM32     S20Q32 R IS CONCEITED-W3
+H3BM33          int     %42.0f     H3BM33     S20Q33 R IS WILLING TO TAKE A STAND-W3
+H3BM34          int     %42.0f     H3BM34     S20Q34 R LOVES CHILDREN-W3
+H3BM35          int     %42.0f     H3BM35     S20Q35 R IS TACTFUL-W3
+H3BM36          int     %42.0f     H3BM36     S20Q36 R IS AGGRESSIVE-W3
+H3BM37          int     %42.0f     H3BM37     S20Q37 R IS GENTLE-W3
+H3BM38          int     %42.0f     H3BM38     S20Q38 R IS CONVENTIONAL-W3
+H3PR1           int     %41.0f     H3PR1      S21 R LIKES WILD/QUIET PARTIES-W3
+H3PR2           int     %41.0f     H3PR2      S21 R USES ALCOHOL,MARIJUANA/DOESN'T-W3
+H3PR3           int     %41.0f     H3PR3      S21 R INTERESTED IN EXPERIENCES/NOT-W3
+H3PR4           int     %41.0f     H3PR4      S21 R LIKES DATES FOR LOOKS/CHARACTER-W3
+H3PR5           int     %41.0f     H3PR5      S21 R FAVORS PRE-MARITAL SEX/DOESN'T-W3
+H3PR6           int     %41.0f     H3PR6      S21 R WANTS LIFE OF IDLE RICH/DOESN'T-W3
+H3PR7           int     %41.0f     H3PR7      S21 R CHEERED BY ALCOHOL/NOT-W3
+H3DS1           int     %19.0f     H3DS1      S26Q1 12 MO,OFT DAMAGE PROP/NOT YOUR-W3
+H3DS2           int     %19.0f     H3DS2      S26Q2 12 MO,OFT STEAL SOMETHING/>$50-W3
+H3DS3           int     %19.0f     H3DS3      S26Q3 12 MO,OFT HOUSE STEAL SOMETHIN-W3
+H3DS4           int     %19.0f     H3DS4      S26Q4 12 MO,OFT WEAPON GET SOMETHING-W3
+H3DS5           int     %19.0f     H3DS5      S26Q5 12 MO,OFT SELL DRUGS-W3
+H3DS6           int     %19.0f     H3DS6      S26Q6 12 MO,OFT STEAL SOMETHING/<$50-W3
+H3DS7           int     %19.0f     H3DS7      S26Q7 12 MO,OFT PART PHYS FIGHT/GRP-W3
+H3DS8           int     %19.0f     H3DS8      S26Q8 12 MO,OFT BUY,SELL,STOL PROPER-W3
+H3DS9           int     %19.0f     H3DS9      S26Q9 12 MO,OFT USE ONE'S CRED CARD-W3
+H3DS10          int     %19.0f     H3DS10     S26Q10 12 MO,OFT DELIB WRIT BAD CHECK-W3
+H3DS11          int     %19.0f     H3DS11     S26Q11 12 MO,OFT USE WEAPON/FIGHT-W3
+H3DS12          int     %19.0f     H3DS12     S26Q12 12 MO,OFT CARRY GUN SCH/WRK-W3
+H3DS13          int     %18.0f     H3DS13     S26Q13 12 MO,EVER BELONGED NAMED GANG-W3
+H3DS14          int     %21.0f     H3DS14     S26Q14 DO YOU OWN A HANDGUN-W3
+H3DS15          int     %20.0f     H3DS15     S26Q15 # HANDGUNS OWN-W3
+H3DS16          int     %19.0f     H3DS16     S26Q16 12 MO,#TIME PHYS FIGHT/INJURED-W3
+H3DS17          int     %20.0f     H3DS17     S26Q17 12 MO,#TIME HURT ONE BAD/CARE-W3
+H3DS18A         int     %18.0f     H3DS18A    S26Q18A 12 MO,SAW ONE SHOOT/STAB PERS-W3
+H3DS18B         int     %18.0f     H3DS18B    S26Q18B 12 MO,ONE PULLED GUN ON YOU-W3
+H3DS18C         int     %18.0f     H3DS18C    S26Q18C 12 MO,ONE PULLED KNIFE ON YOU-W3
+H3DS18D         int     %18.0f     H3DS18D    S26Q18D 12 MO,SOMEONE SHOT YOU-W3
+H3DS18E         int     %18.0f     H3DS18E    S26Q18E 12 MO,SOMEONE STABBED YOU-W3
+H3DS18F         int     %18.0f     H3DS18F    S26Q18F 12 MO,YOU WERE BEATEN UP-W3
+H3DS18G         int     %18.0f     H3DS18G    S26Q18G 12 MO,WERE BEATEN UP/THG STOL-W3
+H3DS18H         int     %18.0f     H3DS18H    S26Q18H 12 MO,PULL KNIKE/GUN SOMEONE-W3
+H3DS18I         int     %18.0f     H3DS18I    S26Q18I 12 MO,SHOT/STABBED SOMEONE-W3
+H3CJ1           int     %25.0f     H3CJ1      S27Q1 NUM TIMES STOPPED BY POLICE-W3
+H3CJ2           int     %20.0f     H3CJ2      S27Q2 AGE WHEN STOPPED BY POLICE-W3
+H3CJ3           int     %22.0f     H3CJ3      S27Q3 EVER BEEN ARRESTED BY POLICE-W3
+H3CJ4           int     %20.0f     H3CJ4      S27Q4 AGE WHEN ARRESTED BY POLICE-W3
+H3CJ5           int     %20.0f     H3CJ5      S27Q5 NUM TIMES ARRESTED BEF AGE 18-W3
+H3CJ6           int     %19.0f     H3CJ6      S27Q6 TYPE CHARGE-ASSAULT-W3
+H3CJ7           int     %19.0f     H3CJ7      S27Q7 TYPE CHARGE-ROBBERY-W3
+H3CJ8           int     %19.0f     H3CJ8      S27Q8 TYPE CHARGE-THEFT-W3
+H3CJ9           int     %19.0f     H3CJ9      S27Q9 TYPE CHARGE-POSSES STOLEN PROP-W3
+H3CJ10          int     %19.0f     H3CJ10     S27Q10 TYPE CHARGE-DESTROY PROPERTY-W3
+H3CJ11          int     %19.0f     H3CJ11     S27Q11 TYPE CHARGE-POS/USE MARIJUANA-W3
+H3CJ12          int     %19.0f     H3CJ12     S27Q12 TYPE CHARGE-SELLING MARIJUANA-W3
+H3CJ13          int     %19.0f     H3CJ13     S27Q13 TYPE CHARGE-POSS OTH DRUGS-W3
+H3CJ14          int     %19.0f     H3CJ14     S27Q14 TYPE CHARGE-SELL OTH DRUGS-W3
+H3CJ15          int     %19.0f     H3CJ15     S27Q15 TYPE CHARGE-MAJ TRAFF OFFENSE-W3
+H3CJ16          int     %19.0f     H3CJ16     S27Q16 TYPE CHARGE-DRINK/PURCH ALCOH-W3
+H3CJ17          int     %19.0f     H3CJ17     S27Q17 TYPE CHARGE-ANIMAL ABUSE/NEGL-W3
+H3CJ18          int     %19.0f     H3CJ18     S27Q18 TYPE CHARGE-POSS ILL FIRE ARM-W3
+H3CJ19          int     %19.0f     H3CJ19     S27Q19 TYPE CHARGE-SOLICITATION-W3
+H3CJ20          int     %19.0f     H3CJ20     S27Q20 TYPE CHARGE-OTHER FELONY-W3
+H3CJ21          int     %19.0f     H3CJ21     S27Q21 TYPE CHARGE-OTH MISDEMEANOR-W3
+H3CJ22          int     %21.0f     H3CJ22     S27Q22 EVER BEEN CONVICTED/PLED CRM-W3
+H3CJ23          int     %32.0f     H3CJ23     S27Q23 NUM OF TIMES CONVICTED-W3
+H3CJ24          int     %20.0f     H3CJ24     S27Q24 AGE WHEN CONVICTED-W3
+H3CJ25M         int     %20.0f     H3CJ25M    S27Q25M MONTH WHEN CONVICTED-W3
+H3CJ25Y         int     %22.0f     H3CJ25Y    S27Q25Y YEAR WHEN CONVICTED-W3
+H3CJ26          int     %19.0f     H3CJ26     S27Q26 CONVICT CHARGE-ASSAULT-W3
+H3CJ27          int     %19.0f     H3CJ27     S27Q27 CONVICT CHARGE-ROBBERY-W3
+H3CJ28          int     %19.0f     H3CJ28     S27Q28 CONVICT CHARGE-THEFT-W3
+H3CJ29          int     %19.0f     H3CJ29     S27Q29 CONVICT CHARGE-REC STOL PROP-W3
+H3CJ30          int     %19.0f     H3CJ30     S27Q30 CONVICT CHARGE-DESTROY PROP-W3
+H3CJ31          int     %19.0f     H3CJ31     S27Q31 CONVICT CHARGE-POS/USE MARIJ-W3
+H3CJ32          int     %19.0f     H3CJ32     S27Q32 CONVICT CHARGE-SELLING MARIJ-W3
+H3CJ33          int     %19.0f     H3CJ33     S27Q33 CONVICT CHARGE-POSS OTH DRUGS-W3
+H3CJ34          int     %19.0f     H3CJ34     S27Q34 CONVICT CHARGE-SELL OTH DRUGS-W3
+H3CJ35          int     %19.0f     H3CJ35     S27Q35 CONVICT CHARGE-MAJ TRAFF OFFN-W3
+H3CJ36          int     %19.0f     H3CJ36     S27Q36 CONVICT CHARGE-DRINK/PRCH ALC-W3
+H3CJ37          int     %19.0f     H3CJ37     S27Q37 CONVICT CHARGE-ANIMAL ABUSE-W3
+H3CJ38          int     %19.0f     H3CJ38     S27Q38 CONVICT CHARGE-POSS ILL F ARM-W3
+H3CJ39          int     %19.0f     H3CJ39     S27Q39 CONVICT CHARGE-SOLICITATION-W3
+H3CJ40          int     %19.0f     H3CJ40     S27Q40 CONVICT CHARGE-OTH FELONY-W3
+H3CJ41          int     %19.0f     H3CJ41     S27Q41 CONVICT CHARGE-OTH MISDEMEANOR-W3
+H3CJ42          int     %41.0f     H3CJ42     S27Q42 SENTENCE PROBATION/DETENTION-W3
+H3CJ43A         int     %20.0f     H3CJ43A    S27Q43A HOW LONG PROBAT/DETENTION-W3
+H3CJ43B         int     %20.0f     H3CJ43B    S27Q43B HOW LONG PROBAT/DETENTION-W3
+H3CJ44          int     %19.0f     H3CJ44     S27Q44 HAD ACTUALLY COMMITTED CRIME-W3
+H3CJ45          int     %20.0f     H3CJ45     S27Q45 HAD ACTUALLY COMMITTED CRIMES-W3
+H3CJ46          int     %19.0f     H3CJ46     S27Q46 2ND CONV CHARG-ASSAULT-W3
+H3CJ47          int     %19.0f     H3CJ47     S27Q47 2ND CONV CHARG-ROBBERY-W3
+H3CJ48          int     %19.0f     H3CJ48     S27Q48 2ND CONV CHARG-THEFT-W3
+H3CJ49          int     %19.0f     H3CJ49     S27Q49 2ND CONV CHARG-REC STOL PROP-W3
+H3CJ50          int     %19.0f     H3CJ50     S27Q50 2ND CONV CHARG-DESTROY PROP-W3
+H3CJ51          int     %19.0f     H3CJ51     S27Q51 2ND CONV CHARG-POS/USE MARIJ-W3
+H3CJ52          int     %19.0f     H3CJ52     S27Q52 2ND CONV CHARG-SELLING MARIJ-W3
+H3CJ53          int     %19.0f     H3CJ53     S27Q53 2ND CONV CHARG-POSS OTH DRUGS-W3
+H3CJ54          int     %19.0f     H3CJ54     S27Q54 2ND CONV CHARG-SELL OTH DRUGS-W3
+H3CJ55          int     %19.0f     H3CJ55     S27Q55 2ND CONV CHARG-MAJ TRAFF OFFN-W3
+H3CJ56          int     %19.0f     H3CJ56     S27Q56 2ND CONV CHARG-DRINK/PRCH ALC-W3
+H3CJ57          int     %19.0f     H3CJ57     S27Q57 2ND CONV CHARG-ANIMAL ABUSE-W3
+H3CJ58          int     %19.0f     H3CJ58     S27Q58 2ND CONV CHARG-POSS ILL F ARM-W3
+H3CJ59          int     %19.0f     H3CJ59     S27Q59 2ND CONV CHARG-SOLICITATION-W3
+H3CJ60          int     %19.0f     H3CJ60     S27Q60 2ND CONV CHARG-OTH FELONY-W3
+H3CJ61          int     %19.0f     H3CJ61     S27Q61 2ND CONV CHARG-OTH MISDEMEANOR-W3
+H3CJ62          int     %41.0f     H3CJ62     S27Q62 SENTENCE PROBATION/DETENTION-W3
+H3CJ63A         int     %20.0f     H3CJ63A    S27Q63A TOTAL MON DETENTION CENTER-W3
+H3CJ63B         int     %20.0f     H3CJ63B    S27Q63B TOTAL YRS DETENTION CENTER-W3
+H3CJ64A         int     %20.0f     H3CJ64A    S27Q64A TOTAL MON ON PROBATION-W3
+H3CJ64B         int     %20.0f     H3CJ64B    S27Q64B TOTAL YRS ON PROBATION-W3
+H3CJ65          int     %19.0f     H3CJ65     S27Q65 HAD ACTUALLY COMMITTED CRIME-W3
+H3CJ66          int     %19.0f     H3CJ66     S27Q66 HAD ACTUALLY COMMITTED CRIMES-W3
+H3CJ67          int     %22.0f     H3CJ67     S27Q67 EVER ARRESTED SINCE AGE 18-W3
+H3CJ68          int     %21.0f     H3CJ68     S27Q68 NUM OF TIMES ARRESTED SINCE 18-W3
+H3CJ69          int     %19.0f     H3CJ69     S27Q69 TYPE CHARGE-ASSAULT-W3
+H3CJ70          int     %19.0f     H3CJ70     S27Q70 TYPE CHARGE-ROBBERY-W3
+H3CJ71          int     %19.0f     H3CJ71     S27Q71 TYPE CHARGE-THEFT-W3
+H3CJ72          int     %19.0f     H3CJ72     S27Q72 TYPE CHARGE-POSSES STOLEN PROP-W3
+H3CJ73          int     %19.0f     H3CJ73     S27Q73 TYPE CHARGE-DESTROY PROPERTY-W3
+H3CJ74          int     %19.0f     H3CJ74     S27Q74 TYPE CHARGE-POS/USE MARIJUANA-W3
+H3CJ75          int     %19.0f     H3CJ75     S27Q75 TYPE CHARGE-SELLING MARIJUANA-W3
+H3CJ76          int     %19.0f     H3CJ76     S27Q76 TYPE CHARGE-POSS OTH DRUGS-W3
+H3CJ77          int     %19.0f     H3CJ77     S27Q77 TYPE CHARGE-SELL OTH DRUGS-W3
+H3CJ78          int     %19.0f     H3CJ78     S27Q78 TYPE CHARGE-MAJ TRAFF OFFENSE-W3
+H3CJ79          int     %19.0f     H3CJ79     S27Q79 TYPE CHARGE-ANIMAL ABUSE/NEGL-W3
+H3CJ80          int     %19.0f     H3CJ80     S27Q80 TYPE CHARGE-POSS ILL FIRE ARM-W3
+H3CJ81          int     %19.0f     H3CJ81     S27Q81 TYPE CHARGE-SOLICITATION-W3
+H3CJ82          int     %19.0f     H3CJ82     S27Q82 TYPE CHARGE-CHILD ABUSE-W3
+H3CJ83          int     %19.0f     H3CJ83     S27Q83 TYPE CHARGE-DOMESTIC VIOLENCE-W3
+H3CJ84          int     %19.0f     H3CJ84     S27Q84 TYPE CHARGE-OTHER FELONY-W3
+H3CJ85          int     %19.0f     H3CJ85     S27Q85 TYPE CHARGE-OTH MISDEMEANOR-W3
+H3CJ86          int     %22.0f     H3CJ86     S27Q86 BEEN CONVIC/PLED ADULT COURT-W3
+H3CJ87          int     %32.0f     H3CJ87     S27Q87 NUM OF TIMES CONVICTED-W3
+H3CJ88          int     %20.0f     H3CJ88     S27Q88 AGE WHEN CONVICTED-W3
+H3CJ89M         int     %20.0f     H3CJ89M    S27Q89M MONTH WHEN CONVICTED-W3
+H3CJ89Y         int     %22.0f     H3CJ89Y    S27Q89Y YEAR WHEN CONVICTED-W3
+H3CJ90          int     %19.0f     H3CJ90     S27Q90 TYPE CHARGE-ASSAULT-W3
+H3CJ91          int     %19.0f     H3CJ91     S27Q91 TYPE CHARGE-ROBBERY-W3
+H3CJ92          int     %19.0f     H3CJ92     S27Q92 TYPE CHARGE-THEFT-W3
+H3CJ93          int     %19.0f     H3CJ93     S27Q93 TYPE CHARGE-POSSES STOLEN PROP-W3
+H3CJ94          int     %19.0f     H3CJ94     S27Q94 TYPE CHARGE-DESTROY PROPERTY-W3
+H3CJ95          int     %19.0f     H3CJ95     S27Q95 TYPE CHARGE-POS/USE MARIJUANA-W3
+H3CJ96          int     %19.0f     H3CJ96     S27Q96 TYPE CHARGE-SELLING MARIJUANA-W3
+H3CJ97          int     %19.0f     H3CJ97     S27Q97 TYPE CHARGE-POSS OTH DRUGS-W3
+H3CJ98          int     %19.0f     H3CJ98     S27Q98 TYPE CHARGE-SELL OTH DRUGS-W3
+H3CJ99          int     %19.0f     H3CJ99     S27Q99 TYPE CHARGE-MAJ TRAFF OFFENSE-W3
+H3CJ100         int     %19.0f     H3CJ100    S27Q100 TYPE CHARGE-ANIMAL ABUSE/NEGL-W3
+H3CJ101         int     %19.0f     H3CJ101    S27Q101 TYPE CHARGE-POSS ILL FIRE ARM-W3
+H3CJ102         int     %19.0f     H3CJ102    S27Q102 TYPE CHARGE-SOLICITATION-W3
+H3CJ103         int     %19.0f     H3CJ103    S27Q103 TYPE CHARGE-CHILD ABUSE-W3
+H3CJ104         int     %19.0f     H3CJ104    S27Q104 TYPE CHARGE-DOMESTIC VIOLENCE-W3
+H3CJ105         int     %19.0f     H3CJ105    S27Q105 TYPE CHARGE-OTHER FELONY-W3
+H3CJ106         int     %19.0f     H3CJ106    S27Q106 TYPE CHARGE-OTH MISDEMEANOR-W3
+H3CJ107         int     %19.0f     H3CJ107    S27Q107 SENTENCE PROB/JAIL/PRISON-W3
+H3CJ108A        int     %20.0f     H3CJ108A   S27Q108A LENGTH OF SENTENCE MONTHS-W3
+H3CJ108B        int     %21.0f     H3CJ108B   S27Q108B LENGTH OF SENTENCE YEARS-W3
+H3CJ109A        int     %20.0f     H3CJ109A   S27Q109A LENGTH OF PROBATION MONTHS-W3
+H3CJ109B        int     %20.0f     H3CJ109B   S27Q109B LENGTH OF PROBATION YEARS-W3
+H3CJ110         int     %19.0f     H3CJ110    S27Q110 HAD ACTUALLY COMMITTED CRIME-W3
+H3CJ111         int     %20.0f     H3CJ111    S27Q111 HAD ACTUALLY COMMITTED CRIMES-W3
+H3CJ112M        int     %20.0f     H3CJ112M   S27Q112M MONTH CONVICTED RECENT CRIME-W3
+H3CJ112Y        int     %22.0f     H3CJ112Y   S27Q112Y YEAR CONVICTED RECENT CRIME-W3
+H3CJ113         int     %19.0f     H3CJ113    S27Q113 TYPE CHARGE-ASSAULT-W3
+H3CJ114         int     %19.0f     H3CJ114    S27Q114 TYPE CHARGE-ROBBERY-W3
+H3CJ115         int     %19.0f     H3CJ115    S27Q115 TYPE CHARGE-THEFT-W3
+H3CJ116         int     %19.0f     H3CJ116    S27Q116 TYPE CHARGE-POSSES STOLN PROP-W3
+H3CJ117         int     %19.0f     H3CJ117    S27Q117 TYPE CHARGE-DESTROY PROPERTY-W3
+H3CJ118         int     %19.0f     H3CJ118    S27Q118 TYPE CHARGE-POS/USE MARIJUANA-W3
+H3CJ119         int     %19.0f     H3CJ119    S27Q119 TYPE CHARGE-SELLING MARIJUANA-W3
+H3CJ120         int     %19.0f     H3CJ120    S27Q120 TYPE CHARGE-POSS OTH DRUGS-W3
+H3CJ121         int     %19.0f     H3CJ121    S27Q121 TYPE CHARGE-SELL OTH DRUGS-W3
+H3CJ122         int     %19.0f     H3CJ122    S27Q122 TYPE CHARGE-MAJ TRAFF OFFENSE-W3
+H3CJ123         int     %19.0f     H3CJ123    S27Q123 TYPE CHARGE-ANIMAL ABUSE/NEGL-W3
+H3CJ124         int     %19.0f     H3CJ124    S27Q124 TYPE CHARGE-POSS ILL FIRE ARM-W3
+H3CJ125         int     %19.0f     H3CJ125    S27Q125 TYPE CHARGE-SOLICITATION-W3
+H3CJ126         int     %19.0f     H3CJ126    S27Q126 TYPE CHARGE-CHILD ABUSE-W3
+H3CJ127         int     %19.0f     H3CJ127    S27Q127 TYPE CHARGE-DOMESTIC VIOLENCE-W3
+H3CJ128         int     %19.0f     H3CJ128    S27Q128 TYPE CHARGE-OTHER FELONY-W3
+H3CJ129         int     %19.0f     H3CJ129    S27Q129 TYPE CHARGE-OTH MISDEMEANOR-W3
+H3CJ130         int     %19.0f     H3CJ130    S27Q130 SENTENCE PROB/JAIL/PRISON-W3
+H3CJ131A        int     %20.0f     H3CJ131A   S27Q131A LENGTH OF SENTENCE MONTHS-W3
+H3CJ131B        int     %20.0f     H3CJ131B   S27Q131B LENGTH OF SENTENCE YEARS-W3
+H3CJ132A        int     %20.0f     H3CJ132A   S27Q132A LENGTH OF PROBATION MONTHS-W3
+H3CJ132B        int     %20.0f     H3CJ132B   S27Q132B LENGTH OF PROBATION YEARS-W3
+H3CJ133         int     %19.0f     H3CJ133    S27Q133 HAD ACTUALLY COMMITTED CRIME-W3
+H3CJ134         int     %20.0f     H3CJ134    S27Q134 HAD ACTUALLY COMMITTED CRIMES-W3
+H3CJ135         int     %19.0f     H3CJ135    S27Q135 OTH TYPE CHARGE-ASSAULT-W3
+H3CJ136         int     %19.0f     H3CJ136    S27Q136 OTH TYPE CHARGE-ROBBERY-W3
+H3CJ137         int     %19.0f     H3CJ137    S27Q137 OTH TYPE CHARGE-THEFT-W3
+H3CJ138         int     %19.0f     H3CJ138    S27Q138 OTH TYPE CHARGE-POS STLN PROP-W3
+H3CJ139         int     %19.0f     H3CJ139    S27Q139 OTH TYPE CHARGE-DESTROY PROP-W3
+H3CJ140         int     %19.0f     H3CJ140    S27Q140 OTH TYPE CHARGE-POS/USE MARIJ-W3
+H3CJ141         int     %19.0f     H3CJ141    S27Q141 OTH TYPE CHARGE-SELLING MARIJ-W3
+H3CJ142         int     %19.0f     H3CJ142    S27Q142 OTH TYPE CHARGE-POSS OTH DRGS-W3
+H3CJ143         int     %19.0f     H3CJ143    S27Q143 OTH TYPE CHARGE-SELL OTH DRGS-W3
+H3CJ144         int     %19.0f     H3CJ144    S27Q144 OTH TYPE CHARGE-MAJ TRAFF OFF-W3
+H3CJ145         int     %19.0f     H3CJ145    S27Q145 OTH TYPE CHARGE-ANIM ABS/NEGL-W3
+H3CJ146         int     %19.0f     H3CJ146    S27Q146 OTH TYPE CHARGE-P IL FIRE ARM-W3
+H3CJ147         int     %19.0f     H3CJ147    S27Q147 OTH TYPE CHARGE-SOLICITATION-W3
+H3CJ148         int     %19.0f     H3CJ148    S27Q148 OTH TYPE CHARGE-CHILD ABUSE-W3
+H3CJ149         int     %19.0f     H3CJ149    S27Q149 OTH TYPE CHARGE-DMSTIC VLNCE-W3
+H3CJ150         int     %19.0f     H3CJ150    S27Q150 OTH TYPE CHARGE-OTHER FELONY-W3
+H3CJ151         int     %19.0f     H3CJ151    S27Q151 OTH TYPE CHARGE-OTH MSDMEANOR-W3
+H3CJ152         int     %19.0f     H3CJ152    S27Q152 SENTENCE TYPE PROBATION-W3
+H3CJ153         int     %19.0f     H3CJ153    S27Q153 SENTENCE TYPE JAIL-W3
+H3CJ154         int     %19.0f     H3CJ154    S27Q154 SENTENCE TYPE PRISON-W3
+H3CJ155         int     %26.0f     H3CJ155    S27Q155 SENTENCE TYPE NONE OF ABOVE-W3
+H3CJ156A        int     %20.0f     H3CJ156A   S27Q156A LENGTH SENTENCE PRISON MONTH-W3
+H3CJ156B        int     %20.0f     H3CJ156B   S27Q156B LENGTH SENTENCE PRISON YEAR-W3
+H3CJ157A        int     %20.0f     H3CJ157A   S27Q157A LENGTH SENTENCE PROBAT MONTH-W3
+H3CJ157B        int     %20.0f     H3CJ157B   S27Q157A LENGTH SENTENCE PROBAT YEAR-W3
+H3CJ158         int     %19.0f     H3CJ158    S27Q158 HAD ACTUALLY COMMITTED CRIME-W3
+H3CJ159         int     %20.0f     H3CJ159    S27Q159 HAD ACTUALLY COMMITTED CRIMES-W3
+H3CJ160         int     %19.0f     H3CJ160    S27Q160 HAS BIOL FATHER SERVED TIME-W3
+H3TO1           int     %21.0f     H3TO1      S28Q1 EVER TRIED CIG SMOKING-W3
+H3TO2           int     %20.0f     H3TO2      S28Q2 EVER SMOKED ENTIRE CIGARRETE-W3
+H3TO3           int     %20.0f     H3TO3      S28Q3 AGE AT 1ST ENTIRE CIG SMOKING-W3
+H3TO4           int     %21.0f     H3TO4      S28Q4 EVER SMOK REGLRLY 1 CIG/30 DAYS-W3
+H3TO5           int     %20.0f     H3TO5      S28Q5 AGE AT REGULAR SMOKING-W3
+H3TO6           int     %21.0f     H3TO6      S28Q6 HAVE SMOKED PAST 30 DAYS-W3
+H3TO7           int     %20.0f     H3TO7      S28Q7 HOW MANY SMOKED PAST 30 DAYS-W3
+H3TO8           int     %20.0f     H3TO8      S28Q8 PAST 30 DAYS HOW MANY CIGARS-W3
+H3TO9           int     %20.0f     H3TO9      S28Q9 PAST 30 DAYS HOW MANY BIDIS-W3
+H3TO10          int     %21.0f     H3TO10     S28Q10 PST 30 DAYS HOW MANY SMK E/DAY-W3
+H3TO11          int     %19.0f     H3TO11     S28Q11 PST 6 MON TRIED TO QUIT SMOKNG-W3
+H3TO12          int     %24.0f     H3TO12     S28Q12 SMOKE HOW SOON AFTER WAKE UP -W3
+H3TO13          int     %19.0f     H3TO13     S28Q13 IS DIFFICLT NO SMOKE IN PLACES-W3
+H3TO14          int     %28.0f     H3TO14     S28Q14 WHICH CIG MOST DIFF TO GIVE UP-W3
+H3TO15          int     %19.0f     H3TO15     S28Q15 HOW MANY CIGRRT SMOKE A DAY-W3
+H3TO16          int     %19.0f     H3TO16     S28Q16 SMOKE MORE FREQ MORNING-W3
+H3TO17          int     %19.0f     H3TO17     S28Q17 SMOKE EVEN IF ILL IN MORNING-W3
+H3TO18          int     %21.0f     H3TO18     S28Q18 EVER SMOKE MORE THAN CURRENT-W3
+H3TO19          int     %24.0f     H3TO19     S28Q19 SMOK MOST TIME MORN 1ST CIG-W3
+H3TO20          int     %19.0f     H3TO20     S28Q20 SMOK MOST DFFCLT NOT IN PLACE-W3
+H3TO21          int     %28.0f     H3TO21     S28Q21 SMOK MOST WHICH CIG HARD G/UP-W3
+H3TO22          int     %19.0f     H3TO22     S28Q22 SMOK MOST HOW MANY CIG/DAY-W3
+H3TO23          int     %19.0f     H3TO23     S28Q23 SMOK MOST MORE FREQ IN MORN -W3
+H3TO24          int     %19.0f     H3TO24     S28Q24 SMOK MOST DID IT EVEN WHEN ILL-W3
+H3TO25A         int     %19.0f     H3TO25A    S28Q25A 1ST BEG SMOK PLSANT SENSATION-W3
+H3TO25B         int     %19.0f     H3TO25B    S28Q25B 1ST BEG SMOK UNPLSANT SENSATN-W3
+H3TO25C         int     %19.0f     H3TO25C    S28Q25C 1ST BEG SMOK NAUSEA-W3
+H3TO25D         int     %19.0f     H3TO25D    S28Q25D 1ST BEG SMOK RELAXATION-W3
+H3TO25E         int     %19.0f     H3TO25E    S28Q25E 1ST BEG SMOK DIZZINESS-W3
+H3TO25F         int     %19.0f     H3TO25F    S28Q25F 1ST BEG SMOK PLEASURE RUSH-W3
+H3TO25G         int     %19.0f     H3TO25G    S28Q25G 1ST BEG SMOK COUGHING-W3
+H3TO25H         int     %19.0f     H3TO25H    S28Q25H 1ST BEG SMOK DIFFCLT INHALING-W3
+H3TO25I         int     %19.0f     H3TO25I    S28Q25I 1ST BEG SMOK HEART POUNDING-W3
+H3TO26          int     %41.0f     H3TO26     S28Q26 HOW OFTEN SMOKE W/SIBLING-W3
+H3TO27          int     %19.0f     H3TO27     S28Q27 TRUE-TRY NEW THING/THRILLS-W3
+H3TO28          int     %19.0f     H3TO28     S28Q28 TRUE-LOOK FOR EXCITEMENT-W3
+H3TO29          int     %19.0f     H3TO29     S28Q29 TRUE-GET PEOPLE TO BELIEVE ME-W3
+H3TO30          int     %19.0f     H3TO30     S28Q30 TRUE-DO THINGS HOW FELL MOMENT-W3
+H3TO31          int     %19.0f     H3TO31     S28Q31 TRUE-SO EXCITED LOOSE CONTROL-W3
+H3TO32          int     %19.0f     H3TO32     S28Q32 TRUE-LIKE NO RESTRICTIONS-W3
+H3TO33          int     %19.0f     H3TO33     S28Q33 TRUE-FOLLOW INSTINCTS-W3
+H3TO34          int     %19.0f     H3TO34     S28Q34 TRUE-STRETCH THE TRUTH-W3
+H3TO35          int     %19.0f     H3TO35     S28Q35 TRUE-CHANGE INTERESTS A LOT-W3
+H3TO36          int     %19.0f     H3TO36     S28Q36 PAST 30 DAYS CHEW TOBCCO/SNUFF-W3
+H3TO37          int     %21.0f     H3TO37     S28Q37 SINCE JUN95 DRINK 2/3 TIMES-W3
+H3TO38          int     %55.0f     H3TO38     S28Q38 PST 12 MON # DAYS DRINK ALCOH-W3
+H3TO39          int     %20.0f     H3TO39     S28Q39 PST 12 MON AVRG # DRINKS TIME-W3
+H3TO40          int     %55.0f     H3TO40     S28Q40 PST 12 MON MANY DAYS/5+ DRINKS-W3
+H3TO41          int     %20.0f     H3TO41     S28Q41 PST 2 WEEKS # TIMES 5+ DRINKS-W3
+H3TO42          int     %20.0f     H3TO42     S28Q42 PST 2 WEEKS # TIMES 4+ DRINKS-W3
+H3TO43          int     %55.0f     H3TO43     S28Q43 PST 12 MON # DAYS BEEN DRUNK-W3
+H3TO44          int     %25.0f     H3TO44     S28Q44 MORE OFTEN KIND OF DRINK-W3
+H3TO45          int     %19.0f     H3TO45     S28Q45 PST 12 MON PROB WORK DUE DRINK-W3
+H3TO46          int     %19.0f     H3TO46     S28Q46 PST 12 MON PROB W/FRIENDS-W3
+H3TO47          int     %19.0f     H3TO47     S28Q47 PST 12 MON PROB W/DATING FRND-W3
+H3TO48A         int     %19.0f     H3TO48A    S28Q48A PST 12 MON # TIMES HUNG OVER-W3
+H3TO48B         int     %19.0f     H3TO48B    S28Q48B PST 12 MON SICK STOMACH-W3
+H3TO48C         int     %19.0f     H3TO48C    S28Q48C PST 12 MON SEXUAL REGRET-W3
+H3TO48D         int     %19.0f     H3TO48D    S28Q48D PST 12 MON PHYSICAL FIGHT-W3
+H3TO48E         int     %19.0f     H3TO48E    S28Q48E PST 12 MON DRUNK SCHOOL/WORK-W3
+H3TO49          int     %36.0f     H3TO49     S28Q49 SINCE JUN95 HAVE DRIVEN DRUNK-W3
+H3TO50          int     %42.0f     H3TO50     S28Q50 BINGE-HOW FAVOURABLE FEEL-W3
+H3TO51          int     %42.0f     H3TO51     S28Q51 BINGE-IMP PEOPLE DISAPPROVE-W3
+H3TO52          int     %42.0f     H3TO52     S28Q52 BINGE-FRIENDS DISAPPROVE-W3
+H3TO53          int     %42.0f     H3TO53     S28Q53 BINGE-MOTHER DISAPPROVE-W3
+H3TO54          int     %42.0f     H3TO54     S28Q54 BINGE-FATHER DISAPPROVE-W3
+H3TO55          int     %42.0f     H3TO55     S28Q55 BINGE-PARTNER DISAPPROVE-W3
+H3TO56          int     %42.0f     H3TO56     S28Q56 BINGE-ALLOW HAVE FUN-W3
+H3TO57          int     %42.0f     H3TO57     S28Q57 BINGE-PEOPLE THINK ALCOHOLIC-W3
+H3TO58          int     %42.0f     H3TO58     S28Q58 BINGE-HELP RELAX BETTER-W3
+H3TO59          int     %42.0f     H3TO59     S28Q59 BINGE-FRIENDS THINK IS COOL-W3
+H3TO60          int     %42.0f     H3TO60     S28Q60 BINGE-EASIER TO SOCIALIZE-W3
+H3TO61          int     %42.0f     H3TO61     S28Q61 BINGE-MAKE SICK/HANGOVER-W3
+H3TO62          int     %42.0f     H3TO62     S28Q62 BINGE-DAMAGE HEALTH-W3
+H3TO63          int     %42.0f     H3TO63     S28Q63 BINGE-HELP LOSE CONTROL-W3
+H3TO64          int     %42.0f     H3TO64     S28Q64 BINGE-LOSE INHIBITIONS-W3
+H3TO65          int     %42.0f     H3TO65     S28Q65 BINGE-EASIER MEET PEOPLE-W3
+H3TO66          int     %42.0f     H3TO66     S28Q66 BINGE-IF WANTED GO BINGE DRNK-W3
+H3TO67          int     %42.0f     H3TO67     S28Q67 BINGE-HARD TO BINGE IF WANTED-W3
+H3TO68          int     %42.0f     H3TO68     S28Q68 BINGE-WHO DOES IS INTELLIGENT-W3
+H3TO69          int     %42.0f     H3TO69     S28Q69 BINGE-WHO DOES IS POPULAR-W3
+H3TO70          int     %42.0f     H3TO70     S28Q70 BINGE-WHO DOES IS IMMATURE-W3
+H3TO71          int     %45.0f     H3TO71     S28Q71 BINGE-WHO DOES IS CONFIDENT-W3
+H3TO72          int     %42.0f     H3TO72     S28Q72 BINGE-WHO DOES IS INDEPENDENT-W3
+H3TO73          int     %42.0f     H3TO73     S28Q73 BINGE-WHO DOES IS CAREFUL-W3
+H3TO74          int     %42.0f     H3TO74     S28Q74 BINGE-WHO DOES IS ATTRACTIVE-W3
+H3TO75          int     %42.0f     H3TO75     S28Q75 BINGE-WHO DOES IS CONSIDERATE-W3
+H3TO76          int     %42.0f     H3TO76     S28Q76 BINGE-WHO DOES IS SLF-CENTERED-W3
+H3TO77          int     %42.0f     H3TO77     S28Q77 BINGE-HOW POSITIVE IF MORE FUN-W3
+H3TO78          int     %42.0f     H3TO78     S28Q78 BINGE-HOW POS IF ALCOHOLIC-W3
+H3TO79          int     %42.0f     H3TO79     S28Q79 BINGE-HOW POS IF HELP RELAX-W3
+H3TO80          int     %42.0f     H3TO80     S28Q80 BINGE-HOW POS IF THOUGHT COOL-W3
+H3TO81          int     %42.0f     H3TO81     S28Q81 BINGE-HOW POS IF SOCIALIZE-W3
+H3TO82          int     %42.0f     H3TO82     S28Q82 BINGE-HOW POS IF SICK/HUNG-W3
+H3TO83          int     %42.0f     H3TO83     S28Q83 BINGE-HOW POS IF DAMAGE HEALTH-W3
+H3TO84          int     %42.0f     H3TO84     S28Q84 BINGE-HOW POS IF LOSE CONTROL-W3
+H3TO85          int     %42.0f     H3TO85     S28Q85 BINGE-HOW POS IF LOSE INHBTN-W3
+H3TO86          int     %42.0f     H3TO86     S28Q86 BINGE-HOW POS IF MEET PEOPLE-W3
+H3TO87          int     %42.0f     H3TO87     S28Q87 BINGE-GOING OUT HOW EXCITED-W3
+H3TO88          int     %42.0f     H3TO88     S28Q88 BINGE-GOING OUT HOW PLEASED-W3
+H3TO89          int     %42.0f     H3TO89     S28Q89 BINGE-GOING OUT HOW NERVOUS-W3
+H3TO90          int     %42.0f     H3TO90     S28Q90 BINGE-GOING OUT HOW AROUSED-W3
+H3TO91          int     %42.0f     H3TO91     S28Q91 BINGE-HOW POS IF ENGAGING-W3
+H3TO92          int     %42.0f     H3TO92     S28Q92 BINGE-FRIENDS EVALUAT BINGING-W3
+H3TO93          int     %42.0f     H3TO93     S28Q93 BINGE-FRIENDS EVALUAT ABSTAIN-W3
+H3TO94          int     %26.0f     H3TO94     S28Q94 SELF-HOW INTELLIGENT-W3
+H3TO95          int     %22.0f     H3TO95     S28Q95 SELF-HOW POPULAR-W3
+H3TO96          int     %23.0f     H3TO96     S28Q96 SELF-HOW IMMATURE-W3
+H3TO97          int     %34.0f     H3TO97     S28Q97 SELF-HOW CONFIDENT-W3
+H3TO98          int     %26.0f     H3TO98     S28Q98 SELF-HOW INDEPENDENT-W3
+H3TO99          int     %22.0f     H3TO99     S28Q99 SELF-HOW CAREFUL-W3
+H3TO100         int     %25.0f     H3TO100    S28Q100 SELF-HOW ATTRACTIVE-W3
+H3TO101         int     %26.0f     H3TO101    S28Q101 SELF-HOW CONSIDERATE-W3
+H3TO102         int     %28.0f     H3TO102    S28Q102 SELF-HOW SELF-CENTERED-W3
+H3TO103         int     %22.0f     H3TO103    S28Q103 3 BEST FRNDS H/MANY DRINK MON-W3
+H3TO104         int     %22.0f     H3TO104    S28Q104 3 BEST FRNDS H/MANY BINGE-W3
+H3TO105A        int     %18.0f     H3TO105A   S28Q105A SINC JUN95 TAKEN SEDATIVES-W3
+H3TO105B        int     %18.0f     H3TO105B   S28Q105B SINC JUN95 TAKN TRANQUILIZER-W3
+H3TO105C        int     %18.0f     H3TO105C   S28Q105C SINCE JUN95 TAKEN STIMULANTS-W3
+H3TO105D        int     %18.0f     H3TO105D   S28Q105D SINC JUN95 TAKEN PAIN KILLER-W3
+H3TO105E        int     %18.0f     H3TO105E   S28Q105E SINCE JUN95 TAKEN STEROIDS-W3
+H3TO106         int     %18.0f     H3TO106    S28Q106 PST YEAR USED CREATINE-W3
+H3TO107         int     %18.0f     H3TO107    S28Q107 PST YEAR USED ANABOLIC STER-W3
+H3TO108         int     %22.0f     H3TO108    S28Q108 SINCE JUN95 USED MARIJUANA-W3
+H3TO109         int     %22.0f     H3TO109    S28Q109 PAST YEAR USED MARIJUANA-W3
+H3TO110         int     %22.0f     H3TO110    S28Q110 PAST 30 DAYS USED MARIJUANA -W3
+H3TO111         int     %22.0f     H3TO111    S28Q111 SINCE JUN95 USED COCAINE-W3
+H3TO112         int     %22.0f     H3TO112    S28Q112 PAST YEAR USED COCAINE-W3
+H3TO113         int     %21.0f     H3TO113    S28Q113 PAST 30 DAYS USED COCAINE-W3
+H3TO114         int     %22.0f     H3TO114    S28Q114 SINCE JUN95 USED CRYSTAL METH-W3
+H3TO115         int     %22.0f     H3TO115    S28Q115 PAST YEAR USED CRYSTAL METH-W3
+H3TO116         int     %21.0f     H3TO116    S28Q116 PAST 30 DYS USED CRYSTAL METH-W3
+H3TO117         int     %22.0f     H3TO117    S28Q117 SINCE JUN95 USED OTH DRUG-W3
+H3TO118         int     %22.0f     H3TO118    S28Q118 PAST YEAR USED OTH DRUGS-W3
+H3TO119         int     %21.0f     H3TO119    S28Q119 PAST 30 DYS # TIME OTH DRUGS-W3
+H3TO120         int     %22.0f     H3TO120    S28Q120 SINCE JUN95 SHOT DRUGS-W3
+H3TO121         int     %22.0f     H3TO121    S28Q121 PST YEAR SHOT DRUGS-W3
+H3TO122         int     %21.0f     H3TO122    S28Q122 PST 30 DYS SHOT DRUGS-W3
+H3TO123         int     %19.0f     H3TO123    S28Q123 PST 12 MON PROB SCH/WORK-W3
+H3TO124         int     %19.0f     H3TO124    S28Q124 PST 12 MON PROB FRND DUE DRUG-W3
+H3TO125         int     %19.0f     H3TO125    S28Q125 PST 12 MON PROB PART DUE DRUG-W3
+H3TO126         int     %19.0f     H3TO126    S28Q126 PST 12 MON PROB SEX DUE DRUG-W3
+H3TO127         int     %19.0f     H3TO127    S28Q127 PST 12 MON FIGHT DUE DRUG-W3
+H3TO128         int     %19.0f     H3TO128    S28Q128 PST 12 MON HIGH AT SCH/WORK-W3
+H3TO129         int     %18.0f     H3TO129    S28Q129 MEMBER OF 12 STEP PROG-W3
+H3TO130         int     %22.0f     H3TO130    S28Q130 PST 12 MON THOUGHT AB SUICIDE-W3
+H3TO131         int     %19.0f     H3TO131    S28Q131 PST 12 MON # TIMES ATTMPT SUI-W3
+H3TO132         int     %19.0f     H3TO132    S28Q132 PST 12 MON ATTEMP INJRY/POISN-W3
+H3TO133         int     %22.0f     H3TO133    S28Q133 PST 12 MON FRNDS KILL SELVS-W3
+H3TO134         int     %19.0f     H3TO134    S28Q134 PST 12 MON HAVE ANY DIED-W3
+H3TO135         int     %19.0f     H3TO135    S28Q135 PST 12 MON FAM MEM KILL SLF-W3
+H3TO136         int     %19.0f     H3TO136    S28Q136 PST 12 MON HAVE ANY DIED-W3
+H3MA1           int     %27.0f     H3MA1      S29Q1 BY 6 GRD TIMES LEFT HOME ALONE-W3
+H3MA2           int     %27.0f     H3MA2      S29Q2 BY 6 GRD NEEDS NOT TAKEN CARE-W3
+H3MA3           int     %27.0f     H3MA3      S29Q3 BY 6 GRD TIMES BEING HIT/KICK-W3
+H3MA4           int     %27.0f     H3MA4      S29Q4 BY 6 GRD TIMES TOUCH SEXUAL WAY-W3
+H3MA5           int     %19.0f     H3MA5      S29Q5 BY 6 GRD OFTEN SOC SVCS INVESTG-W3
+H3MA6           int     %20.0f     H3MA6      S29Q6 BY 6 GRD OFTEN TAKN BY SOC SVCS-W3
+H3MAC7          int     %42.0f     H3MAC7     S28Q7 OFTEN LEFT CHILDREN ALONE-W3
+H3MAC8          int     %42.0f     H3MAC8     S28Q8 OFTEN NEGLECTED CHILDREN-W3
+H3MAC9          int     %42.0f     H3MAC9     S28Q9 OFTEN SLAP,HIT,KICK CHILDREN-W3
+H3MAC10         int     %42.0f     H3MAC10    S28Q10 OFTEN SOCIAL SERVICES INVOLVED-W3
+H3CC1           int     %20.0f     H3CC1      S30Q1 DUR ADOLSCNC PART VOL/COMM SVC-W3
+H3CC2A          int     %19.0f     H3CC2A     S30Q2 WAS WORK VOLUNTARY-W3
+H3CC2B          int     %19.0f     H3CC2B     S30Q3 WAS WORK COURT-ORDERED-W3
+H3CC2C          int     %19.0f     H3CC2C     S30Q4 WAS WORK REQ PARENTS/SCH/CHURCH-W3
+H3CC3           int     %20.0f     H3CC3      S30Q5 LAST 12 MON PERFORM VOLTRY WORK-W3
+H3CC4A          int     %19.0f     H3CC4A     S30Q6 ORG TYPE: YOUTH ORG/LTL_LG/SCTS-W3
+H3CC4B          int     %19.0f     H3CC4B     S30Q7 ORG TYPE: SVC ORG/BIG BRO/SIS-W3
+H3CC4C          int     %19.0f     H3CC4C     S30Q8 ORG TYPE: POLITICAL CLUB-W3
+H3CC4D          int     %19.0f     H3CC4D     S30Q9 ORG TYPE: SOLIDARITY/ETHNIC-W3
+H3CC4E          int     %19.0f     H3CC4E     S30Q10 ORG TYPE: CHURCH RELATED-W3
+H3CC4F          int     %19.0f     H3CC4F     S30Q11 ORG TYPE: COMM/CNTR/ASSOC/SOC-W3
+H3CC4G          int     %19.0f     H3CC4G     S30Q12 ORG TYPE: VOL/GRP/HOSPITAL-W3
+H3CC4H          int     %19.0f     H3CC4H     S30Q13 ORG TYPE: EDUCATIONAL GRP-W3
+H3CC4I          int     %19.0f     H3CC4I     S30Q14 ORG TYPE: ENVIRON/RECYCL-W3
+H3CC5           int     %19.0f     H3CC5      S30Q15 LAST 12 MON HAVE DONATED BLOOD-W3
+H3CC6           int     %19.0f     H3CC6      S30Q16 REGISTERED ORGAN DONOR-W3
+H3CC7           int     %19.0f     H3CC7      S30Q17 REGISTERED TO VOTE-W3
+H3CC8           int     %19.0f     H3CC8      S30Q18 VOTED LAST PRESIDENTIAL/ELECT-W3
+H3CC9A          int     %18.0f     H3CC9A     S30Q19 LAST 12 MON CONTRBT/POL/PRTY-W3
+H3CC9B          int     %18.0f     H3CC9B     S30Q20 LAST 12 MON CONTCT OFF COM ISS-W3
+H3CC9C          int     %18.0f     H3CC9C     S30Q21 LAST 12 MON RUN FOR PUB OFF-W3
+H3CC9D          int     %18.0f     H3CC9D     S30Q22 LAST 12 MON RUN NON/PUB/OFF-W3
+H3CC9E          int     %18.0f     H3CC9E     S30Q23 LAST 12 MON ATTND POL/RALLY-W3
+H3CC9F          int     %18.0f     H3CC9F     S30Q24 LAST 12 MON FILED TAX RETURN-W3
+H3CC10          int     %30.0f     H3CC10     S30Q25 AGREE WITH TRUST FED GOV-W3
+H3CC11          int     %30.0f     H3CC11     S30Q26 AGREE WITH TRUST STATE GOV-W3
+H3CC12          int     %30.0f     H3CC12     S30Q27 AGREE WITH TRUST LOCAL GOV-W3
+H3CC13          int     %22.0f     H3CC13     S30Q28 CONSIDER CONSERV/LIBERAL/MIDDL-W3
+H3CC14          int     %18.0f     H3CC14     S30Q29 IDENTIFY WITH POLITICAL PARTY-W3
+H3CC15          int     %20.0f     H3CC15     S30Q30 POLITICAL PARTY IDENTIFICATION-W3
+H3RE1           int     %25.0f     H3RE1      S31Q1 PRESENT RELIGION-W3
+H3RE2           int     %25.0f     H3RE2      S31Q2 PRESENT RELIGION ADD/CODES-W3
+H3RE3           int     %20.0f     H3RE3      S31Q3 FUNDAMENTALIST/LIBERAL/PENTECTL-W3
+H3RE4           int     %19.0f     H3RE4      S31Q4 TRADITIONAL/MODERATE/LIBERAL-W3
+H3RE5           int     %19.0f     H3RE5      S31Q5 ORTHODOX/CONSERVATIVE/REFORM-W3
+H3RE6           int     %54.0f     H3RE6      S31Q6 DENOMINATION-W3
+H3RE7           int     %54.0f     H3RE7      S31Q7 DENOMINATION ADDITIONAL CODES-W3
+H3RE8           int     %20.0f     H3RE8      S31Q8 ANABAPTIST CHURCH NAME-W3
+H3RE9           int     %51.0f     H3RE9      S31Q9 BAPTIST GROUP NAME-W3
+H3RE10          int     %26.0f     H3RE10     S31Q10 CHURCH OF BRETHREN GROUP-W3
+H3RE11          int     %33.0f     H3RE11     S31Q11 ASSOCIATED WITH DENOMINATION-W3
+H3RE12          int     %42.0f     H3RE12     S31Q12 CHRISTIAN DENOMINATION-W3
+H3RE13          int     %27.0f     H3RE13     S31Q13 CHURCH OF CHRIST ID-W3
+H3RE14          int     %34.0f     H3RE14     S31Q14 CHURCH OF GOD ID-W3
+H3RE15          int     %27.0f     H3RE15     S31Q15 UNITED CHURCH OF CHRIST ID-W3
+H3RE16          int     %20.0f     H3RE16     S31Q16 HOLINESS GROUP ID-W3
+H3RE17          int     %30.0f     H3RE17     S31Q17 INDEPENDENT CHARIS/PENTECTL ID-W3
+H3RE18          int     %19.0f     H3RE18     S31Q18 AFFILIATED WITH DENOMINATION-W3
+H3RE19          int     %42.0f     H3RE19     S31Q19 EVAN LUTHERAN/MISSR SYNOD ID-W3
+H3RE20          int     %43.0f     H3RE20     S31Q20 METHODIST CHURCH ID-W3
+H3RE21          int     %44.0f     H3RE21     S31Q21 PENTECOSTAL CHURCH ID-W3
+H3RE22          int     %42.0f     H3RE22     S31Q22 PRESBYTERIAN CHURCH ID-W3
+H3RE23          int     %30.0f     H3RE23     S31Q23 CHRISTIAN REFORM CHURCH ID-W3
+H3RE24          int     %25.0f     H3RE24     S31Q24 HAVE ATTENDED CHURCH/MOSQ/SYNG-W3
+H3RE25          int     %25.0f     H3RE25     S31Q25 PARTICIPATED CHURCH ACTIVITIES-W3
+H3RE26          int     %23.0f     H3RE26     S31Q26 RELIGION BEEN RAISED-W3
+H3RE27          int     %20.0f     H3RE27     S31Q27 RAISED FUNDMTL/MODER/LIBERL-W3
+H3RE28          int     %19.0f     H3RE28     S31Q28 RAISED TARDTL/MODERATE/LIBERAL-W3
+H3RE29          int     %19.0f     H3RE29     S31Q29 RAISED ORTHDX/CONSRVT/REFORM-W3
+H3RE30          int     %37.0f     H3RE30     S31Q30 HOW IMPORTANT RELIG FAITH-W3
+H3RE31          int     %19.0f     H3RE31     S31Q31 AVG NUM HRS RELIG ACTIVITIES-W3
+H3RE32          int     %26.0f     H3RE32     S31Q32 OFTEN PRAY IN RELIG PLACES-W3
+H3RE33          int     %37.0f     H3RE33     S31Q33 HOW IMPORTANT SPIRITUAL LIFE-W3
+H3RE34          int     %21.0f     H3RE34     S31Q34 EVER HAD RELG EXP CHANGE LIFE-W3
+H3RE35          int     %20.0f     H3RE35     S31Q35 HOW OLD WHEN EXPRNC HAPPENED-W3
+H3RE36          int     %49.0f     H3RE36     S31Q36 BEST DESCRP OF BELIEFS ABT GOD-W3
+H3RE37          int     %30.0f     H3RE37     S31Q37 BEING LED SPIRITUALLY-W3
+H3RE38          int     %30.0f     H3RE38     S31Q38 REL/SPRTL BELIEFS GUIDE TO LIV-W3
+H3RE39          int     %30.0f     H3RE39     S31Q39 ANGELS WATCH OVER-W3
+H3RE40          int     %19.0f     H3RE40     S31Q40 BORN AGAIN-W3
+H3RE41          int     %24.0f     H3RE41     S31Q41 RELIGIOUS PERSON-W3
+H3RE42          int     %24.0f     H3RE42     S31Q43 SPIRITUAL PERSON-W3
+H3GM1           int     %18.0f     H3GM1      S32Q1 BOUGHT LOTTRY/SCRATCH TCKT-W3
+H3GM2           int     %18.0f     H3GM2      S32Q2 PLAYED CHANCE GAMES FOR MONEY-3
+H3GM3           int     %18.0f     H3GM3      S32Q3 PLAYED OR BET OTH EVENTS-W3
+H3GM4           int     %34.0f     H3GM4      S32Q4 LARGEST AMOUNT BEHIND IN A YR-W3
+H3GM5           int     %19.0f     H3GM5      S32Q5 PERIODS TIME THINKNG ON BETS-W3
+H3GM6           int     %19.0f     H3GM6      S32Q6 GAMBLED TO RELIEVE FEELINGS-W3
+H3GM7           int     %19.0f     H3GM7      S32Q7 LOST ONE DAY RETURN TO GET EVEN-W3
+H3GM8           int     %19.0f     H3GM8      S32Q8 GAMBLING AFFECTED RELATIONSHIPS-W3
+H3DA1           int     %19.0f     H3DA1      S33Q1 WORK AROUND THE HOUSE-W3
+H3DA2           int     %19.0f     H3DA2      S33Q2 HOBBIES-W3
+H3DA3           int     %19.0f     H3DA3      S33Q3 WATCH VIDEOS-W3
+H3DA4           int     %20.0f     H3DA4      S33Q4 HRS/WK WATCH VIDEOS-W3
+H3DA5           int     %20.0f     H3DA5      S33Q5 HRS/WK PLAY COMPUTER GAMES-W3
+H3DA6           int     %19.0f     H3DA6      S33Q6 WATCH TV-W3
+H3DA7           int     %20.0f     H3DA7      S33Q7 HRS/WK WATCH TV-W3
+H3DA8           int     %19.0f     H3DA8      S33Q8 BIKE/SKATEBRD/DANCE/HIKE/HUNT-W3
+H3DA9           int     %19.0f     H3DA9      S33Q9 ROLR BLADE/SKATE/SKI/AEROBICS-W3
+H3DA10          int     %19.0f     H3DA10     S33Q10 PLAY A STRENUOUS SPORT-W3
+H3DA11          int     %19.0f     H3DA11     S33Q11 PLAY INDIVIDUAL SPORT-W3
+H3DA12          int     %19.0f     H3DA12     S33Q12 GYMNSTCS/WT LIFT/STRENGTH-W3
+H3DA13          int     %19.0f     H3DA13     S33Q13 PLAY GOLF/FISH/BOWL/BASEBALL-W3
+H3DA14          int     %19.0f     H3DA14     S33Q14 WALK FOR EXERCISE-W3
+H3DA15          int     %19.0f     H3DA15     S33Q15 HANG OUT WITH FRIENDS - W3
+H3DA16          int     %22.0f     H3DA16     S33Q16 LAST 7 DAYS-TYP PHYS ACTIV-W3
+H3DA17          int     %19.0f     H3DA17     S33Q17 GEN MORE/LESS ACTIVE LAST WEEK-W3
+H3DA18          int     %19.0f     H3DA18     S33Q18 CHILDREN < 6 IN HH-W3
+H3DA19          int     %19.0f     H3DA19     S33Q19 CHILDREN 6-12 IN HH-W3
+H3DA20          int     %21.0f     H3DA20     S33Q20 HRS FEED/BATHE/DRESS CHILD < 6-W3
+H3DA21          int     %21.0f     H3DA21     S33Q21 HRS CARE/WALK/PLAY W/CHILD < 6-W3
+H3DA22          int     %21.0f     H3DA22     S33Q22 HH CHILD INVOLVED IN SPORTS-W3
+H3DA23          int     %21.0f     H3DA23     S33Q23 ATTEND HH CHILD SPORTS-W3
+H3DA24          int     %20.0f     H3DA24     S33Q24 NO TIMES ATTEND CHILD SPORTS-W3
+H3DA25          int     %21.0f     H3DA25     S33Q25 PARTIC/COACH CHILD SPORTS-W3
+H3DA26          int     %20.0f     H3DA26     S33Q26 TIMES PART/COACH CHILD SPORTS-W3
+H3DA27          int     %20.0f     H3DA27     S33Q27 AVG/HRS SPENT CHILD SPORTS-W3
+H3DA28          int     %21.0f     H3DA28     S33Q28 CURRENTLY HAVE JOB-W3
+H3DA29A         int     %19.0f     H3DA29A    S33Q29 WORK TRANSPORT-CAR-W3
+H3DA29B         int     %19.0f     H3DA29B    S33Q29 WORK TRANSPORT-BUS-W3
+H3DA29C         int     %19.0f     H3DA29C    S33Q29 WORK TRANSPORT-SUBWAY-W3
+H3DA29D         int     %19.0f     H3DA29D    S33Q29 WORK TRANSPORT-WALK-W3
+H3DA29E         int     %19.0f     H3DA29E    S33Q29 WORK TRANSPORT-BIKE-W3
+H3DA29F         int     %19.0f     H3DA29F    S33Q29 WORK TRANSPORT-OTHER-W3
+H3DA30          int     %21.0f     H3DA30     S33Q30 DAILY NO MILES COMMUTE-WORK-W3
+H3DA31          int     %21.0f     H3DA31     S33Q31 NO HRS/WK SPENT AT WORK-W3
+H3DA32          int     %21.0f     H3DA32     S33Q32 AVG HRS/WK HARD/PHYS LABOR-WRK-W3
+H3DA33          int     %20.0f     H3DA33     S33Q33 AVG HRS/WK MOD/PHYS LABOR-WRK-W3
+H3DA34          int     %20.0f     H3DA34     S33Q34 AVG HRS/WK LGT/PHYS LABOR-WRK-W3
+H3DA35          int     %21.0f     H3DA35     S33Q35 AVG HRS/WK SEATED AT WORK-W3
+H3DA36          int     %21.0f     H3DA36     S33Q36 ENROLLED SCHOOL/VOC TRAIN-W3
+H3DA37          int     %21.0f     H3DA37     S33Q37 NO HRS/WK SPENT SCHOOL/VOC-W3
+H3DA38A         int     %19.0f     H3DA38A    S33Q38 SCHOOL TRANSPORT-CAR-W3
+H3DA38B         int     %19.0f     H3DA38B    S33Q38 SCHOOL TRANSPORT-BUS-W3
+H3DA38C         int     %19.0f     H3DA38C    S33Q38 SCHOOL TRANSPORT-SUBWAY-W3
+H3DA38D         int     %19.0f     H3DA38D    S33Q38 SCHOOL TRANSPORT-WALK-W3
+H3DA38E         int     %19.0f     H3DA38E    S33Q38 SCHOOL TRANSPORT-BIKE-W3
+H3DA38F         int     %19.0f     H3DA38F    S33Q38 SCHOOL TRANSPORT-OTHER-W3
+H3DA39          int     %21.0f     H3DA39     S33Q39 DAILY NO MILES COMMUTE-SCH-W3
+H3DA40          int     %20.0f     H3DA40     S33Q40 AVG HRS/WK WALK/BIKE SCHOOL-W3
+H3DA41          int     %20.0f     H3DA41     S33Q41 AVG HRS/WK STAND AT SCHOOL-W3
+H3DA42          int     %21.0f     H3DA42     S33Q42 AVG HRS/WK SEATED AT SCHOOL-W3
+H3DA43F         int     %15.0f     H3DA43F    S33Q43 HEIGHT-FEET-W3
+H3DA43I         int     %15.0f     H3DA43I    S33Q43 HEIGHT-INCHES-W3
+H3DA44          int     %20.0f     H3DA44     S33Q44 WEIGHT-LBS-W3
+H3DA45          int     %26.0f     H3DA45     S33Q45 MENSTR-AGE FIRST PERIOD-W3
+H3WGT           float   %46.1f     H3WGT      MEASURED WEIGHT-W3
+H3HGT_F         int     %15.0f     H3HGT_F    MEASURED HEIGHT,FEET-W3
+H3HGT_I         int     %15.0f     H3HGT_I    MEASURED HEIGHT,INCHES-W3
+H3HGT_PI        float   %14.3f     H3HGT_PI   MEASURED HEIGHT,PARTIAL INCH-W3
+CH              int     %14.0f     CH         CHLAMYDIA ASSAY RESULTS
+GC              int     %14.0f     GC         GONORRHAEAE ASSAY RESULTS
+TRICH           int     %14.0f     TRICH      TRICH ASSAY RESULTS
+H3RPART         int     %60.0f     H3RPART    AGREE TO RECRUIT PARTNER-W3
+H3IR1           int     %21.0f     H3IR1      S35Q1 PHYSICAL ATTRACTIVENESS OF R-W3
+H3IR2           int     %21.0f     H3IR2      S35Q2 PERSONALITY ATTRACTIVENESS OF R-W3
+H3IR3           int     %23.0f     H3IR3      S35Q3 GROOMING-W3
+H3IR4           int     %33.0f     H3IR4      S35Q4 RACE OF RESPONDENT BY FI-W3
+H3IR5           int     %7.0f      H3IR5      S35Q5 THIRD PERSON PRESENT AT INTRVW-W3
+H3IR6           int     %23.0f     H3IR6      S35Q6 INTERRUPTIONS DURING INTERVIEW-W3
+H3IR7           int     %46.0f     H3IR7      S35Q7 LOCATION OF INTERVIEW-W3
+H3IR8           int     %7.0f      H3IR8      S35Q8 CONCERN FOR SAFETY-W3
+H3IR9           int     %11.0f     H3IR9      S35Q9 R APPEARED TO BE DRUNK-W3
+H3IR10          int     %7.0f      H3IR10     S35Q10 R APPEARED BORED/IMPATIENT-W3
+H3IR11          int     %19.0f     H3IR11     S35Q11 BOREDOM NEG AFFECT ON INTRVW-W3
+H3IR12          int     %7.0f      H3IR12     S35Q12 R APPEARED EMBARRASSED-W3
+H3IR13          int     %7.0f      H3IR13     S35Q13 CANDIDNESS OF R-W3
+H3IR14          int     %21.0f     H3IR14     S35Q14 IS RESPONDENT BLIND-W3
+H3IR15          int     %19.0f     H3IR15     S35Q15 IS RESPONDENT DEAF-W3
+H3IR16          int     %7.0f      H3IR16     S35Q16 IS RESPONDENT PHYS DISABLED-W3
+H3IR17          int     %16.0f     H3IR17     S35Q17 RESPONDENT SKIN COLOR-W3
+H3IR18          int     %27.0f     H3IR18     S35Q18 RESPONDENT HAIR COLOR-W3
+H3IR19          int     %9.0f      H3IR19     S35Q19 RESPONDENT EYE COLOR-W3
+H3IR20          int     %48.0f     H3IR20     S35Q20 R NEED HELP W/SELF ADMIN-W3
+H3IR21          int     %18.0f     H3IR21     S35Q21 ANYTHING ESSENTIAL-W3
+----------------------------------------------------------------------------------------------------------------------------------------
+Sorted by: 
+
+. d,s
+
+Contains data from data/DS0008/21600-0008-Data.dta
+  obs:         4,882                          National Longitudinal Study of Adolescent to Adult Health (Add Health), 1994-200
+ vars:         1,831                          20 May 2016 09:05
+ size:    19,718,398                          
+Sorted by: 
+
+. clear
+
+. exit
