@@ -1,5 +1,10 @@
-// Change the below to wherever you unzipped the big file from ICPSR
-// cd "C:\Users\delamb\data\ahbelong\data"
+**************************************
+** CHANGE THE BELOW TO WHEREVER YOU **
+** UNZIPPED THE BIG FILE FROM ICPSR **
+**************************************
+
+cd "C:\Users\delamb\data\ahbelong\data"
+
 
 
 ******************************
