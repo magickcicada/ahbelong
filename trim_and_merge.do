@@ -1,10 +1,44 @@
 // Change the below to wherever you unzipped the big file from ICPSR
 // cd "C:\Users\delamb\data\ahbelong\data"
 
-**********************
-** MAIN WAVE I DATA **
-**********************
+
+******************************
+** RUN RECODING SCRIPTS AND **
+** SAVE RECODED DATASETS    **
+******************************
+
 use DS0001/21600-0001-Data.dta, clear
+do DS0001/21600-0001-Supplemental_syntax.do
+save DS0001/21600-0001-DataRecode.dta, replace
+
+use DS0008/21600-0008-Data.dta, clear
+do DS0008/21600-0008-Supplemental_syntax.do
+save DS0008/21600-0008-DataRecode.dta, replace
+
+use DS0016/21600-0016-Data.dta, clear
+do DS0016/21600-0016-Supplemental_syntax.do
+save DS0016/21600-0016-DataRecode.dta, replace
+
+use DS0017/21600-0017-Data.dta, clear
+do DS0017/21600-0017-Supplemental_syntax.do
+save DS0017/21600-0017-DataRecode.dta, replace
+
+use DS0020/21600-0020-Data.dta, clear
+do DS0020/21600-0020-Supplemental_syntax.do
+save DS0020/21600-0020-DataRecode.dta, replace
+
+use DS0022/21600-0022-Data.dta, clear
+do DS0022/21600-0022-Supplemental_syntax.do
+save DS0022/21600-0022-DataRecode.dta, replace
+
+
+
+****************************
+** DROP UNNEEDED SECTIONS **
+** FROM MAIN WAVE I DATA  **
+****************************
+
+use DS0001/21600-0001-DataRecode.dta, clear
 keep AID-H1DA11 H1GH18-H1GH21 H1ED1-H1ED24 H1FS1-H1FS19 H1NM1-H1RF14 H1SU1-H1SU8 H1PR1-H1PR8 ///
      H1EE1-H1EE15 S1-S62R PA1-PA39 PA55 PB2 PB8 AH_PVT AH_RAW
 /*  The above drops:
@@ -33,18 +67,24 @@ keep AID-H1DA11 H1GH18-H1GH21 H1ED1-H1ED24 H1FS1-H1FS19 H1NM1-H1RF14 H1SU1-H1SU8
             
 */
 
-// Merge in variables from Waves III-IV
-merge 1:1 AID using DS0008/21600-0008-Data.dta, gen(_mergeW3InHome) ///
+
+
+
+********************************************
+** MERGE IN VARIABLES FROM WAVES III & IV **
+********************************************
+
+merge 1:1 AID using DS0008/21600-0008-DataRecode.dta, gen(_mergeW3InHome) ///
           keepusing(H3ED1-H3ED49YO H3SP1-H3SP27 H3EC1A-H3EC63) // WIII In-Home questionnaire
        /* keeping only:
             Section 7: Education
             Section 12: Social Psychology & Mental Health
             Section 15: Economics & Personal Future
        */
-merge 1:1 AID using DS0016/21600-0016-Data.dta, gen(_mergeW3Ed) // WIII Education variables
-merge 1:1 AID using DS0017/21600-0017-Data.dta, gen(_mergeW3Grad) // WIII School varabiales
-merge 1:1 AID using DS0020/21600-0020-Data.dta, gen(_mergeW3Pvt) // WIII Peabody PVT scores
-merge 1:1 AID using DS0022/21600-0022-Data.dta, gen(_mergeW4) ///
+merge 1:1 AID using DS0016/21600-0016-DataRecode.dta, gen(_mergeW3Ed) // WIII Education variables
+merge 1:1 AID using DS0017/21600-0017-DataRecode.dta, gen(_mergeW3Grad) // WIII School varabiales
+merge 1:1 AID using DS0020/21600-0020-DataRecode.dta, gen(_mergeW3Pvt) // WIII Peabody PVT scores
+merge 1:1 AID using DS0022/21600-0022-DataRecode.dta, gen(_mergeW4) ///
           keepusing(H4ID5H-H4ID5J H4ED1-H4ED9 H4EC1-H4EC19 H4MH2-H4MH29 H4PE1-H4PE41) // WIV In-home survey
         /* keeping:
             Section 6: Illness, Medications, and Physical Disabilities **Anxiety, Depression, PTSD variables only
@@ -54,20 +94,25 @@ merge 1:1 AID using DS0022/21600-0022-Data.dta, gen(_mergeW4) ///
             Section 26: Personality (self-perception)
         */
 
-// Merge in weights
+
+
+
+**********************************
+** MERGE IN WEIGHTS WE MAY NEED **
+**********************************
+
 merge 1:1 AID using DS0004/21600-0004-Data.dta, gen(_mergeW1wgt) keepusing(GSWGT1)
 merge 1:1 AID using DS0021/21600-0021-Data.dta, gen(_mergeW3wgt) keepusing(GSWGT3 GSWGT3_2)
 merge 1:1 AID using DS0018/21600-0018-Data.dta, gen(_mergeW3wgtEd) keepusing(PTWGT3 PTWGT3_2)
 merge 1:1 AID using DS0031/21600-0031-Data.dta, gen(_mergeW4wgt) keepusing(GSWGT4 GSWGT4_2 GSWGT134)
 
-// Run recoding scripts provided in ICPSR files
-do DS0001/21600-0001-Supplemental_syntax.do
-do DS0008/21600-0008-Supplemental_syntax.do
-do DS0016/21600-0016-Supplemental_syntax.do
-do DS0017/21600-0017-Supplemental_syntax.do
-do DS0020/21600-0020-Supplemental_syntax.do
-do DS0022/21600-0022-Supplemental_syntax.do
 
+
+
+***********************
+** CLEAN UP AND SAVE **
+***********************
 
 rename *, lower // lowercase variable names
 order _merge*, last // move merge categoricals to end for prettiness.
+save addhealth_narrow.dta, replace
