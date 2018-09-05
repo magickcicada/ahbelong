@@ -33,14 +33,26 @@ keep AID-H1DA11 H1GH18-H1GH21 H1ED1-H1ED24 H1FS1-H1FS19 H1NM1-H1RF14 H1SU1-H1SU8
             
 */
 
-** Merge in variables from Waves III-IV
+// Merge in variables from Waves III-IV
 merge 1:1 AID using DS0008/21600-0008-Data.dta, gen(_mergeW3InHome) ///
-          keepusing(H3ED1-H3ED49YO H3SP1-H3SP27 H3EC1A-H3EC63) // WIII In-Home Survey
+          keepusing(H3ED1-H3ED49YO H3SP1-H3SP27 H3EC1A-H3EC63) // WIII In-Home questionnaire
+       /* keeping only:
+            Section 7: Education
+            Section 12: Social Psychology & Mental Health
+            Section 15: Economics & Personal Future
+       */
 merge 1:1 AID using DS0016/21600-0016-Data.dta, gen(_mergeW3Ed) // WIII Education variables
 merge 1:1 AID using DS0017/21600-0017-Data.dta, gen(_mergeW3Grad) // WIII School varabiales
 merge 1:1 AID using DS0020/21600-0020-Data.dta, gen(_mergeW3Pvt) // WIII Peabody PVT scores
 merge 1:1 AID using DS0022/21600-0022-Data.dta, gen(_mergeW4) ///
           keepusing(H4ID5H-H4ID5J H4ED1-H4ED9 H4EC1-H4EC19 H4MH2-H4MH29 H4PE1-H4PE41) // WIV In-home survey
+        /* keeping:
+            Section 6: Illness, Medications, and Physical Disabilities **Anxiety, Depression, PTSD variables only
+            Section 9: Education
+            Section 12: Economics
+            Section 14: Social Psychology & Mental Health, excluding memory task battery (MH1 & followups)
+            Section 26: Personality (self-perception)
+        */
 
 ** Merge in weights
 merge 1:1 AID using DS0004/21600-0004-Data.dta, gen(_mergeW1wgt) keepusing(GSWGT1)
