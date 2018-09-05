@@ -54,11 +54,20 @@ merge 1:1 AID using DS0022/21600-0022-Data.dta, gen(_mergeW4) ///
             Section 26: Personality (self-perception)
         */
 
-** Merge in weights
+// Merge in weights
 merge 1:1 AID using DS0004/21600-0004-Data.dta, gen(_mergeW1wgt) keepusing(GSWGT1)
 merge 1:1 AID using DS0021/21600-0021-Data.dta, gen(_mergeW3wgt) keepusing(GSWGT3 GSWGT3_2)
 merge 1:1 AID using DS0018/21600-0018-Data.dta, gen(_mergeW3wgtEd) keepusing(PTWGT3 PTWGT3_2)
 merge 1:1 AID using DS0031/21600-0031-Data.dta, gen(_mergeW4wgt) keepusing(GSWGT4 GSWGT4_2 GSWGT134)
+
+// Run recoding scripts provided in ICPSR files
+do DS0001/21600-0001-Supplemental_syntax.do
+do DS0008/21600-0008-Supplemental_syntax.do
+do DS0016/21600-0016-Supplemental_syntax.do
+do DS0017/21600-0017-Supplemental_syntax.do
+do DS0020/21600-0020-Supplemental_syntax.do
+do DS0022/21600-0022-Supplemental_syntax.do
+
 
 rename *, lower // lowercase variable names
 order _merge*, last // move merge categoricals to end for prettiness.
