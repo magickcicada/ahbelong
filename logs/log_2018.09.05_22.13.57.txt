@@ -1,0 +1,67 @@
+-----------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\delamb\data\ahbelong\logs\log_2018.09.05_22.13.57.txt
+  log type:  text
+ opened on:   5 Sep 2018, 22:13:57
+
+. 
+. 
+. 
+. 
+. ***********************
+. ** RENAMES & RECODES **
+. ***********************
+. 
+. // Feels alienated from school
+. recode s62e (4/5=1) (1/3=0), gen(alienated)
+(4293 differences between s62e and alienated)
+
+. label define noyes 0 "(0) No" 1 "(1) Yes"
+
+. label values alienated noyes
+
+. label var alienated "Feels Alienated from School"
+
+. 
+. // Any post-high school credential
+. recode h4ed3a (1=0) (2/8=1), gen(credential)
+(3697 differences between h4ed3a and credential)
+
+. label values credential noyes
+
+. label var credential "Any Post-High School Credential"
+
+. 
+. // Highest degree attained
+. recode h4ed2 (1/2=1) (3=2) (4/6=3) (7/8=4) (9=5) (10=5) (11=6) (12=4) (13=5), gen(degree)
+(5097 differences between h4ed2 and degree)
+
+. label define degree 1 "(1) Less than H.S." 2 "(2) HS Grad/GED" 3 "(3) Some College/Trade/Voc School" 4 "(4) Bac
+> helor's Degree" ///
+>         5 "(5) Master's/Professional Degree" 6 "(6) Doctoral Degree"
+
+. label values degree degree
+
+. label var degree "Highest Education Attained, 2008"
+
+. 
+. // Dummy for sex
+. recode bio_sex4 (1=0) (2=1), gen(female)
+variable bio_sex4 not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do explore.do
+file explore.do not found
+r(601);
+
+. do ../explore.do
+
+. ********************************************
+. ** BOILERPLATE & AUTOMATIC LOG GENERATION **
+. ********************************************
+. 
+. capture log close
