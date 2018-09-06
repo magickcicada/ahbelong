@@ -22,20 +22,22 @@ cd ..
 ** RENAMES & RECODES **
 ***********************
 
-// Does NOT feel a part of school
+// Does NOT feel part of school
 recode s62e (4/5=1) (1/3=0), gen(notPart)
-label define noyes 0 "(0) No" 1 "(1) Yes"
-label values notPart noyes
-label var notPart "Does NOT feel a part of school"
+label define part 0 "(0) DOES feel part" 1 "(1) Does NOT feel part"
+label values notPart part
+label var notPart "Does NOT feel part of school"
 
 
 // Does NOT feel close to others at school
 recode s62b (4/5=1) (1/3=0), gen(notClose)
-label values notClose noyes
+label define close 0 "(0) DOES feel close" 1 "(1) Does NOT feel close"
+label values notClose close
 label var notClose "Does NOT feel close to others at school"
 
 // Any post-high school credential
 recode h4ed3a (1=0) (2/8=1), gen(credential)
+label define noyes 0 "(0) No" 1 "(1) Yes"
 label values credential noyes
 label var credential "Any Post-High School Credential"
 
