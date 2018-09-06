@@ -48,6 +48,9 @@ label define degree 1 "(1) Less than H.S." 2 "(2) HS Grad/GED" 3 "(3) Some Colle
 label values degree degree
 label var degree "Highest Degree Attained, 2008"
 
+// Rename cumulative GPA to something more convenient
+clonevar gpa = eaogpac
+
 // Dummy for sex
 recode bio_sex (1=0) (2=1), gen(female)
 label define sex 0 "(0) Male" 1 "(1) Female"
